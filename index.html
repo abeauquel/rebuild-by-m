@@ -105,16 +105,20 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-dark">
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm text-brand-dark">
                 <a href="#apropos" class="hover:text-brand-terra transition-colors">Qui suis-je ?</a>
                 <a href="#expertise" class="hover:text-brand-terra transition-colors">Expertise</a>
-                <a href="#suivis" class="hover:text-brand-terra transition-colors">Suivi à Distance</a>
+                <a href="#suivis" class="hover:text-brand-terra transition-colors">Suivi</a>
                 <a href="#temoignages" class="hover:text-brand-terra transition-colors">Témoignages</a>
+                <a href="#ressources" class="hover:text-brand-terra transition-colors">Ressources</a>
+                <a href="#faq" class="hover:text-brand-terra transition-colors">FAQ</a>
                 
+                <div class="h-4 w-px bg-brand-muted/20 mx-2"></div>
+
                 <a href="https://www.instagram.com/rebuild.by.m/" target="_blank" class="hover:text-brand-terra transition-colors text-brand-muted hover:bg-brand-sand/20 p-2 rounded-full">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
                 </a>
-                <a href="#contact" class="bg-brand-dark text-white hover:bg-brand-terra px-6 py-3 rounded-full font-semibold transition-all shadow-lg shadow-brand-dark/10 hover:shadow-brand-terra/20">
+                <a href="#contact" class="bg-brand-dark text-white hover:bg-brand-terra px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand-dark/10 hover:shadow-brand-terra/20 text-xs tracking-wide uppercase">
                     Me contacter
                 </a>
             </div>
@@ -131,12 +135,14 @@
             <a href="#expertise" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Expertise</a>
             <a href="#suivis" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Suivi Distance</a>
             <a href="#temoignages" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Témoignages</a>
+            <a href="#ressources" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Ressources</a>
+            <a href="#faq" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">FAQ</a>
             <a href="#contact" class="mobile-link bg-brand-terra text-white py-4 rounded-xl font-bold text-center">Me contacter</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
         <!-- Soft Background Elements -->
         <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-sand/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 -z-10"></div>
         <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-terra/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 -z-10"></div>
@@ -176,7 +182,8 @@
                 <!-- Hero Visual Soft -->
                 <div class="md:w-1/2 relative reveal">
                     <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/5">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Manon Kine" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+                         <!-- Image: Woman stretching/training, focused but approachable -->
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Manon Kine" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
                         
                         <!-- Floating Card -->
                         <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-lg">
@@ -197,110 +204,106 @@
                 </div>
             </div>
         </div>
+
+        <!-- Wave Separator -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(130%+1.3px)] h-[100px] text-white" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-current"></path>
+            </svg>
+        </div>
     </section>
 
-    <!-- About Section Updated: Better Alignment -->
+    <!-- About Section Updated: Centered Single Photo -->
     <section id="apropos" class="py-24 bg-white relative overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <!-- Visuals: Compact Grid Centered -->
-                <div class="md:w-1/2 reveal">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-4 pt-8"> <!-- Slight stagger but cleaner -->
-                             <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=600&q=80" class="rounded-2xl object-cover h-56 w-full shadow-md hover:scale-[1.02] transition-transform duration-500">
-                             <div class="bg-brand-light p-5 rounded-2xl border border-brand-sand/30 shadow-sm">
-                                <p class="text-brand-terra font-bold text-3xl mb-1">100%</p>
-                                <p class="text-brand-muted text-sm font-medium">Personnalisé & Adapté à tes objectifs</p>
-                             </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="bg-brand-terra p-5 rounded-2xl text-white shadow-md">
-                                <i data-lucide="heart" class="w-8 h-8 mb-3"></i>
-                                <p class="font-medium text-sm leading-tight">Passionnée par le mouvement & le sport.</p>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" class="rounded-2xl object-cover h-56 w-full shadow-md hover:scale-[1.02] transition-transform duration-500">
-                        </div>
+            <div class="max-w-3xl mx-auto text-center reveal">
+                
+                <!-- Single Photo Manon -->
+                <div class="relative w-48 h-48 mx-auto mb-10 group">
+                    <div class="absolute inset-0 bg-brand-terra rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80" alt="Manon" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl">
+                    <div class="absolute bottom-2 right-2 bg-white p-3 rounded-full shadow-lg text-brand-terra">
+                        <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
                     </div>
                 </div>
-                
-                <!-- Content: Centered vertically -->
-                <div class="md:w-1/2 space-y-8 reveal">
-                    <div>
-                        <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-2">Qui suis-je ?</h2>
-                        <h3 class="text-3xl md:text-4xl font-display font-bold text-brand-dark mb-6">Je suis Manon 👋</h3>
-                        <p class="text-brand-muted text-lg leading-relaxed">
-                            Passionnée par le mouvement & le sport en général (surtout quand il s’agit de soulever lourd & de finir des WOD en crachant ses poumons 😅).
-                        </p>
-                        <p class="text-brand-dark font-medium text-lg mt-4 border-l-4 border-brand-sand pl-4">
-                            👉 J’ai créé <span class="text-brand-terra font-bold">@rebuild.by.m</span> pour aider les crossfitteurs/ses à s’épanouir dans leur pratique sans douleur & limitations.
-                        </p>
-                    </div>
 
+                <!-- Intro Text -->
+                <div class="space-y-6 mb-12">
+                    <div>
+                        <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-3">Qui suis-je ?</h2>
+                        <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-6">Je suis Manon 👋</h3>
+                    </div>
+                    <p class="text-brand-muted text-lg leading-relaxed">
+                        Passionnée par le mouvement & le sport en général (surtout quand il s’agit de soulever lourd & de finir des WOD en crachant ses poumons 😅).
+                    </p>
+                    <p class="text-brand-dark font-medium text-lg">
+                        👉 J’ai créé <span class="text-brand-terra font-bold">@rebuild.by.m</span> pour aider les crossfitteurs/ses à s’épanouir dans leur pratique sans douleur & limitations.
+                    </p>
+                </div>
+
+                <!-- Lists Container (Grid for better readability) -->
+                <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
                     <!-- The "Stop" List -->
-                    <div class="bg-red-50 p-6 rounded-3xl border border-red-100">
+                    <div class="bg-red-50 p-8 rounded-3xl border border-red-100">
+                        <h4 class="font-bold text-red-900 mb-4 flex items-center gap-2">
+                            <i data-lucide="ban" class="w-5 h-5"></i> On arrête :
+                        </h4>
                         <ul class="space-y-3">
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
-                                <span>Stop aux WOD gâchés par une douleur</span>
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Les WOD gâchés par une douleur</span>
                             </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
-                                <span>Stop aux entraînements adaptés par défaut</span>
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Les entraînements adaptés par défaut</span>
                             </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
-                                <span>Stop aux compétitions annulées</span>
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Les compétitions annulées</span>
                             </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
-                                <span>Stop aux frustrations de mobilité</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
-                                <span>Stop aux prises en charge « génériques » qui ne comprennent pas ta pratique</span>
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="x" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>La prise en charge « générique »</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- The "Solutions" List -->
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="bg-brand-sand/50 p-2 rounded-lg text-brand-terra">
-                                <i data-lucide="lightbulb" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-xl text-brand-dark">Ici, tu trouveras :</h4>
-                        </div>
-                        <ul class="grid sm:grid-cols-1 gap-3">
-                            <li class="flex items-center gap-3 text-brand-muted">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
-                                Des conseils clairs pour comprendre ta pathologie
+                    <div class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30">
+                        <h4 class="font-bold text-brand-dark mb-4 flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-terra"></i> Ici, on trouve :
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
+                                <span>Des conseils clairs sur ta pathologie</span>
                             </li>
-                            <li class="flex items-center gap-3 text-brand-muted">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
-                                Des solutions pour éradiquer tes douleurs
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
+                                <span>Des solutions pour éradiquer tes douleurs</span>
                             </li>
-                            <li class="flex items-center gap-3 text-brand-muted">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
-                                Des outils pour améliorer ta mobilité
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
+                                <span>Des outils pour améliorer ta mobilité</span>
                             </li>
-                            <li class="flex items-center gap-3 text-brand-muted">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
-                                Des stratégies pour prévenir les blessures
+                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
+                                <span>Des stratégies de prévention blessures</span>
                             </li>
                         </ul>
                     </div>
-
-                    <!-- CTA -->
-                    <div class="pt-6 border-t border-brand-sand/30">
-                        <p class="font-bold text-brand-dark mb-4 text-lg">➡️ Et si tu veux aller plus loin : un suivi 100% personnalisé 🔥</p>
-                        <p class="text-brand-muted mb-6">
-                            Adapté à ton quotidien, ta pratique & tes objectifs – par une kiné du sport formée & spécialisée dans les pathologies du CrossFit.
-                        </p>
-                        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-terra text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition-colors shadow-lg shadow-brand-terra/20">
-                            Prendre RDV maintenant <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                        </a>
-                    </div>
                 </div>
+
+                <!-- CTA -->
+                <div class="inline-block relative group">
+                    <div class="absolute -inset-1 bg-brand-terra rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+                    <a href="#contact" class="relative inline-flex items-center gap-2 bg-brand-terra text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-colors shadow-lg">
+                        Prendre RDV maintenant <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <p class="text-sm text-brand-muted mt-6">
+                    Adapté à ton quotidien, ta pratique & tes objectifs.
+                </p>
             </div>
         </div>
     </section>
@@ -478,7 +481,7 @@
     </section>
 
     <!-- NEW 3: Instagram Feed Integration (Refined for Educational Content) -->
-    <section class="py-24 bg-brand-light border-t border-brand-sand/20">
+    <section id="ressources" class="py-24 bg-brand-light border-t border-brand-sand/20">
         <div class="container mx-auto px-6">
              <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
                 <div>
@@ -493,33 +496,33 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                <!-- Insta Post 1: Educational -->
+                <!-- Insta Post 1: Educational (Mobility/Stretching) -->
                 <a href="#" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80" alt="Mobilité Hanche" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1562771242-a02d9090c90c?auto=format&fit=crop&w=600&q=80" alt="Mobilité Hanche" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Mobilité Hanche</span>
                         <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Voir l'exercice</span>
                     </div>
                 </a>
-                <!-- Insta Post 2: Educational -->
+                <!-- Insta Post 2: Educational (Squat) -->
                  <a href="#" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=600&q=80" alt="Correction Squat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" alt="Correction Squat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Correction Squat</span>
                         <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Analyse technique</span>
                     </div>
                 </a>
-                <!-- Insta Post 3: Educational -->
+                <!-- Insta Post 3: Educational (Overhead/Shoulder) -->
                  <a href="#" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Douleur Épaule" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80" alt="Douleur Épaule" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Douleur Épaule ?</span>
                         <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Comprendre la cause</span>
                     </div>
                 </a>
-                <!-- Insta Post 4: Educational -->
+                <!-- Insta Post 4: Educational (Active Warmup) -->
                  <a href="#" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Warm-up Routine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=600&q=80" alt="Warm-up Routine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Warm-up Routine</span>
                         <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Avant le WOD</span>
@@ -536,7 +539,7 @@
         </div>
     </section>
 
-    <!-- NEW 2: FAQ Section -->
+    <!-- FAQ Section -->
     <section id="faq" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-3xl">
             <div class="text-center mb-16 reveal">
@@ -685,58 +688,80 @@
 
     <!-- Scripts -->
     <script>
-        lucide.createIcons();
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-            const isOpen = mobileMenu.classList.contains('flex');
-            menuBtn.innerHTML = isOpen ? '<i data-lucide="x" class="w-7 h-7"></i>' : '<i data-lucide="menu" class="w-7 h-7"></i>';
-            lucide.createIcons();
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-                menuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Initialize Icons
+            if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
-            });
-        });
+            }
 
-        // Navbar Scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
-                navbar.classList.remove('py-6');
-            } else {
-                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
-                navbar.classList.add('py-6');
+            // Set Year
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                    const isOpen = mobileMenu.classList.contains('flex');
+                    // Toggle icon based on state
+                    if (typeof lucide !== 'undefined') {
+                         menuBtn.innerHTML = isOpen ? '<i data-lucide="x" class="w-7 h-7"></i>' : '<i data-lucide="menu" class="w-7 h-7"></i>';
+                         lucide.createIcons();
+                    }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        if (typeof lucide !== 'undefined') {
+                            menuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+                            lucide.createIcons();
+                        }
+                    });
+                });
+            }
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                        navbar.classList.remove('py-6');
+                    } else {
+                        navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                        navbar.classList.add('py-6');
+                    }
+                });
+            }
+
+            // Scroll Reveal Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && revealElements.length > 0) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            revealObserver.unobserve(entry.target); 
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+
+                revealElements.forEach(el => revealObserver.observe(el));
             }
         });
-
-        // Scroll Reveal Observer
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target); // Trigger only once
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of element is visible
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
     </script>
 </body>
 </html>
