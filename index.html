@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rebuild.by.m - Kiné CrossFit & Santé</title>
+    <meta name="description" content="Kinésithérapie spécialisée CrossFit & Haltérophilie. Suivis à distance et analyse de mouvement.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            terra: '#d66d4f', // Terracotta principal
+                            sand: '#f7d1cc',  // Beige/Peach
+                            light: '#fdfbf9', // Fond très clair chaud
+                            dark: '#2d2a26',  // Texte principal
+                            muted: '#6b6661'  // Texte secondaire
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fdfbf9;
+            color: #2d2a26;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdfbf9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e0dc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d66d4f;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-sand selection:text-brand-terra overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 cursor-pointer group">
+                <div class="bg-brand-terra text-white p-2 rounded-xl group-hover:rotate-12 transition-transform">
+                   <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xl font-display font-bold tracking-tight text-brand-dark lowercase">
+                    rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-dark">
+                <a href="#apropos" class="hover:text-brand-terra transition-colors">Qui suis-je ?</a>
+                <a href="#expertise" class="hover:text-brand-terra transition-colors">Expertise</a>
+                <a href="#suivis" class="hover:text-brand-terra transition-colors">Suivi à Distance</a>
+                <a href="#temoignages" class="hover:text-brand-terra transition-colors">Témoignages</a>
+                
+                <a href="https://www.instagram.com/rebuild.by.m/" target="_blank" class="hover:text-brand-terra transition-colors text-brand-muted hover:bg-brand-sand/20 p-2 rounded-full">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="#contact" class="bg-brand-dark text-white hover:bg-brand-terra px-6 py-3 rounded-full font-semibold transition-all shadow-lg shadow-brand-dark/10 hover:shadow-brand-terra/20">
+                    Me contacter
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-dark">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-brand-sand/30 p-6 flex-col gap-6 shadow-xl z-50">
+            <a href="#apropos" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Qui suis-je ?</a>
+            <a href="#expertise" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Expertise</a>
+            <a href="#suivis" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Suivi Distance</a>
+            <a href="#temoignages" class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Témoignages</a>
+            <a href="#contact" class="mobile-link bg-brand-terra text-white py-4 rounded-xl font-bold text-center">Me contacter</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Soft Background Elements -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-sand/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-terra/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 -z-10"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+                <div class="md:w-1/2 space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-brand-sand/40 border border-brand-sand text-brand-terra px-4 py-2 rounded-full text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brand-terra animate-pulse"></span>
+                        Suivis 100% Personnalisés
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-display font-bold leading-[1.1] text-brand-dark tracking-tight">
+                        S'épanouir dans la pratique,<br/>
+                        <span class="relative inline-block">
+                            sans douleur
+                            <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-sand/60 -z-10 rounded-sm"></span>
+                        </span>
+                        <span class="text-brand-terra italic">& limitations.</span>
+                    </h1>
+                    
+                    <p class="text-xl text-brand-muted leading-relaxed max-w-lg">
+                        Passionnée par le mouvement et le sport, j'aide les crossfitteurs à comprendre leur corps pour performer durablement.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#contact" class="bg-brand-terra hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-terra/20 hover:shadow-none hover:translate-y-1">
+                            Commencer mon suivi
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#expertise" class="bg-white border border-brand-sand text-brand-dark hover:border-brand-terra hover:text-brand-terra px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center shadow-sm">
+                            Découvrir
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Soft -->
+                <div class="md:w-1/2 relative">
+                    <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/5">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Manon Kine" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-lg">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-brand-terra/10 p-3 rounded-full text-brand-terra">
+                                    <i data-lucide="check-circle" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-brand-dark">Kiné du Sport</p>
+                                    <p class="text-sm text-brand-muted">Spécialisée CrossFit ®</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Circle -->
+                    <div class="absolute -top-12 -right-12 w-48 h-48 border-2 border-brand-terra/20 rounded-full z-0"></div>
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-brand-sand rounded-full -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section Updated -->
+    <section id="apropos" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16">
+                <!-- Visuals -->
+                <div class="md:w-1/2 relative md:sticky md:top-32 h-fit">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-6 translate-y-12">
+                             <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=600&q=80" class="rounded-3xl object-cover h-64 w-full shadow-lg">
+                             <div class="bg-brand-light p-6 rounded-3xl border border-brand-sand/30">
+                                <p class="text-brand-terra font-bold text-3xl mb-1">100%</p>
+                                <p class="text-brand-muted text-sm font-medium">Personnalisé & Adapté à tes objectifs</p>
+                             </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-brand-terra p-6 rounded-3xl text-white">
+                                <i data-lucide="heart" class="w-8 h-8 mb-4"></i>
+                                <p class="font-medium">Passionnée par le mouvement & le sport.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" class="rounded-3xl object-cover h-64 w-full shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="md:w-1/2 space-y-8">
+                    <div>
+                        <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-2">Qui suis-je ?</h2>
+                        <h3 class="text-3xl md:text-4xl font-display font-bold text-brand-dark mb-6">Je suis Manon 👋</h3>
+                        <p class="text-brand-muted text-lg leading-relaxed">
+                            Passionnée par le mouvement & le sport en général (surtout quand il s’agit de soulever lourd & de finir des WOD en crachant ses poumons 😅).
+                        </p>
+                        <p class="text-brand-dark font-medium text-lg mt-4 border-l-4 border-brand-sand pl-4">
+                            👉 J’ai créé <span class="text-brand-terra font-bold">@rebuild.by.m</span> pour aider les crossfitteurs/ses à s’épanouir dans leur pratique sans douleur & limitations.
+                        </p>
+                    </div>
+
+                    <!-- The "Stop" List -->
+                    <div class="bg-red-50 p-6 rounded-3xl border border-red-100">
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-brand-dark">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Stop aux WOD gâchés par une douleur</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-brand-dark">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Stop aux entraînements adaptés par défaut</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-brand-dark">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Stop aux compétitions annulées</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-brand-dark">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Stop aux frustrations de mobilité</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-brand-dark">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Stop aux prises en charge « génériques » qui ne comprennent pas ta pratique</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- The "Solutions" List -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="bg-brand-sand/50 p-2 rounded-lg text-brand-terra">
+                                <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-brand-dark">Ici, tu trouveras :</h4>
+                        </div>
+                        <ul class="grid sm:grid-cols-1 gap-3">
+                            <li class="flex items-center gap-3 text-brand-muted">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
+                                Des conseils clairs pour comprendre ta pathologie
+                            </li>
+                            <li class="flex items-center gap-3 text-brand-muted">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
+                                Des solutions pour éradiquer tes douleurs
+                            </li>
+                            <li class="flex items-center gap-3 text-brand-muted">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
+                                Des outils pour améliorer ta mobilité
+                            </li>
+                            <li class="flex items-center gap-3 text-brand-muted">
+                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold"></i>
+                                Des stratégies pour prévenir les blessures
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="pt-6 border-t border-brand-sand/30">
+                        <p class="font-bold text-brand-dark mb-4 text-lg">➡️ Et si tu veux aller plus loin : un suivi 100% personnalisé 🔥</p>
+                        <p class="text-brand-muted mb-6">
+                            Adapté à ton quotidien, ta pratique & tes objectifs – par une kiné du sport formée & spécialisée dans les pathologies du CrossFit.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-terra text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition-colors shadow-lg shadow-brand-terra/20">
+                            Prendre RDV maintenant <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards (Expertise) -->
+    <section id="expertise" class="py-24 bg-brand-light relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-display font-bold text-brand-dark mb-4">Expertise & Soins</h2>
+                <p class="text-brand-muted">Une méthode éprouvée pour les athlètes exigeants.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Approche Moderne -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20">
+                    <div class="w-14 h-14 bg-brand-terra/10 rounded-2xl flex items-center justify-center text-brand-terra mb-6 rotate-3">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Renforcement Actif</h3>
+                    <p class="text-brand-muted leading-relaxed mb-6">
+                        Une approche moderne de la kinésithérapie. Fini le passif, place au mouvement pour renforcer durablement vos zones fragiles et éviter la récidive.
+                    </p>
+                    <a href="#contact" class="text-brand-terra font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Découvrir l'approche <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Expertise CrossFit -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-sand/30 rounded-bl-[4rem] -mr-4 -mt-4 z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-sand/50 rounded-2xl flex items-center justify-center text-brand-dark mb-6 -rotate-3">
+                            <i data-lucide="dumbbell" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Expertise CrossFit ®</h3>
+                        <p class="text-brand-muted leading-relaxed mb-6">
+                            Une excellente connaissance des mouvements spécifiques (Gym, Haltéro) et des prérequis mécaniques nécessaires pour performer sans se blesser.
+                        </p>
+                        <a href="#contact" class="text-brand-dark font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                            Analyser ma technique <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Expérience -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20">
+                    <div class="w-14 h-14 bg-brand-terra/10 rounded-2xl flex items-center justify-center text-brand-terra mb-6 rotate-3">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Expérience Terrain</h3>
+                    <p class="text-brand-muted leading-relaxed mb-6">
+                        Sur le terrain depuis 2019. Une expertise solide forgée en cabinet et confirmée par des centaines de suivis à distance réussis auprès d'athlètes.
+                    </p>
+                    <a href="#contact" class="text-brand-terra font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Commencer le suivi <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remote Steps with Soft Colors -->
+    <section id="suivis" class="py-24 bg-brand-dark text-white rounded-[3rem] -mt-10 mb-10 relative z-10 mx-4 md:mx-0">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="md:w-2/5">
+                    <h2 class="text-brand-sand font-bold tracking-wide uppercase text-sm mb-4">100% Digital</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-6">Votre kiné,<br/>où que vous soyez.</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        La distance n'est plus un obstacle à des soins de qualité. Grâce à un suivi digitalisé précis, bénéficiez de l'expertise Rebuild sans vous déplacer.
+                    </p>
+                    <a href="#contact" class="bg-brand-terra hover:bg-white hover:text-brand-terra text-white px-8 py-4 rounded-full font-bold transition-all inline-flex items-center gap-2">
+                        Réserver un bilan
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <div class="md:w-3/5 space-y-12">
+                    <!-- Step 1 -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Bilan Visio Initial</h4>
+                            <p class="text-gray-400 leading-relaxed">60 min d'échange pour comprendre votre histoire, vos blessures et vos objectifs. Tests de mobilité en direct.</p>
+                        </div>
+                    </div>
+                     <!-- Step 2 -->
+                     <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Plan d'Action Sur-Mesure</h4>
+                            <p class="text-gray-400 leading-relaxed">Réception de votre programme de rééducation sur application mobile. Vidéos démonstratives claires.</p>
+                        </div>
+                    </div>
+                     <!-- Step 3 -->
+                     <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Suivi & Ajustements</h4>
+                            <p class="text-gray-400 leading-relaxed">Communication via WhatsApp/App. On adapte la charge chaque semaine selon vos ressentis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-2">Témoignages</h2>
+                <h3 class="text-4xl font-display font-bold text-brand-dark">Ils sont revenus plus forts.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-1 text-brand-terra mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">"J'ai traîné une douleur à l'épaule pendant 6 mois qui m'empêchait de snatcher. En 3 semaines de suivi avec Manon, j'ai pu reprendre la barre."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center text-brand-dark font-bold">TL</div>
+                        <div>
+                            <p class="font-bold text-brand-dark text-sm">Thomas L.</p>
+                            <p class="text-brand-muted text-xs">CrossFit ® Athlete</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-1 text-brand-terra mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">"Le suivi à distance est incroyable. Les retours vidéos sont ultra précis. Je me sens plus forte et plus safe techniquement sur mes mouvements de gym."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center text-brand-dark font-bold">SB</div>
+                        <div>
+                            <p class="font-bold text-brand-dark text-sm">Sarah B.</p>
+                            <p class="text-brand-muted text-xs">Gymnastique</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-1 text-brand-terra mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">"Enfin une kiné qui comprend que 'arrêter le sport' n'est pas une option. Manon a adapté mon volume pour que je puisse continuer à m'entraîner."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-sand/50 flex items-center justify-center text-brand-dark font-bold">JM</div>
+                        <div>
+                            <p class="font-bold text-brand-dark text-sm">Julien M.</p>
+                            <p class="text-brand-muted text-xs">Haltérophilie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Block Section (Updated for Google Form) -->
+    <section id="contact" class="py-24 bg-brand-light border-t border-brand-sand/20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                
+                <!-- Contact Text -->
+                <div class="space-y-8 sticky top-32">
+                    <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm">Me Contacter</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark leading-tight">
+                        Prêt(e) à <span class="text-brand-terra">reconstruire</span> vos fondations ?
+                    </h3>
+                    <p class="text-brand-muted text-lg leading-relaxed">
+                        N'attendez pas que la douleur s'installe. Cliquez ci-dessous pour remplir le formulaire détaillé, et Manon vous recontactera personnellement sous 48h.
+                    </p>
+                    
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-terra group-hover:bg-brand-terra group-hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-muted">Email</p>
+                                <a href="mailto:contact@rebuildbym.com" class="font-bold text-brand-dark text-lg hover:text-brand-terra transition-colors">contact@rebuildbym.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-terra group-hover:bg-brand-terra group-hover:text-white transition-all">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-muted">Instagram</p>
+                                <a href="https://instagram.com/rebuild.by.m/" target="_blank" class="font-bold text-brand-dark text-lg hover:text-brand-terra transition-colors">@rebuild.by.m</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Form CTA (New layout) -->
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-brand-dark/5 border border-brand-sand/20 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-brand-terra/10 rounded-full flex items-center justify-center text-brand-terra">
+                        <i data-lucide="clipboard-list" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-brand-dark mb-3">Formulaire de Bilan Initial</h4>
+                    <p class="text-brand-muted mb-8">
+                        Remplissez le formulaire détaillé (santé, historique, objectifs) pour que Manon puisse préparer au mieux notre premier échange.
+                    </p>
+                    
+                    <!-- Simulating Google Form link -->
+                    <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-brand-terra/20">
+                        Accéder au Google Form
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </a>
+                    <p class="text-xs text-brand-muted mt-4">Ouverture dans un nouvel onglet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Simplified) -->
+    <footer class="bg-white border-t border-brand-sand/20 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="bg-brand-terra text-white p-2 rounded-xl">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                     </div>
+                    <span class="text-xl font-display font-bold tracking-tight text-brand-dark lowercase">
+                        rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
+                    </span>
+                </a>
+                
+                <div class="text-sm text-brand-muted text-center md:text-right">
+                    <p class="mb-2">&copy; <span id="year"></span> Rebuild by Mouvement. Tous droits réservés.</p>
+                    <div class="flex gap-6 justify-center md:justify-end">
+                        <a href="#" class="hover:text-brand-terra transition-colors">Mentions Légales</a>
+                        <a href="#" class="hover:text-brand-terra transition-colors">Politique de confidentialité</a>
+                        <a href="#" class="hover:text-brand-terra transition-colors">CGV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            const isOpen = mobileMenu.classList.contains('flex');
+            menuBtn.innerHTML = isOpen ? '<i data-lucide="x" class="w-7 h-7"></i>' : '<i data-lucide="menu" class="w-7 h-7"></i>';
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // Navbar Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                navbar.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+</html>
