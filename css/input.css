@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+    /* Fonts */
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui;
+    --font-display: "Outfit", ui-sans-serif, system-ui;
+
+    /* Brand Colors */
+    --color-brand-terra: #d66d4f;
+    --color-brand-sand: #f7d1cc;
+    --color-brand-light: #fdfbf9;
+    --color-brand-dark: #2d2a26;
+    --color-brand-muted: #6b6661;
+
+    /* Custom Radius */
+    --radius-4xl: 2rem;
+}
+
+/* Your custom animations and scrollbars stay here too */
+@layer base {
+    body {
+        background-color: var(--color-brand-light);
+        color: var(--color-brand-dark);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-brand-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e5e0dc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-terra);
+}
+
+/* Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
