@@ -12,6 +12,18 @@
     --color-brand-dark: #2d2a26;
     --color-brand-muted: #6b6661;
 
+    /* Extended Color Palette - Main */
+    --color-brand-petrol: #376875;    /* Bleu pétrole */
+    --color-brand-slate: #a2b4c1;     /* Gris bleu */
+    --color-brand-coral: #f4ac94;     /* Saumon / Corail */
+    --color-brand-navy: #203e46;      /* Vert sombre / Bleu nuit */
+    --color-brand-ice: #eaf5f4;       /* Blanc cassé / Bleu glace */
+
+    /* Extended Color Palette - Secondary */
+    --color-brand-blush: #fadbe3;     /* Rose pâle */
+    --color-brand-burgundy: #30100f;  /* Marron foncé / Bordeaux */
+    --color-brand-rust: #c74f2f;      /* Rouille / Rouge brique */
+
     /* Custom Radius */
     --radius-4xl: 2rem;
 }

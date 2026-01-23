@@ -102,20 +102,20 @@
 
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-        <!-- Soft Background Elements -->
+        <!-- Soft Background Elements - Warm Palette -->
         <div
-            class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-sand/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 -z-10">
+            class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blush/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 -z-10">
         </div>
         <div
-            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-terra/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 -z-10">
+            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-coral/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 -z-10">
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
                 <div class="md:w-1/2 space-y-8 reveal">
                     <div
-                        class="inline-flex items-center gap-2 bg-brand-sand/40 border border-brand-sand text-brand-terra px-4 py-2 rounded-full text-sm font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-brand-terra animate-pulse"></span>
+                        class="inline-flex items-center gap-2 bg-brand-coral/20 border border-brand-coral/40 text-brand-rust px-4 py-2 rounded-full text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brand-rust animate-pulse"></span>
                         Suivis 100% Personnalisés
                     </div>
 
@@ -137,12 +137,12 @@
                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
                         <!-- UX Fix: Point to Services instead of Contact directly -->
                         <a href="#suivis"
-                            class="bg-brand-terra hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-terra/20 hover:shadow-none hover:translate-y-1">
+                            class="bg-brand-terra hover:bg-brand-rust text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-terra/20 hover:shadow-2xl hover:scale-105">
                             Commencer mon suivi
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                         <a href="#expertise"
-                            class="bg-white border border-brand-sand text-brand-dark hover:border-brand-terra hover:text-brand-terra px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center shadow-sm">
+                            class="bg-white border-2 border-brand-sand text-brand-dark hover:bg-brand-sand hover:border-brand-coral px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center shadow-sm hover:shadow-lg">
                             Découvrir
                         </a>
                     </div>
@@ -189,18 +189,18 @@
     </section>
 
     <!-- About Section Updated: Centered Single Photo -->
-    <section id="apropos" class="py-24 bg-white relative overflow-hidden">
+    <section id="apropos" class="py-24 bg-gradient-to-br from-brand-blush/20 via-white to-brand-ice/30 relative overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto text-center reveal">
 
                 <!-- Single Photo Manon -->
                 <div class="relative w-48 h-48 mx-auto mb-10 group">
                     <div
-                        class="absolute inset-0 bg-brand-terra rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity">
+                        class="absolute inset-0 bg-brand-coral rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity">
                     </div>
                     <img src="images/profile.jpg" alt="Manon"
-                        class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl">
-                    <div class="absolute bottom-2 right-2 bg-white p-3 rounded-full shadow-lg text-brand-terra">
+                        class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl ring-4 ring-brand-blush/40">
+                    <div class="absolute bottom-2 right-2 bg-brand-terra p-3 rounded-full shadow-lg text-white">
                         <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                 <!-- Intro Text -->
                 <div class="space-y-6 mb-12">
                     <div>
-                        <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-3">Qui suis-je ?</h2>
+                        <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-3">Qui suis-je ?</h2>
                         <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-6">Je suis Manon 👋
                         </h3>
                     </div>
@@ -278,10 +278,10 @@
                 <!-- CTA -->
                 <div class="inline-block relative group">
                     <div
-                        class="absolute -inset-1 bg-brand-terra rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-200">
+                        class="absolute -inset-1 bg-brand-coral rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-200">
                     </div>
                     <a href="#contact"
-                        class="relative inline-flex items-center gap-2 bg-brand-terra text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-colors shadow-lg">
+                        class="relative inline-flex items-center gap-2 bg-brand-coral hover:bg-brand-rust text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg">
                         Prendre RDV maintenant <i data-lucide="calendar-check" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -293,7 +293,7 @@
     </section>
 
     <!-- Services Cards (Expertise) -->
-    <section id="expertise" class="py-24 bg-brand-light relative">
+    <section id="expertise" class="py-24 bg-white relative">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
                 <h2 class="text-4xl font-display font-bold text-brand-dark mb-4">Expertise & Soins</h2>
@@ -303,9 +303,9 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1: Approche Moderne -->
                 <div
-                    class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20 reveal">
+                    class="bg-gradient-to-br from-brand-blush/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-terra/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-sand reveal">
                     <div
-                        class="w-14 h-14 bg-brand-terra/10 rounded-2xl flex items-center justify-center text-brand-terra mb-6 rotate-3">
+                        class="w-14 h-14 bg-brand-terra rounded-2xl flex items-center justify-center text-white mb-6 rotate-3 shadow-lg">
                         <i data-lucide="zap" class="w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-3">Renforcement Actif</h3>
@@ -321,12 +321,12 @@
 
                 <!-- Card 2: Expertise CrossFit -->
                 <div
-                    class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20 relative overflow-hidden reveal">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-sand/30 rounded-bl-[4rem] -mr-4 -mt-4 z-0">
+                    class="bg-gradient-to-br from-brand-coral/20 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-coral/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-coral/30 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-sand/60 rounded-bl-[4rem] -mr-4 -mt-4 z-0">
                     </div>
                     <div class="relative z-10">
                         <div
-                            class="w-14 h-14 bg-brand-sand/50 rounded-2xl flex items-center justify-center text-brand-dark mb-6 -rotate-3">
+                            class="w-14 h-14 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-6 -rotate-3 shadow-lg">
                             <i data-lucide="dumbbell" class="w-7 h-7"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Expertise CrossFit ®</h3>
@@ -335,7 +335,7 @@
                             mécaniques nécessaires pour performer sans se blesser.
                         </p>
                         <a href="#contact"
-                            class="text-brand-dark font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                            class="text-brand-coral font-semibold flex items-center gap-2 hover:gap-3 transition-all">
                             Analyser ma technique <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -343,9 +343,9 @@
 
                 <!-- Card 3: Expérience -->
                 <div
-                    class="bg-white p-8 rounded-[2rem] shadow-xl shadow-brand-dark/5 hover:-translate-y-2 transition-transform duration-300 border border-brand-sand/20 reveal">
+                    class="bg-gradient-to-br from-brand-sand/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-rust/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-rust/20 reveal">
                     <div
-                        class="w-14 h-14 bg-brand-terra/10 rounded-2xl flex items-center justify-center text-brand-terra mb-6 rotate-3">
+                        class="w-14 h-14 bg-brand-rust rounded-2xl flex items-center justify-center text-white mb-6 rotate-3 shadow-lg">
                         <i data-lucide="award" class="w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-3">Expérience Terrain</h3>
@@ -354,7 +354,7 @@
                         centaines de suivis à distance réussis auprès d'athlètes.
                     </p>
                     <a href="#contact"
-                        class="text-brand-terra font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        class="text-brand-rust font-semibold flex items-center gap-2 hover:gap-3 transition-all">
                         Commencer le suivi <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -363,8 +363,12 @@
     </section>
 
     <!-- Remote Steps with Soft Colors -->
-    <section id="suivis" class="py-24 bg-brand-dark text-white rounded-[3rem] -mt-10 mb-10 relative z-10 mx-4 md:mx-0">
-        <div class="container mx-auto px-6">
+    <section id="suivis" class="py-24 bg-brand-dark text-white rounded-[3rem] -mt-10 mb-10 relative z-10 mx-4 md:mx-0 overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-terra/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row gap-16">
                 <div class="md:w-2/5 reveal">
                     <h2 class="text-brand-sand font-bold tracking-wide uppercase text-sm mb-4">100% Digital</h2>
@@ -375,7 +379,7 @@
                         bénéficiez de l'expertise Rebuild sans vous déplacer.
                     </p>
                     <a href="#contact"
-                        class="bg-brand-terra hover:bg-white hover:text-brand-terra text-white px-8 py-4 rounded-full font-bold transition-all inline-flex items-center gap-2">
+                        class="bg-brand-coral hover:bg-brand-terra text-white px-8 py-4 rounded-full font-bold transition-all inline-flex items-center gap-2 shadow-lg shadow-brand-coral/20 hover:shadow-xl hover:scale-105">
                         Réserver un bilan
                         <i data-lucide="calendar" class="w-5 h-5"></i>
                     </a>
@@ -385,7 +389,7 @@
                     <!-- Step 1 -->
                     <div class="flex gap-6 group">
                         <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">
+                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
                             1</div>
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">Bilan Visio Initial</h4>
@@ -396,7 +400,7 @@
                     <!-- Step 2 -->
                     <div class="flex gap-6 group">
                         <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">
+                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
                             2</div>
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">Plan d'Action Sur-Mesure</h4>
@@ -407,7 +411,7 @@
                     <!-- Step 3 -->
                     <div class="flex gap-6 group">
                         <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-terra group-hover:text-white group-hover:border-brand-terra transition-all duration-500">
+                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
                             3</div>
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">Suivi & Ajustements</h4>
@@ -431,7 +435,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow reveal">
+                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -443,7 +447,6 @@
                         mois qui m'empêchait de snatcher. En 3 semaines de suivi avec Manon, j'ai pu reprendre la
                         barre."</p>
                     <div class="flex items-center gap-4">
-                        <!-- UX Fix: Better Contrast for Initials -->
                         <div
                             class="w-10 h-10 rounded-full bg-brand-terra flex items-center justify-center text-white font-bold">
                             TL</div>
@@ -456,7 +459,7 @@
 
                 <!-- Review 2 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow reveal">
+                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -468,9 +471,8 @@
                         retours vidéos sont ultra précis. Je me sens plus forte et plus safe techniquement sur mes
                         mouvements de gym."</p>
                     <div class="flex items-center gap-4">
-                        <!-- UX Fix: Better Contrast for Initials -->
                         <div
-                            class="w-10 h-10 rounded-full bg-brand-terra flex items-center justify-center text-white font-bold">
+                            class="w-10 h-10 rounded-full bg-brand-coral flex items-center justify-center text-white font-bold">
                             SB</div>
                         <div>
                             <p class="font-bold text-brand-dark text-sm">Sarah B.</p>
@@ -481,7 +483,7 @@
 
                 <!-- Review 3 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-lg transition-shadow reveal">
+                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -493,9 +495,8 @@
                         sport' n'est pas une option. Manon a adapté mon volume pour que je puisse continuer à
                         m'entraîner."</p>
                     <div class="flex items-center gap-4">
-                        <!-- UX Fix: Better Contrast for Initials -->
                         <div
-                            class="w-10 h-10 rounded-full bg-brand-terra flex items-center justify-center text-white font-bold">
+                            class="w-10 h-10 rounded-full bg-brand-rust flex items-center justify-center text-white font-bold">
                             JM</div>
                         <div>
                             <p class="font-bold text-brand-dark text-sm">Julien M.</p>
@@ -660,7 +661,7 @@
     </section>
 
     <!-- Contact Block Section (Updated for Google Form) -->
-    <section id="contact" class="py-24 bg-brand-light border-t border-brand-sand/20">
+    <section id="contact" class="py-24 bg-gradient-to-br from-brand-blush/40 to-brand-light border-t border-brand-sand/20">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-start">
 
@@ -703,9 +704,9 @@
 
                 <!-- Google Form CTA (New layout) -->
                 <div
-                    class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-brand-dark/5 border border-brand-sand/20 text-center reveal">
+                    class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-brand-terra/10 border border-brand-sand/20 text-center reveal hover:shadow-brand-coral/20 transition-all">
                     <div
-                        class="w-20 h-20 mx-auto mb-6 bg-brand-terra/10 rounded-full flex items-center justify-center text-brand-terra">
+                        class="w-20 h-20 mx-auto mb-6 bg-brand-coral rounded-full flex items-center justify-center text-white shadow-lg">
                         <i data-lucide="clipboard-list" class="w-10 h-10"></i>
                     </div>
                     <h4 class="text-2xl font-display font-bold text-brand-dark mb-3">Formulaire de Bilan Initial</h4>
@@ -716,7 +717,7 @@
 
                     <!-- Simulating Google Form link -->
                     <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank"
-                        class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-brand-terra/20">
+                        class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
                         Accéder au Google Form
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </a>
