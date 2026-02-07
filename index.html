@@ -55,7 +55,7 @@
             <div class="hidden md:flex items-center gap-6 font-medium text-sm text-brand-dark">
                 <a href="#apropos" class="hover:text-brand-terra transition-colors">Qui suis-je ?</a>
                 <a href="#expertise" class="hover:text-brand-terra transition-colors">Expertise</a>
-                <a href="#suivis" class="hover:text-brand-terra transition-colors">Suivi</a>
+                <a href="#suivis" class="hover:text-brand-terra transition-colors">Offres</a>
                 <a href="#temoignages" class="hover:text-brand-terra transition-colors">Témoignages</a>
                 <a href="#ressources" class="hover:text-brand-terra transition-colors">Ressources</a>
                 <a href="#faq" class="hover:text-brand-terra transition-colors">FAQ</a>
@@ -87,8 +87,7 @@
             <a href="#expertise"
                 class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Expertise</a>
             <a href="#suivis"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Suivi
-                Distance</a>
+                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Offres</a>
             <a href="#temoignages"
                 class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Témoignages</a>
             <a href="#ressources"
@@ -362,63 +361,94 @@
         </div>
     </section>
 
-    <!-- Remote Steps with Soft Colors -->
+    <!-- Offres Section -->
     <section id="suivis" class="py-24 bg-brand-dark text-white rounded-[3rem] -mt-10 mb-10 relative z-10 mx-4 md:mx-0 overflow-hidden">
         <!-- Decorative elements -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-terra/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl"></div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row gap-16">
-                <div class="md:w-2/5 reveal">
-                    <h2 class="text-brand-sand font-bold tracking-wide uppercase text-sm mb-4">100% Digital</h2>
-                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-6">Votre kiné,<br />où que vous soyez.
-                    </h3>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
-                        La distance n'est plus un obstacle à des soins de qualité. Grâce à un suivi digitalisé précis,
-                        bénéficiez de l'expertise Rebuild sans vous déplacer.
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-brand-sand font-bold tracking-wide uppercase text-sm mb-4">Mes Offres</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-6">Choisissez votre formule</h3>
+                <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
+                    Deux solutions adaptées à vos besoins pour reprendre le contrôle de votre corps et de votre pratique.
+                </p>
+            </div>
+
+            <!-- Offres Cards -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Offre 1: Bilan Douleur -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 hover:border-brand-coral/50 transition-all duration-300 reveal group">
+                    <div class="w-16 h-16 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="clipboard-check" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-4">Bilan de la Douleur</h4>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Une consultation approfondie pour comprendre l'origine de votre douleur, établir un diagnostic précis et repartir avec un plan d'action clair.
                     </p>
-                    <a href="#contact"
-                        class="bg-brand-coral hover:bg-brand-terra text-white px-8 py-4 rounded-full font-bold transition-all inline-flex items-center gap-2 shadow-lg shadow-brand-coral/20 hover:shadow-xl hover:scale-105">
-                        Réserver un bilan
-                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-coral"></i>
+                            <span>Bilan visio de 60 min</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-coral"></i>
+                            <span>Analyse posturale & mobilité</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-coral"></i>
+                            <span>Diagnostic personnalisé</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-coral"></i>
+                            <span>Recommandations écrites</span>
+                        </li>
+                    </ul>
+                    <a href="bilan-douleur.html"
+                        class="w-full inline-flex items-center justify-center gap-2 bg-brand-coral hover:bg-brand-terra text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                        Plus d'infos
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
 
-                <div class="md:w-3/5 space-y-12 reveal">
-                    <!-- Step 1 -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
-                            1</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">Bilan Visio Initial</h4>
-                            <p class="text-gray-400 leading-relaxed">60 min d'échange pour comprendre votre histoire,
-                                vos blessures et vos objectifs. Tests de mobilité en direct.</p>
-                        </div>
+                <!-- Offre 2: Suivi Personnalisé -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-terra relative overflow-hidden reveal group">
+                    <!-- Badge Populaire -->
+                    <div class="absolute top-4 right-4 bg-brand-terra text-white text-xs font-bold px-3 py-1 rounded-full">
+                        POPULAIRE
                     </div>
-                    <!-- Step 2 -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
-                            2</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">Plan d'Action Sur-Mesure</h4>
-                            <p class="text-gray-400 leading-relaxed">Réception de votre programme de rééducation sur
-                                application mobile. Vidéos démonstratives claires.</p>
-                        </div>
+                    <div class="w-16 h-16 bg-brand-terra rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="message-circle" class="w-8 h-8"></i>
                     </div>
-                    <!-- Step 3 -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border-2 border-white/10 flex items-center justify-center text-2xl font-bold text-brand-sand group-hover:bg-brand-coral group-hover:text-white group-hover:border-brand-coral transition-all duration-500 shadow-lg">
-                            3</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">Suivi & Ajustements</h4>
-                            <p class="text-gray-400 leading-relaxed">Communication via WhatsApp/App. On adapte la charge
-                                chaque semaine selon vos ressentis.</p>
-                        </div>
-                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-4">Suivi Personnalisé</h4>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Un accompagnement complet avec échanges WhatsApp pour un suivi au plus près de votre progression et de vos besoins quotidiens.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-terra"></i>
+                            <span>Bilan visio initial inclus</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-terra"></i>
+                            <span>Programme sur-mesure évolutif</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-terra"></i>
+                            <span>Échanges WhatsApp 6j/7</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-terra"></i>
+                            <span>Réponse garantie en 24h</span>
+                        </li>
+                    </ul>
+                    <a href="suivi-personnalise.html"
+                        class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                        Plus d'infos
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
                 </div>
             </div>
         </div>
