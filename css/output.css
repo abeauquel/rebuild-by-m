@@ -49,6 +49,7 @@
     --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -63,7 +64,6 @@
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-sm: 8px;
     --blur-md: 12px;
-    --blur-xl: 24px;
     --blur-2xl: 40px;
     --blur-3xl: 64px;
     --default-transition-duration: 150ms;
@@ -76,13 +76,9 @@
     --color-brand-light: #fdfbf9;
     --color-brand-dark: #2d2a26;
     --color-brand-muted: #6b6661;
-    --color-brand-petrol: #376875;
-    --color-brand-slate: #a2b4c1;
     --color-brand-coral: #f4ac94;
-    --color-brand-navy: #203e46;
     --color-brand-ice: #eaf5f4;
     --color-brand-blush: #fadbe3;
-    --color-brand-burgundy: #30100f;
     --color-brand-rust: #c74f2f;
   }
 }
@@ -671,13 +667,6 @@
       margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-7 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 7) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 7) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .space-y-8 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -793,12 +782,6 @@
     border-color: color-mix(in srgb, #d66d4f 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-brand-terra) 30%, transparent);
-    }
-  }
-  .border-brand-terra\/40 {
-    border-color: color-mix(in srgb, #d66d4f 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-brand-terra) 40%, transparent);
     }
   }
   .border-green-200 {
@@ -1114,12 +1097,6 @@
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
   }
-  .pt-36 {
-    padding-top: calc(var(--spacing) * 36);
-  }
-  .pt-48 {
-    padding-top: calc(var(--spacing) * 48);
-  }
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
   }
@@ -1196,6 +1173,10 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
