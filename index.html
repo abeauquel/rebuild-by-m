@@ -214,7 +214,7 @@
                 <!-- Lists Container (Grid for better readability) -->
                 <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
                     <!-- The "Stop" List -->
-                    <div class="bg-brand-rust/8 p-8 rounded-3xl border border-brand-rust/20">
+                    <div id="stop-list" class="bg-brand-rust/8 p-8 rounded-3xl border border-brand-rust/20">
                         <h4 class="font-bold text-brand-rust mb-4 flex items-center gap-2">
                             <i data-lucide="ban" class="w-5 h-5"></i> On arrête :
                         </h4>
@@ -888,6 +888,36 @@
                 revealElements.forEach(el => revealObserver.observe(el));
             }
         });
+    </script>
+
+    <!-- DEV TOOL: Supprimer avant mise en prod -->
+    <div id="dev-panel" style="position:fixed;bottom:20px;right:20px;background:#fff;border:2px solid #c74f2f;border-radius:16px;padding:16px 20px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.15);font-family:sans-serif;font-size:13px;min-width:240px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <strong style="color:#30100f;">Test des couleurs</strong>
+            <button onclick="document.getElementById('dev-panel').style.display='none'" style="background:none;border:none;cursor:pointer;font-size:18px;color:#6b6661;">&times;</button>
+        </div>
+        <label style="display:block;margin-bottom:8px;color:#30100f;">Fond "On arrête" : <span id="val-bg">8</span>%</label>
+        <input type="range" min="0" max="30" value="8" id="slider-bg" style="width:100%;accent-color:#c74f2f;">
+        <label style="display:block;margin-top:10px;margin-bottom:8px;color:#30100f;">Bordure "On arrête" : <span id="val-border">20</span>%</label>
+        <input type="range" min="0" max="50" value="20" id="slider-border" style="width:100%;accent-color:#c74f2f;">
+    </div>
+    <script>
+        (function() {
+            const el = document.getElementById('stop-list');
+            const sliderBg = document.getElementById('slider-bg');
+            const sliderBorder = document.getElementById('slider-border');
+            const valBg = document.getElementById('val-bg');
+            const valBorder = document.getElementById('val-border');
+            if (!el || !sliderBg || !sliderBorder) return;
+            sliderBg.addEventListener('input', function() {
+                valBg.textContent = this.value;
+                el.style.backgroundColor = 'color-mix(in srgb, #c74f2f ' + this.value + '%, transparent)';
+            });
+            sliderBorder.addEventListener('input', function() {
+                valBorder.textContent = this.value;
+                el.style.borderColor = 'color-mix(in srgb, #c74f2f ' + this.value + '%, transparent)';
+            });
+        })();
     </script>
 </body>
 
