@@ -76,7 +76,9 @@
     --color-brand-light: #fdfbf9;
     --color-brand-dark: #30100f;
     --color-brand-muted: #6b6661;
+    --color-brand-petrol: #376875;
     --color-brand-coral: #f4ac94;
+    --color-brand-navy: #203e46;
     --color-brand-ice: #eaf5f4;
     --color-brand-blush: #fadbe3;
     --color-brand-rust: #c74f2f;
@@ -730,6 +732,12 @@
       border-color: color-mix(in oklab, var(--color-brand-coral) 30%, transparent);
     }
   }
+  .border-brand-petrol\/20 {
+    border-color: color-mix(in srgb, #376875 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-brand-petrol) 20%, transparent);
+    }
+  }
   .border-brand-rust\/15 {
     border-color: color-mix(in srgb, #c74f2f 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -816,6 +824,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-brand-muted) 20%, transparent);
     }
+  }
+  .bg-brand-petrol {
+    background-color: var(--color-brand-petrol);
   }
   .bg-brand-rust {
     background-color: var(--color-brand-rust);
@@ -1214,6 +1225,9 @@
   .text-brand-muted {
     color: var(--color-brand-muted);
   }
+  .text-brand-petrol {
+    color: var(--color-brand-petrol);
+  }
   .text-brand-rust {
     color: var(--color-brand-rust);
   }
@@ -1515,10 +1529,27 @@
       }
     }
   }
+  .hover\:border-brand-petrol\/50 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: color-mix(in srgb, #376875 50%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          border-color: color-mix(in oklab, var(--color-brand-petrol) 50%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-brand-light {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-brand-light);
+      }
+    }
+  }
+  .hover\:bg-brand-navy {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-brand-navy);
       }
     }
   }
