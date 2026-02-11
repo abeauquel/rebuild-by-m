@@ -1214,6 +1214,18 @@
   .italic {
     font-style: italic;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .decoration-brand-sand {
+    text-decoration-color: var(--color-brand-sand);
+  }
+  .decoration-2 {
+    text-decoration-thickness: 2px;
+  }
+  .underline-offset-2 {
+    text-underline-offset: 2px;
+  }
   .opacity-30 {
     opacity: 30%;
   }
