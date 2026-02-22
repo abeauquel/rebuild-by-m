@@ -125,7 +125,6 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <!-- UX Fix: Point to Mes Services instead of Contact directly -->
                         <a href="#suivis"
                             class="bg-brand-terra hover:bg-brand-rust text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-terra/20 hover:shadow-2xl hover:scale-105">
                             Comment puis-je t'aider ?
@@ -136,28 +135,30 @@
                             Découvrir
                         </a>
                     </div>
+
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50">
+                            <i data-lucide="users" class="w-3.5 h-3.5 text-brand-terra"></i> 50+ athlètes
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50">
+                            <i data-lucide="star" class="w-3.5 h-3.5 text-brand-terra fill-brand-terra"></i> 4.9/5
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50">
+                            <i data-lucide="video" class="w-3.5 h-3.5 text-brand-terra"></i> 100% à distance
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50">
+                            <i data-lucide="award" class="w-3.5 h-3.5 text-brand-terra"></i> Kiné du Sport — CrossFit ®
+                        </span>
+                    </div>
                 </div>
 
                 <!-- Hero Visual Soft -->
-                <div class="md:w-1/2 relative reveal">
+                <div class="md:w-5/12 relative reveal">
                     <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/5">
 
                         <img src="images/manonOH.jpeg" alt="Manon Kine"
-                            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+                            class="w-full max-h-[600px] object-cover hover:scale-105 transition-transform duration-700">
 
-                        <!-- Floating Card -->
-                        <div
-                            class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-lg">
-                            <div class="flex items-center gap-4">
-                                <div class="bg-brand-terra/10 p-3 rounded-full text-brand-terra">
-                                    <i data-lucide="check-circle" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-brand-dark">Kiné du Sport</p>
-                                    <p class="text-sm text-brand-muted">Spécialisée CrossFit ®</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- Decorative Circle -->
                     <div class="absolute -top-12 -right-12 w-48 h-48 border-2 border-brand-rust/20 rounded-full z-0">
@@ -167,15 +168,6 @@
             </div>
         </div>
 
-        <!-- Wave Separator -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-            <svg class="relative block w-[calc(130%+1.3px)] h-[100px] text-white" data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="fill-current"></path>
-            </svg>
-        </div>
     </section>
 
     <!-- About Section Updated: Centered Single Photo -->
@@ -291,41 +283,58 @@
                 <p class="text-brand-muted text-lg">Une approche structurée pour aller de la douleur à la performance.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Étape 1: Bilan -->
-                <div class="relative bg-gradient-to-br from-brand-blush/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-terra/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-sand reveal">
-                    <div class="absolute -top-4 -left-2 w-10 h-10 bg-brand-rust rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">1</div>
-                    <div class="w-14 h-14 bg-brand-terra rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg">
-                        <i data-lucide="search" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-3">Bilan</h3>
-                    <p class="text-brand-muted leading-relaxed">
-                        Échange approfondi en visio pour comprendre votre situation, votre historique et identifier l'origine de vos douleurs.
-                    </p>
-                </div>
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Connecting line (desktop) -->
+                <div class="hidden md:block absolute top-12 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-0.5 bg-gradient-to-r from-brand-terra via-brand-coral to-brand-rust z-0"></div>
 
-                <!-- Étape 2: Tests -->
-                <div class="relative bg-gradient-to-br from-brand-coral/20 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-coral/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-coral/30 reveal">
-                    <div class="absolute -top-4 -left-2 w-10 h-10 bg-brand-rust rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">2</div>
-                    <div class="w-14 h-14 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg">
-                        <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Étape 1: Bilan -->
+                    <div class="relative reveal">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="relative z-10 w-14 h-14 bg-brand-terra rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
+                                <i data-lucide="search" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 1</span>
+                            <div class="bg-gradient-to-br from-brand-blush/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-terra/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-sand w-full">
+                                <h3 class="text-xl font-bold text-brand-dark mb-3">Bilan</h3>
+                                <p class="text-brand-muted leading-relaxed">
+                                    Échange approfondi en visio pour comprendre ta situation, ton historique et identifier l'origine de tes douleurs.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-3">Tests</h3>
-                    <p class="text-brand-muted leading-relaxed">
-                        Batterie de tests fonctionnels et d'analyses de mouvement pour évaluer votre mobilité, vos forces et vos faiblesses.
-                    </p>
-                </div>
 
-                <!-- Étape 3: Planification Réhab -->
-                <div class="relative bg-gradient-to-br from-brand-sand/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-rust/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-rust/20 reveal">
-                    <div class="absolute -top-4 -left-2 w-10 h-10 bg-brand-rust rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">3</div>
-                    <div class="w-14 h-14 bg-brand-rust rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg">
-                        <i data-lucide="calendar-check" class="w-7 h-7"></i>
+                    <!-- Étape 2: Tests -->
+                    <div class="relative reveal">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="relative z-10 w-14 h-14 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
+                                <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 2</span>
+                            <div class="bg-gradient-to-br from-brand-coral/20 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-coral/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-coral/30 w-full">
+                                <h3 class="text-xl font-bold text-brand-dark mb-3">Tests</h3>
+                                <p class="text-brand-muted leading-relaxed">
+                                    Batterie de tests fonctionnels et d'analyses de mouvement pour évaluer ta mobilité, tes forces et tes faiblesses.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-3">Planification Réhab</h3>
-                    <p class="text-brand-muted leading-relaxed">
-                        Construction de votre programme personnalisé et évolutif, adapté à votre quotidien et à vos objectifs sportifs.
-                    </p>
+
+                    <!-- Étape 3: Planification Réhab -->
+                    <div class="relative reveal">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="relative z-10 w-14 h-14 bg-brand-rust rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
+                                <i data-lucide="calendar-check" class="w-7 h-7"></i>
+                            </div>
+                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 3</span>
+                            <div class="bg-gradient-to-br from-brand-sand/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-rust/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-rust/20 w-full">
+                                <h3 class="text-xl font-bold text-brand-dark mb-3">Planification Réhab</h3>
+                                <p class="text-brand-muted leading-relaxed">
+                                    Construction de ton programme personnalisé et évolutif, adapté à ton quotidien et à tes objectifs sportifs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -451,7 +460,8 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    <span class="absolute top-4 left-6 text-6xl font-display text-brand-coral/20 leading-none select-none">"</span>
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -459,9 +469,9 @@
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">"J'ai traîné une douleur à l'épaule pendant 6
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">J'ai traîné une douleur à l'épaule pendant 6
                         mois qui m'empêchait de snatcher. En 3 semaines de suivi avec Manon, j'ai pu reprendre la
-                        barre."</p>
+                        barre.</p>
                     <div class="flex items-center gap-4">
                         <div
                             class="w-10 h-10 rounded-full bg-brand-terra flex items-center justify-center text-white font-bold">
@@ -475,7 +485,8 @@
 
                 <!-- Review 2 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    <span class="absolute top-4 left-6 text-6xl font-display text-brand-coral/20 leading-none select-none">"</span>
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -483,9 +494,9 @@
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">"Le suivi à distance est incroyable. Les
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">Le suivi à distance est incroyable. Les
                         retours vidéos sont ultra précis. Je me sens plus forte et plus safe techniquement sur mes
-                        mouvements de gym."</p>
+                        mouvements de gym.</p>
                     <div class="flex items-center gap-4">
                         <div
                             class="w-10 h-10 rounded-full bg-brand-coral flex items-center justify-center text-white font-bold">
@@ -499,7 +510,8 @@
 
                 <!-- Review 3 -->
                 <div
-                    class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
+                    <span class="absolute top-4 left-6 text-6xl font-display text-brand-coral/20 leading-none select-none">"</span>
                     <div class="flex items-center gap-1 text-brand-terra mb-4">
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -507,9 +519,9 @@
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">"Enfin une kiné qui comprend que 'arrêter le
-                        sport' n'est pas une option. Manon a adapté mon volume pour que je puisse continuer à
-                        m'entraîner."</p>
+                    <p class="text-brand-dark italic mb-6 leading-relaxed">Enfin une kiné qui comprend que "arrêter le
+                        sport" n'est pas une option. Manon a adapté mon volume pour que je puisse continuer à
+                        m'entraîner.</p>
                     <div class="flex items-center gap-4">
                         <div
                             class="w-10 h-10 rounded-full bg-brand-rust flex items-center justify-center text-white font-bold">
@@ -788,24 +800,65 @@
         </div>
     </section>
 
-    <!-- Footer (Simplified) -->
-    <footer class="bg-white border-t border-brand-sand/20 py-12">
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-brand-blush/30 to-brand-light border-t border-brand-sand/20 pt-16 pb-8">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <a href="#" class="flex items-center gap-3 group">
-                    <img src="images/logo.jpeg" alt="Logo rebuild.by.m" class="w-10 h-10 rounded-full object-cover">
-                    <span class="text-xl md:text-2xl font-display font-bold tracking-tight text-brand-dark lowercase">
-                        rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
-                    </span>
-                </a>
-
-                <div class="text-sm text-brand-muted text-center md:text-right">
-                    <p class="mb-2">&copy; <span id="year"></span> Rebuild by Mouvement. Tous droits réservés.</p>
-                    <div class="flex gap-6 justify-center md:justify-end">
-                        <a href="legal/mentions-legales.html" class="hover:text-brand-terra transition-colors">Mentions Légales</a>
-                        <a href="legal/politique-de-confidentialite.html" class="hover:text-brand-terra transition-colors">Politique de confidentialité</a>
-                        <a href="legal/cgv.html" class="hover:text-brand-terra transition-colors">CGV</a>
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <a href="#hero" class="flex items-center gap-3 group">
+                        <img src="images/logo.jpeg" alt="Logo rebuild.by.m" class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-xl font-display font-bold tracking-tight text-brand-dark lowercase">
+                            rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
+                        </span>
+                    </a>
+                    <p class="text-brand-muted text-sm leading-relaxed max-w-xs">
+                        Le mouvement au service du mouvement. Reconstruire un corps performant & durable.
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="https://www.instagram.com/rebuild.by.m/" target="_blank"
+                            class="w-10 h-10 rounded-full bg-brand-sand/40 hover:bg-brand-terra hover:text-white text-brand-dark flex items-center justify-center transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:contact@rebuildbym.com"
+                            class="w-10 h-10 rounded-full bg-brand-sand/40 hover:bg-brand-terra hover:text-white text-brand-dark flex items-center justify-center transition-all">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h5 class="font-display font-bold text-sm uppercase tracking-widest text-brand-muted/50 mb-4">Navigation</h5>
+                    <nav class="grid grid-cols-2 gap-2 text-sm">
+                        <a href="#apropos" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Qui suis-je ?</a>
+                        <a href="#expertise" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Ma Méthode</a>
+                        <a href="#suivis" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Mes Services</a>
+                        <a href="#temoignages" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Témoignages</a>
+                        <a href="#ressources" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Ressources</a>
+                        <a href="#faq" class="text-brand-muted hover:text-brand-terra transition-colors py-1">FAQ</a>
+                    </nav>
+                </div>
+
+                <!-- CTA -->
+                <div>
+                    <h5 class="font-display font-bold text-sm uppercase tracking-widest text-brand-muted/50 mb-4">Prêt(e) à commencer ?</h5>
+                    <p class="text-brand-muted text-sm mb-4">Remplis le formulaire de bilan initial et je te recontacte sous 48h.</p>
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-3 px-6 rounded-xl transition-all text-sm shadow-lg shadow-brand-terra/20">
+                        Me contacter
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-brand-sand/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-brand-muted/50">&copy; <span id="year"></span> Rebuild by Mouvement. Tous droits réservés.</p>
+                <div class="flex gap-6 text-xs text-brand-muted/50">
+                    <a href="legal/mentions-legales.html" class="hover:text-brand-terra transition-colors">Mentions Légales</a>
+                    <a href="legal/politique-de-confidentialite.html" class="hover:text-brand-terra transition-colors">Politique de confidentialité</a>
+                    <a href="legal/cgv.html" class="hover:text-brand-terra transition-colors">CGV</a>
                 </div>
             </div>
         </div>
@@ -869,8 +922,27 @@
                 });
             }
 
-            // Navbar Scroll Effect
+            // Navbar Scroll Effect + Active Section Indicator
             const navbar = document.getElementById('navbar');
+            const navLinks = document.querySelectorAll('nav .hidden.md\\:flex a[href^="#"]');
+            const sections = document.querySelectorAll('section[id]');
+
+            const updateActiveNav = () => {
+                let current = '';
+                sections.forEach(section => {
+                    const top = section.offsetTop - 120;
+                    if (window.scrollY >= top) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('text-brand-terra');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('text-brand-terra');
+                    }
+                });
+            };
+
             if (navbar) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 20) {
@@ -880,6 +952,7 @@
                         navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
                         navbar.classList.add('py-6');
                     }
+                    updateActiveNav();
                 });
             }
 
