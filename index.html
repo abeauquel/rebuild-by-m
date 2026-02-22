@@ -30,7 +30,7 @@
         rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.575.0"></script>
 
     <link href="css/output.css" rel="stylesheet">
 
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-brand-dark p-2">
+            <button id="mobile-menu-btn" class="md:hidden text-brand-dark p-2" aria-label="Ouvrir le menu">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
@@ -188,7 +188,7 @@
                     <div
                         class="absolute inset-0 bg-brand-coral rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity">
                     </div>
-                    <img src="images/profile.jpg" alt="Manon"
+                    <img src="images/profile.jpg" alt="Manon" loading="lazy"
                         class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl ring-4 ring-brand-blush/40">
                     <div class="absolute bottom-2 right-2 bg-brand-terra p-3 rounded-full shadow-lg text-white">
                         <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
@@ -302,10 +302,6 @@
                     <p class="text-brand-muted leading-relaxed">
                         Échange approfondi en visio pour comprendre votre situation, votre historique et identifier l'origine de vos douleurs.
                     </p>
-                </div>
-
-                <!-- Flèche entre étapes (visible desktop) -->
-                <div class="hidden md:flex absolute left-1/3 top-1/2 -translate-y-1/2 z-10">
                 </div>
 
                 <!-- Étape 2: Tests -->
@@ -549,48 +545,48 @@
                 <!-- Insta Post 1: Educational (Mobility/Stretching) -->
                 <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
                     class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/hanche.jpg" alt="Mobilité Hanche"
+                    <img src="images/hanche.jpg" alt="Mobilité Hanche" loading="lazy"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Mobilité Hanche</span>
-                        <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Voir
+                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Voir
                             l'exercice</span>
                     </div>
                 </a>
                 <!-- Insta Post 2: Educational (Squat) -->
                 <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
                     class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/regles.jpg" alt="Correction Squat"
+                    <img src="images/regles.jpg" alt="Correction Squat" loading="lazy"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Correction Squat</span>
-                        <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Analyse
+                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Analyse
                             technique</span>
                     </div>
                 </a>
                 <!-- Insta Post 3: Educational (Overhead/Shoulder) -->
                 <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
                     class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/epaules.jpg" alt="Douleur Épaule"
+                    <img src="images/epaules.jpg" alt="Douleur Épaule" loading="lazy"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Douleur Épaule ?</span>
-                        <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Comprendre la
+                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Comprendre la
                             cause</span>
                     </div>
                 </a>
                 <!-- Insta Post 4: Educational (Active Warmup) -->
                 <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
                     class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/snatch.jpg" alt="Warm-up Routine"
+                    <img src="images/snatch.jpg" alt="Warm-up Routine" loading="lazy"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
                         <span class="text-white font-bold text-sm md:text-base">Warm-up Routine</span>
-                        <span class="text-brand-sand text-xs hidden group-hover:block transition-all">Avant le
+                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Avant le
                             WOD</span>
                     </div>
                 </a>
@@ -671,9 +667,54 @@
                         </span>
                     </summary>
                     <p class="text-brand-muted mt-4 leading-relaxed">
-                        Cela dépend de votre pathologie et de vos objectifs. Pour une réathlétisation complète, comptez
+                        Cela dépend de ta pathologie et de tes objectifs. Pour une réathlétisation complète, compte
                         généralement entre 3 et 6 mois. Cependant, l'engagement minimum est d'un mois, sans obligation
                         de renouvellement.
+                    </p>
+                </details>
+
+                <!-- Question 5 -->
+                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
+                        Comment se déroulent les séances à distance concrètement ?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
+                        </span>
+                    </summary>
+                    <p class="text-brand-muted mt-4 leading-relaxed">
+                        On échange en visio pour les bilans et les points de suivi. Entre les séances, tu reçois ton
+                        programme sur une application dédiée. Tu m'envoies tes vidéos d'entraînement et je te fais un
+                        retour détaillé (vidéo ou audio) avec les corrections. On reste en contact par messagerie pour
+                        ajuster en continu.
+                    </p>
+                </details>
+
+                <!-- Question 6 -->
+                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
+                        Je suis débutant(e), c'est pour moi aussi ?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
+                        </span>
+                    </summary>
+                    <p class="text-brand-muted mt-4 leading-relaxed">
+                        Absolument ! Que tu débutes ou que tu sois compétiteur/trice, le suivi est 100% personnalisé à
+                        ton niveau. L'objectif est le même : bouger mieux, sans douleur, et progresser durablement.
+                    </p>
+                </details>
+
+                <!-- Question 7 -->
+                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
+                        Puis-je arrêter le suivi à tout moment ?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
+                        </span>
+                    </summary>
+                    <p class="text-brand-muted mt-4 leading-relaxed">
+                        Oui, il n'y a aucun engagement au-delà du mois en cours. Tu es libre de poursuivre ou non selon
+                        tes besoins et ton évolution. L'idée est que tu restes parce que ça te fait du bien, pas par
+                        obligation.
                     </p>
                 </details>
             </div>
@@ -861,35 +902,6 @@
         });
     </script>
 
-    <!-- DEV TOOL: Supprimer avant mise en prod -->
-    <div id="dev-panel" style="position:fixed;bottom:20px;right:20px;background:#fff;border:2px solid #c74f2f;border-radius:16px;padding:16px 20px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.15);font-family:sans-serif;font-size:13px;min-width:240px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-            <strong style="color:#30100f;">Test des couleurs</strong>
-            <button onclick="document.getElementById('dev-panel').style.display='none'" style="background:none;border:none;cursor:pointer;font-size:18px;color:#6b6661;">&times;</button>
-        </div>
-        <label style="display:block;margin-bottom:8px;color:#30100f;">Fond "On arrête" : <span id="val-bg">8</span>%</label>
-        <input type="range" min="0" max="30" value="8" id="slider-bg" style="width:100%;accent-color:#c74f2f;">
-        <label style="display:block;margin-top:10px;margin-bottom:8px;color:#30100f;">Bordure "On arrête" : <span id="val-border">20</span>%</label>
-        <input type="range" min="0" max="50" value="20" id="slider-border" style="width:100%;accent-color:#c74f2f;">
-    </div>
-    <script>
-        (function() {
-            const el = document.getElementById('stop-list');
-            const sliderBg = document.getElementById('slider-bg');
-            const sliderBorder = document.getElementById('slider-border');
-            const valBg = document.getElementById('val-bg');
-            const valBorder = document.getElementById('val-border');
-            if (!el || !sliderBg || !sliderBorder) return;
-            sliderBg.addEventListener('input', function() {
-                valBg.textContent = this.value;
-                el.style.backgroundColor = 'color-mix(in srgb, #c74f2f ' + this.value + '%, transparent)';
-            });
-            sliderBorder.addEventListener('input', function() {
-                valBorder.textContent = this.value;
-                el.style.borderColor = 'color-mix(in srgb, #c74f2f ' + this.value + '%, transparent)';
-            });
-        })();
-    </script>
 </body>
 
 </html>
