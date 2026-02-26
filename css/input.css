@@ -65,3 +65,19 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Nav active link indicator */
+nav .hidden a[href^="#"].text-brand-terra {
+    position: relative;
+}
+
+nav .hidden a[href^="#"].text-brand-terra::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-brand-terra);
+    border-radius: 1px;
+}

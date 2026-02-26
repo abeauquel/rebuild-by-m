@@ -25,6 +25,7 @@ if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
   echo "tw() { \"$TAILWIND_BIN\" -i \"$CLAUDE_PROJECT_DIR/css/input.css\" -o \"$CLAUDE_PROJECT_DIR/css/output.css\" \"\$@\"; }" >> "$CLAUDE_ENV_FILE"
 fi
 
+
 # Build CSS
 echo "Building CSS with Tailwind CSS..."
 "$TAILWIND_BIN" -i "$CLAUDE_PROJECT_DIR/css/input.css" -o "$CLAUDE_PROJECT_DIR/css/output.css"
