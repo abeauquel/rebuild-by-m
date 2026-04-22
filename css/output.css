@@ -1,4 +1,4 @@
-/*! tailwindcss v4.2.0 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -1985,7 +1985,7 @@
   background: var(--color-brand-light);
 }
 ::-webkit-scrollbar-thumb {
-  background: #e5e0dc;
+  background: var(--color-brand-sand);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -1997,6 +1997,17 @@
   transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
 .reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+}
+.no-js .reveal {
   opacity: 1;
   transform: translateY(0);
 }

@@ -46,7 +46,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #e5e0dc;
+    background: var(--color-brand-sand);
     border-radius: 10px;
 }
 
@@ -62,6 +62,21 @@
 }
 
 .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fallback for browsers without IntersectionObserver support or JavaScript disabled */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+}
+
+/* Additional fallback using noscript styling */
+.no-js .reveal {
     opacity: 1;
     transform: translateY(0);
 }
