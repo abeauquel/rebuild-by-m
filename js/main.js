@@ -91,6 +91,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Pricing — 3D tilt on hover
+    document.querySelectorAll('.pricing-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+            const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+            card.style.transition = 'transform 0.08s ease-out, box-shadow 0.2s';
+            card.style.transform  = `perspective(900px) rotateX(${-dy * 6}deg) rotateY(${dx * 6}deg) scale3d(1.02,1.02,1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transition = 'transform 0.45s ease-out, box-shadow 0.3s';
+            card.style.transform  = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        });
+    });
+
     // Scroll Reveal Observer
     const revealElements = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && revealElements.length > 0) {
