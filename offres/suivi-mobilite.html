@@ -1,272 +1,141 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suivi Mobilité - rebuild.by.m</title>
-    <meta name="description"
-        content="Programme de mobilité articulaire personnalisé pour bouger mieux, sans douleur et gagner en amplitude.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suivi Mobilité — rebuild.by.m</title>
+<meta name="description" content="Programme de mobilité articulaire personnalisé pour bouger mieux, sans douleur et gagner en amplitude.">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rebuildbym.com/suivi-mobilite">
-    <meta property="og:title" content="Suivi Mobilité - rebuild.by.m">
-    <meta property="og:description"
-        content="Un programme dédié à l'amélioration de votre mobilité articulaire pour bouger mieux et sans douleur.">
-    <meta property="og:image" content="../images/profile2.jpg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rebuildbym.com/suivi-mobilite">
+<meta property="og:title" content="Suivi Mobilité — rebuild.by.m">
+<meta property="og:description" content="Un programme dédié à l'amélioration de ta mobilité articulaire pour bouger mieux et sans douleur.">
+<meta property="og:image" content="https://rebuildbym.com/images/profile2.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" href="../images/logo.jpeg" type="image/jpeg">
+<link rel="icon" type="image/png" href="../images/logo-favicon.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <link href="../css/output.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.575.0"></script>
+<link href="../css/cinema.css" rel="stylesheet">
 </head>
 
-<body class="selection:bg-brand-sand selection:text-brand-terra overflow-x-hidden">
+<body>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-white/90 backdrop-blur-md shadow-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="../index.html" class="cursor-pointer group">
-                <span class="text-2xl md:text-3xl font-display font-bold tracking-tight text-brand-dark lowercase">
-                    rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
-                </span>
-            </a>
+<!-- NAV -->
+<nav id="subnav">
+  <div class="wrap">
+    <a href="../index.html" class="lg" aria-label="Accueil" style="font-family:var(--f-sans); font-weight:700; font-size:20px; letter-spacing:-.02em; text-transform:lowercase; display:inline-flex; align-items:center; gap:11px;">
+      <img src="../images/logo-favicon.png" alt="" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
+      <span>rebuild<span style="color:var(--accent);">.</span>by<span style="color:var(--accent);">.</span>m</span>
+    </a>
+    <a href="../index.html" class="back"><i data-lucide="arrow-left" style="width:17px;height:17px;"></i> Retour à l'accueil</a>
+  </div>
+</nav>
 
-            <!-- Back Button -->
-            <a href="../index.html"
-                class="flex items-center gap-2 text-brand-dark hover:text-brand-terra font-semibold transition-colors">
-                <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                Retour à l'accueil
-            </a>
+<!-- HERO -->
+<header class="page-hero">
+  <div class="wrap reveal" style="max-width:760px;">
+    <span class="section-index" style="display:block; margin-bottom:18px;">— OFFRE · MOBILITÉ</span>
+    <h1 class="serif-xl" style="margin:0 0 22px;">Suivi <em style="color:#a2b4c1;">Mobilité</em></h1>
+    <p style="font-size:18px; line-height:1.6; color:var(--cream-dim); max-width:56ch; margin:0;">
+      Un programme dédié à l'amélioration de ta mobilité articulaire pour <b style="color:var(--cream);">bouger mieux</b>, sans douleur et gagner en amplitude.
+    </p>
+  </div>
+</header>
+
+<!-- HIGHLIGHTS -->
+<section class="section" style="padding-top:56px; padding-bottom:56px; background:var(--ink-soft); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="grid reveal" style="grid-template-columns:repeat(4,1fr);">
+      <div class="statcol"><div class="ic"><i data-lucide="move" style="width:22px;height:22px;"></i></div><div class="v">Mobilité</div><div class="d">Amplitude optimale</div></div>
+      <div class="statcol"><div class="ic"><i data-lucide="target" style="width:22px;height:22px;"></i></div><div class="v">Sur-mesure</div><div class="d">Adapté à tes besoins</div></div>
+      <div class="statcol"><div class="ic"><i data-lucide="play-circle" style="width:22px;height:22px;"></i></div><div class="v">Vidéos</div><div class="d">Exercices guidés</div></div>
+      <div class="statcol"><div class="ic"><i data-lucide="trending-up" style="width:22px;height:22px;"></i></div><div class="v">Progression</div><div class="d">Suivi régulier</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="section">
+  <div class="wrap grid" style="display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(40px,5vw,64px); align-items:start;">
+    <!-- included -->
+    <div class="reveal">
+      <span class="section-index" style="display:block; margin-bottom:18px;">— CE QUI EST INCLUS</span>
+      <h2 class="serif-xl" style="font-size:clamp(32px,4vw,48px); margin:0 0 32px;">Débloque tes <em style="color:#a2b4c1;">amplitudes</em>.</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="card feature"><span class="ic"><i data-lucide="video" style="width:22px;height:22px;"></i></span><div><h3>Bilan mobilité complet</h3><p>Évaluation de ta mobilité articulaire pour identifier les zones à travailler en priorité.</p></div></div>
+        <div class="card feature"><span class="ic"><i data-lucide="dumbbell" style="width:22px;height:22px;"></i></span><div><h3>Routines mobilité sur-mesure</h3><p>Des routines personnalisées à intégrer dans ton quotidien, adaptées à ton niveau et tes objectifs.</p></div></div>
+        <div class="card feature"><span class="ic"><i data-lucide="play-circle" style="width:22px;height:22px;"></i></span><div><h3>Vidéos explicatives incluses</h3><p>Chaque exercice est accompagné d'une vidéo pour garantir une exécution correcte et efficace.</p></div></div>
+        <div class="card feature"><span class="ic"><i data-lucide="refresh-cw" style="width:22px;height:22px;"></i></span><div><h3>Suivi progression régulier</h3><p>Points réguliers pour évaluer tes progrès et ajuster le programme selon ton évolution.</p></div></div>
+      </div>
+    </div>
+
+    <!-- pricing -->
+    <div class="reveal">
+      <div class="card" style="padding:34px 30px; position:sticky; top:104px;">
+        <span class="corner tr" style="top:14px; right:14px;"></span>
+        <h3 class="h-sans" style="font-size:22px; margin:0 0 18px;">Pour qui ?</h3>
+        <ul style="list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:12px;">
+          <li style="display:flex; gap:11px; font-size:14.5px;"><i data-lucide="check-circle" style="width:19px;height:19px;color:#a2b4c1;flex-shrink:0;"></i> Tu manques de mobilité au quotidien</li>
+          <li style="display:flex; gap:11px; font-size:14.5px;"><i data-lucide="check-circle" style="width:19px;height:19px;color:#a2b4c1;flex-shrink:0;"></i> Tu veux améliorer tes performances sportives</li>
+          <li style="display:flex; gap:11px; font-size:14.5px;"><i data-lucide="check-circle" style="width:19px;height:19px;color:#a2b4c1;flex-shrink:0;"></i> Tu souhaites prévenir les blessures</li>
+          <li style="display:flex; gap:11px; font-size:14.5px;"><i data-lucide="check-circle" style="width:19px;height:19px;color:#a2b4c1;flex-shrink:0;"></i> Tu cherches à gagner en amplitude de mouvement</li>
+        </ul>
+        <div style="border-top:1px solid var(--line); padding-top:22px; margin-bottom:24px;">
+          <div class="label" style="margin-bottom:8px;">Programme dédié</div>
+          <div class="h-sans" style="font-size:30px; color:var(--cream);">Sur devis</div>
+          <p style="font-size:13px; color:var(--cream-dim); margin:6px 0 0;">Adapté à tes objectifs &amp; ta pratique</p>
         </div>
-    </nav>
+        <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank" rel="noopener" class="btn-cream" style="justify-content:center; width:100%;">Démarrer mon suivi mobilité <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+        <p class="mono" style="font-size:10px; letter-spacing:.1em; color:var(--cream-faint); text-align:center; margin:14px 0 0;">Réponse sous 48 h après ta demande</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-10 bg-gradient-to-br from-brand-blush/30 via-white to-brand-terra/10 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-terra/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 -z-10"></div>
+<!-- CTA -->
+<section class="section" style="background:var(--ink-soft); border-top:1px solid var(--line);">
+  <div class="wrap" style="text-align:center; max-width:640px;">
+    <div class="reveal">
+      <h2 class="serif-xl" style="font-size:clamp(30px,4vw,52px); margin:0 0 18px;">Prêt·e à <em style="color:#a2b4c1;">bouger mieux</em> ?</h2>
+      <p style="color:var(--cream-dim); font-size:16px; line-height:1.6; margin:0 0 32px;">Gagne en mobilité et en amplitude pour une pratique sportive sans limites.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+        <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank" rel="noopener" class="btn-cream">Démarrer mon suivi mobilité <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+        <a href="../index.html#suivis" class="btn-ghost">Voir toutes les offres</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <h1 class="text-4xl md:text-6xl font-display font-bold text-brand-dark mb-4 leading-tight">
-                    Suivi <span class="text-brand-terra">Mobilité</span>
-                </h1>
+<!-- FOOTER -->
+<footer style="background:var(--ink); border-top:1px solid var(--line); padding:40px 0;">
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;">
+    <a href="../index.html" class="lg" style="font-family:var(--f-sans); font-weight:700; font-size:19px; letter-spacing:-.02em; text-transform:lowercase; display:inline-flex; align-items:center; gap:11px;">
+      <img src="../images/logo-favicon.png" alt="" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
+      <span>rebuild<span style="color:var(--accent);">.</span>by<span style="color:var(--accent);">.</span>m</span>
+    </a>
+    <div style="text-align:right;">
+      <p class="mono" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint); margin:0 0 8px;">© <span id="year"></span> Rebuild by Movement. Tous droits réservés.</p>
+      <div style="display:flex; gap:20px; justify-content:flex-end;" class="mono">
+        <a href="../legal/mentions-legales.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">Mentions légales</a>
+        <a href="../legal/politique-de-confidentialite.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">Confidentialité</a>
+        <a href="../legal/cgv.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-                <p class="text-xl text-brand-muted leading-relaxed max-w-2xl mx-auto mb-4">
-                    Un programme dédié à l'amélioration de votre mobilité articulaire pour bouger mieux, sans douleur et gagner en amplitude.
-                </p>
-            </div>
-        </div>
-    </section>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  if (window.lucide) lucide.createIcons();
+</script>
 
-    <!-- Highlights -->
-    <section class="py-8 bg-gradient-to-r from-brand-terra/10 via-brand-coral/10 to-brand-terra/10">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="reveal">
-                    <div class="w-12 h-12 bg-brand-terra rounded-full flex items-center justify-center mx-auto mb-3 text-white">
-                        <i data-lucide="move" class="w-6 h-6"></i>
-                    </div>
-                    <p class="font-bold text-lg text-brand-dark">Mobilité</p>
-                    <p class="text-brand-muted text-sm">Amplitude optimale</p>
-                </div>
-                <div class="reveal">
-                    <div class="w-12 h-12 bg-brand-terra rounded-full flex items-center justify-center mx-auto mb-3 text-white">
-                        <i data-lucide="target" class="w-6 h-6"></i>
-                    </div>
-                    <p class="font-bold text-lg text-brand-dark">Sur-mesure</p>
-                    <p class="text-brand-muted text-sm">Adapté à vos besoins</p>
-                </div>
-                <div class="reveal">
-                    <div class="w-12 h-12 bg-brand-terra rounded-full flex items-center justify-center mx-auto mb-3 text-white">
-                        <i data-lucide="play-circle" class="w-6 h-6"></i>
-                    </div>
-                    <p class="font-bold text-lg text-brand-dark">Vidéos</p>
-                    <p class="text-brand-muted text-sm">Exercices guidés</p>
-                </div>
-                <div class="reveal">
-                    <div class="w-12 h-12 bg-brand-terra rounded-full flex items-center justify-center mx-auto mb-3 text-white">
-                        <i data-lucide="trending-up" class="w-6 h-6"></i>
-                    </div>
-                    <p class="font-bold text-lg text-brand-dark">Progression</p>
-                    <p class="text-brand-muted text-sm">Suivi régulier</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Details Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
-
-                <!-- Left: What's included -->
-                <div class="reveal">
-                    <h2 class="text-3xl font-display font-bold text-brand-dark mb-8">Ce qui est inclus</h2>
-
-                    <div class="space-y-6">
-                        <div class="flex gap-4 p-6 bg-brand-light rounded-2xl border border-brand-sand/30">
-                            <div class="w-12 h-12 bg-brand-terra rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                                <i data-lucide="video" class="w-6 h-6"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="font-bold text-brand-dark mb-1">Bilan mobilité complet</h3>
-                                <p class="text-brand-muted text-sm">Évaluation de votre mobilité articulaire pour identifier les zones à travailler en priorité.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 p-6 bg-brand-light rounded-2xl border border-brand-sand/30">
-                            <div class="w-12 h-12 bg-brand-terra rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                                <i data-lucide="dumbbell" class="w-6 h-6"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="font-bold text-brand-dark mb-1">Routines mobilité sur-mesure</h3>
-                                <p class="text-brand-muted text-sm">Des routines personnalisées à intégrer dans votre quotidien, adaptées à votre niveau et vos objectifs.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 p-6 bg-brand-light rounded-2xl border border-brand-sand/30">
-                            <div class="w-12 h-12 bg-brand-terra rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                                <i data-lucide="play-circle" class="w-6 h-6"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="font-bold text-brand-dark mb-1">Vidéos explicatives incluses</h3>
-                                <p class="text-brand-muted text-sm">Chaque exercice est accompagné d'une vidéo pour garantir une exécution correcte et efficace.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 p-6 bg-brand-light rounded-2xl border border-brand-sand/30">
-                            <div class="w-12 h-12 bg-brand-terra rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                                <i data-lucide="refresh-cw" class="w-6 h-6"></i>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <h3 class="font-bold text-brand-dark mb-1">Suivi progression régulier</h3>
-                                <p class="text-brand-muted text-sm">Points réguliers pour évaluer vos progrès et ajuster le programme en fonction de votre évolution.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: CTA Card -->
-                <div class="reveal">
-                    <div class="bg-gradient-to-br from-brand-terra/20 to-brand-blush/30 p-8 md:p-10 rounded-3xl border-2 border-brand-terra sticky top-32">
-                        <h3 class="text-2xl font-display font-bold text-brand-dark mb-4">Pour qui ?</h3>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-brand-terra mt-0.5"></i>
-                                <span>Vous manquez de mobilité au quotidien</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-brand-terra mt-0.5"></i>
-                                <span>Vous voulez améliorer vos performances sportives</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-brand-terra mt-0.5"></i>
-                                <span>Vous souhaitez prévenir les blessures</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-brand-terra mt-0.5"></i>
-                                <span>Vous cherchez à gagner en amplitude de mouvement</span>
-                            </li>
-                        </ul>
-
-                        <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank"
-                            class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                            Démarrer mon suivi mobilité
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-
-                        <p class="text-center text-brand-muted text-sm mt-4">
-                            Réponse sous 48h après votre demande
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-brand-blush/40 to-brand-coral/20">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-2xl mx-auto reveal">
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-dark mb-6">Prêt(e) à bouger mieux ?</h2>
-                <p class="text-brand-muted mb-8">Gagnez en mobilité et en amplitude pour une pratique sportive sans limites.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank"
-                        class="bg-brand-terra hover:bg-brand-rust text-white px-8 py-4 rounded-full font-bold transition-all inline-flex items-center justify-center gap-2 shadow-lg hover:scale-105">
-                        Démarrer mon suivi mobilité
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="index.html#suivis"
-                        class="bg-white hover:bg-brand-light text-brand-dark px-8 py-4 rounded-full font-bold transition-all inline-flex items-center justify-center gap-2 border border-brand-sand shadow-sm">
-                        Voir toutes les offres
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-brand-sand/20 py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <a href="../index.html" class="group">
-                    <span class="text-2xl md:text-3xl font-display font-bold tracking-tight text-brand-dark lowercase">
-                        rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
-                    </span>
-                </a>
-
-                <div class="text-sm text-brand-muted text-center md:text-right">
-                    <p class="mb-2">&copy; <span id="year"></span> Rebuild by Mouvement. Tous droits réservés.</p>
-                    <div class="flex gap-6 justify-center md:justify-end">
-                        <a href="../legal/mentions-legales.html" class="hover:text-brand-terra transition-colors">Mentions Légales</a>
-                        <a href="../legal/politique-de-confidentialite.html" class="hover:text-brand-terra transition-colors">Politique de confidentialité</a>
-                        <a href="../legal/cgv.html" class="hover:text-brand-terra transition-colors">CGV</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-
-            const yearSpan = document.getElementById('year');
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
-
-            // Scroll Reveal
-            const revealElements = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window && revealElements.length > 0) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                revealElements.forEach(el => revealObserver.observe(el));
-            }
-        });
-    </script>
 </body>
-
 </html>

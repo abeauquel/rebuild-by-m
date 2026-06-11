@@ -1,889 +1,632 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth no-js">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rebuild.by.m - Kiné CrossFit & Santé</title>
-    <link rel="icon" type="image/png" href="images/logo-favicon.png">
-    <meta name="description"
-        content="Kinésithérapie spécialisée CrossFit & Haltérophilie. Suivis à distance et analyse de mouvement.">
-    <!-- SEO Keywords -->
-    <meta name="keywords"
-        content="Kiné du sport, CrossFit, Haltérophilie, Douleur épaule, Réathlétisation, Suivi à distance, Prévention blessure, Manon Kiné">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rebuild.by.m — Kiné CrossFit & Santé</title>
+<meta name="description" content="Kinésithérapie spécialisée CrossFit & Haltérophilie. Suivis à distance et analyse de mouvement.">
 
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rebuildbym.com/">
-    <meta property="og:title" content="rebuild.by.m - Kiné CrossFit & Santé">
-    <meta property="og:description"
-        content="S'épanouir dans sa pratique, sans douleurs ni limitations. Suivis kiné 100% personnalisés pour CrossFitteurs.">
-    <meta property="og:image" content="images/manonOH.jpeg">
+<!-- SEO Keywords -->
+<meta name="keywords" content="Kiné du sport, CrossFit, Haltérophilie, Douleur épaule, Réathlétisation, Suivi à distance, Prévention blessure, Manon Kiné">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo-favicon.png" type="image/jpeg">
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rebuildbym.com/">
+<meta property="og:title" content="rebuild.by.m — Kiné CrossFit & Santé">
+<meta property="og:description" content="S'épanouir dans sa pratique, sans douleurs ni limitations. Suivis kiné 100% personnalisés pour CrossFitteurs.">
+<meta property="og:image" content="https://rebuildbym.com/images/manonOH.jpeg">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+<link rel="icon" type="image/png" href="images/logo-favicon.png">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@0.575.0"></script>
-
-    <link href="css/output.css" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.575.0"></script>
+<link href="css/cinema.css" rel="stylesheet">
 </head>
 
-<body class="selection:bg-brand-sand selection:text-brand-terra overflow-x-hidden">
+<body>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#hero" class="flex items-center gap-3 cursor-pointer group">
-                <img src="images/logo-favicon.png" alt="Logo rebuild.by.m" class="w-10 h-10 rounded-full object-cover">
-                <span class="text-xl md:text-2xl font-display font-bold tracking-tight text-brand-dark lowercase">
-                    rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
-                </span>
-            </a>
+<!-- ============================ NAV ============================ -->
+<nav id="nav">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+    <a href="#hero" class="lg" aria-label="Accueil">
+      <img src="images/logo-favicon.png" alt="" style="width:34px; height:34px; border-radius:50%; object-fit:cover;">
+      <span>rebuild<span class="acc">.</span>by<span class="acc">.</span>m</span>
+    </a>
+    <div id="navlinks" style="display:flex; align-items:center; gap:28px;">
+      <a class="lk" href="#apropos">Qui suis-je ?</a>
+      <a class="lk" href="#expertise">Ma méthode</a>
+      <a class="lk" href="#suivis">Mes services</a>
+      <a class="lk" href="#temoignages">Témoignages</a>
+      <a class="lk" href="#ressources">Ressources</a>
+      <a class="lk" href="#faq">FAQ</a>
+      <span style="width:1px; height:16px; background:var(--line-strong);"></span>
+      <a class="lk" href="https://www.instagram.com/rebuild.by.m/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-grid; place-items:center;">
+        <i data-lucide="instagram" style="width:19px;height:19px;"></i>
+      </a>
+      <a href="#contact" class="mono" style="border:1px solid var(--line-strong); color:var(--cream); padding:9px 16px; border-radius:999px; font-size:11px; letter-spacing:.18em; text-transform:uppercase;">Me contacter</a>
+    </div>
+    <button id="mburger" aria-label="Menu" style="background:none; border:1px solid var(--line-strong); color:var(--cream); width:42px; height:42px; border-radius:8px; place-items:center; cursor:pointer;">
+      <i data-lucide="menu" style="width:22px;height:22px;"></i>
+    </button>
+  </div>
+  <div id="mnav" style="background:rgba(15,7,8,.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); padding:18px var(--pad) 26px; margin-top:13px;">
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <a class="lk" href="#apropos" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">Qui suis-je ?</a>
+      <a class="lk" href="#expertise" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">Ma méthode</a>
+      <a class="lk" href="#suivis" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">Mes services</a>
+      <a class="lk" href="#temoignages" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">Témoignages</a>
+      <a class="lk" href="#ressources" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">Ressources</a>
+      <a class="lk" href="#faq" style="font-family:var(--f-sans); font-size:19px; font-weight:600; padding:8px 0;">FAQ</a>
+      <a href="#contact" class="btn-cream" style="justify-content:center; margin-top:12px;">Me contacter</a>
+    </div>
+  </div>
+</nav>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-6 font-medium text-sm text-brand-dark">
-                <a href="#apropos" class="hover:text-brand-terra transition-colors">Qui suis-je ?</a>
-                <a href="#expertise" class="hover:text-brand-terra transition-colors">Ma Méthode</a>
-                <a href="#suivis" class="hover:text-brand-terra transition-colors">Mes Services</a>
-                <a href="#temoignages" class="hover:text-brand-terra transition-colors">Témoignages</a>
-                <a href="#ressources" class="hover:text-brand-terra transition-colors">Ressources</a>
-                <a href="#faq" class="hover:text-brand-terra transition-colors">FAQ</a>
+<!-- ============================ HERO ============================ -->
+<header id="hero" style="min-height:100vh; display:grid; grid-template-columns:1.04fr 1fr; position:relative;">
+  <!-- photo column -->
+  <div class="frame" style="position:relative; background:#0c0506;">
+    <img src="images/manonOH.jpeg" alt="Manon en overhead press" style="position:absolute; inset:0; height:100%;">
+    <div style="position:absolute; inset:0; background:linear-gradient(110deg, rgba(20,8,9,0) 38%, rgba(20,8,9,.55) 100%), linear-gradient(to top, rgba(20,8,9,.7), transparent 42%);"></div>
+    <!-- top meta -->
+    <div style="position:absolute; top:104px; left:var(--pad); right:30px; display:flex; justify-content:space-between; align-items:flex-start; gap:16px;">
+      <span class="plate"><span style="width:6px;height:6px;border-radius:50%;background:var(--terra);display:inline-block;"></span> REC · 00 / ACCUEIL</span>
+    </div>
+    <!-- nameplate -->
+    <div style="position:absolute; left:var(--pad); bottom:64px;">
+      <div class="mono" style="font-size:10px; letter-spacing:.3em; color:var(--cream-faint); margin-bottom:8px;">▸ KINÉ DU SPORT · CROSSFIT</div>
+      <div class="h-sans" style="font-size:clamp(40px,5vw,60px); color:var(--cream);">Manon</div>
+      <div class="serif" style="font-style:italic; font-size:17px; color:var(--cream-dim); margin-top:6px;">Masseur-kiné D.E. · Spé. CrossFit · 5 ans · 50+ athlètes</div>
+    </div>
+  </div>
 
-                <div class="h-4 w-px bg-brand-muted/20 mx-2"></div>
+  <!-- content column -->
+  <div style="position:relative; display:flex; flex-direction:column; justify-content:center; padding:120px var(--pad) 96px;">
+    <div class="reveal">
+      <span class="eyebrow" style="margin-bottom:26px;"><span class="ln"></span>Rebuild by Movement</span>
+      <h1 class="serif-xl" style="margin:0 0 26px;">
+        S'épanouir dans sa pratique,
+        <em>sans douleurs</em> ni&nbsp;limitations.
+      </h1>
+      <p class="serif" style="font-style:italic; font-size:clamp(19px,1.7vw,24px); color:var(--cream-dim); margin:0 0 14px;">Le mouvement au service du mouvement.</p>
+      <p style="font-size:16px; line-height:1.6; color:var(--cream-dim); max-width:48ch; margin:0 0 32px;">
+        Reconstruire un corps <b style="color:var(--cream);">performant &amp; durable</b> — sans renoncer à la barre.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:34px;">
+        <a href="#suivis" class="btn-cream">Comment puis-je t'aider ? <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+        <a href="#expertise" class="btn-ghost">Découvrir</a>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:9px;">
+        <span class="chip"><i data-lucide="users"></i> 50+ athlètes</span>
+        <span class="chip"><i data-lucide="shield-check"></i> Suivi jusqu'au retour à la normale</span>
+        <span class="chip"><i data-lucide="video"></i> 100 % à distance</span>
+        <span class="chip"><i data-lucide="award"></i> Kiné du Sport — CrossFit ®</span>
+      </div>
+    </div>
+    <span class="corner tr" style="top:104px; right:30px;"></span>
+    <span class="corner br" style="bottom:40px; right:30px;"></span>
+  </div>
+</header>
 
-                <a href="https://www.instagram.com/rebuild.by.m/" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-brand-terra transition-colors text-brand-muted hover:bg-brand-sand/20 p-2 rounded-full">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                </a>
-                <a href="#contact"
-                    class="bg-brand-dark text-white hover:bg-brand-terra px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand-dark/10 hover:shadow-brand-terra/20 text-xs tracking-wide uppercase">
-                    Me contacter
-                </a>
-            </div>
+<!-- ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span><span class="gdot"></span>EN LIGNE</span><span class="sep">/</span>
+    <span>SUIVI 100 % À DISTANCE</span><span class="sep">/</span>
+    <span>CROSSFIT · HALTÉRO · ENDURANCE</span><span class="sep">/</span>
+    <span>RÉPONSE SOUS 48 H</span><span class="sep">/</span>
+    <span><span class="gdot"></span>EN LIGNE</span><span class="sep">/</span>
+    <span>SUIVI 100 % À DISTANCE</span><span class="sep">/</span>
+    <span>CROSSFIT · HALTÉRO · ENDURANCE</span><span class="sep">/</span>
+    <span>RÉPONSE SOUS 48 H</span><span class="sep">/</span>
+  </div>
+</div>
 
-            <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-brand-dark p-2" aria-label="Ouvrir le menu">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
+<!-- ============================ À PROPOS (Cinéma split) ============================ -->
+<section id="apropos" class="section" style="padding-top:0; padding-bottom:0;">
+  <div style="display:grid; grid-template-columns:1.05fr 1fr; min-height:88vh;">
+    <!-- photo -->
+    <div class="frame" style="position:relative; background:#0c0506;">
+      <img src="images/profile.jpg" alt="Manon, kinésithérapeute" class="duotone" style="position:absolute; inset:0; height:100%;">
+      <div style="position:absolute; inset:0; background:linear-gradient(110deg, rgba(20,8,9,0) 55%, rgba(20,8,9,.55) 100%);"></div>
+      <div style="position:absolute; top:48px; left:var(--pad); right:30px; display:flex; justify-content:space-between;">
+        <span class="plate"><span style="width:6px;height:6px;border-radius:50%;background:var(--terra);display:inline-block;"></span> REC · 01 / À PROPOS</span>
+      </div>
+      <div style="position:absolute; left:var(--pad); bottom:56px;">
+        <div class="mono" style="font-size:10px; letter-spacing:.3em; color:var(--cream-faint); margin-bottom:8px;">▸ IDENTITÉ — PRATICIEN</div>
+        <div class="h-sans" style="font-size:clamp(34px,4vw,48px); color:var(--cream);">Manon</div>
+        <div class="serif" style="font-style:italic; font-size:16px; color:var(--cream-dim); margin-top:6px;">Masseur-kinésithérapeute · Diplômée d'État</div>
+        <div style="display:flex; gap:22px; margin-top:18px; flex-wrap:wrap;">
+          <div><div class="label" style="margin-bottom:3px;">Spécialité</div><div class="sans" style="font-weight:600; font-size:14px;">CrossFit · Haltéro</div></div>
+          <div><div class="label" style="margin-bottom:3px;">Format</div><div class="sans" style="font-weight:600; font-size:14px;">100 % distance</div></div>
+          <div><div class="label" style="margin-bottom:3px;">Langues</div><div class="sans" style="font-weight:600; font-size:14px;">FR · EN</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div style="position:relative; display:flex; flex-direction:column; justify-content:center; padding:96px var(--pad);">
+      <div class="reveal">
+        <span class="serif" style="display:block; font-style:italic; font-size:19px; color:var(--accent); margin-bottom:20px;">Salut, moi c'est Manon —</span>
+        <h2 class="serif-xl" style="margin:0 0 36px;">kiné qui ne te dira <em>jamais</em> d'arrêter le sport.</h2>
+
+        <div style="max-width:52ch; color:var(--cream-dim); font-size:16px; line-height:1.62;">
+          <p style="margin:0 0 16px;">
+            Kiné du sport le jour, crossfitteuse le soir. J'ai créé <b style="color:var(--cream); font-family:var(--f-sans); font-weight:600;">@rebuild.by.m</b> après avoir vu trop d'athlètes s'entendre dire : <i style="color:var(--cream);">« arrête tes WOD trois mois, ça passera »</i>. Spoiler : ça ne passe pas.
+          </p>
+          <p style="margin:0 0 16px;">
+            Et même quand ça passe, ça revient — parce que personne n'a vraiment regardé <em>pourquoi</em> ton épaule lâche au snatch, ou ce que ta hanche raconte sous un OHS.
+          </p>
+          <p style="margin:0;">
+            Ma façon de faire : on cherche la cause, on construit un plan progressif, et <span style="color:var(--accent); font-style:italic;">on garde la barre.</span>
+          </p>
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-brand-sand/30 p-6 flex-col gap-6 shadow-xl z-50">
-            <a href="#apropos"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Qui
-                suis-je ?</a>
-            <a href="#expertise"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Ma Méthode</a>
-            <a href="#suivis"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Mes Services</a>
-            <a href="#temoignages"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Témoignages</a>
-            <a href="#ressources"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">Ressources</a>
-            <a href="#faq"
-                class="mobile-link text-lg font-display font-semibold text-brand-dark hover:text-brand-terra">FAQ</a>
-            <a href="#contact" class="mobile-link bg-brand-terra text-white py-4 rounded-xl font-bold text-center">Me
-                contacter</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-        <!-- Soft Background Elements - Warm Palette -->
-        <div
-            class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blush/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 -z-10">
-        </div>
-        <div
-            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-coral/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 -z-10">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:38px 0 36px;">
+          <div class="numcol"><div class="n">01</div><div class="t">Cause, pas symptôme</div><div class="d">On traite la racine — pas le pansement.</div></div>
+          <div class="numcol"><div class="n">02</div><div class="t">Garder la barre</div><div class="d">Adapter, jamais interdire.</div></div>
+          <div class="numcol"><div class="n">03</div><div class="t">Sortir plus solide</div><div class="d">Pas seulement revenir — dépasser.</div></div>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
-                <div class="md:w-1/2 space-y-8 reveal">
-                    <h1
-                        class="text-5xl md:text-7xl font-display font-bold leading-[1.1] text-brand-dark tracking-tight">
-                        S'épanouir dans sa pratique,<br />
-                        <span class="relative inline-block">
-                            sans douleurs
-                            <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-sand/60 -z-10 rounded-sm"></span>
-                        </span>
-                        <span class="text-brand-rust italic">ni limitations.</span>
-                    </h1>
-
-                    <p class="text-xl text-brand-muted leading-relaxed max-w-lg">
-                        <span class="text-brand-rust font-semibold">Rebuild by Movement</span> — Le mouvement au service du mouvement.<br>
-                        <span class="font-semibold" style="color:#30100f">Reconstruire un corps performant & durable.</span>
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a href="#suivis"
-                            class="bg-brand-terra hover:bg-brand-rust text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-terra/20 hover:shadow-2xl hover:scale-105">
-                            Comment puis-je t'aider ?
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#expertise"
-                            class="bg-white border-2 border-brand-sand text-brand-dark hover:bg-brand-sand hover:border-brand-coral px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center shadow-sm hover:shadow-lg">
-                            Découvrir
-                        </a>
-                    </div>
-
-                    <div class="flex flex-nowrap gap-2 pt-4 overflow-x-hidden">
-                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50 whitespace-nowrap">
-                            <i data-lucide="users" class="w-3.5 h-3.5 text-brand-terra"></i> 50+ athlètes
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50 whitespace-nowrap">
-                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-terra"></i> Suivi jusqu'au retour à la normale
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50 whitespace-nowrap">
-                            <i data-lucide="video" class="w-3.5 h-3.5 text-brand-terra"></i> 100% à distance
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 bg-brand-sand/30 text-brand-dark text-xs font-semibold px-4 py-2 rounded-full border border-brand-sand/50 whitespace-nowrap">
-                            <i data-lucide="award" class="w-3.5 h-3.5 text-brand-terra"></i> Kiné du Sport — CrossFit ®
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Hero Visual Soft -->
-                <div class="md:w-1/2 relative reveal">
-                    <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/5">
-
-                        <img src="images/manonOH.jpeg" alt="Manon Kine"
-                            class="w-full max-h-[600px] object-cover hover:scale-105 transition-transform duration-700">
-
-                    </div>
-                    <!-- Decorative Circle -->
-                    <div class="absolute -top-12 -right-12 w-48 h-48 border-2 border-brand-rust/20 rounded-full z-0">
-                    </div>
-                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-brand-sand rounded-full -z-10"></div>
-                </div>
-            </div>
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+          <a href="#contact" class="btn-cream">Prendre RDV maintenant <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+          <span class="mono" style="font-size:11px; letter-spacing:.18em; color:var(--cream-faint); text-transform:uppercase;">Réponse sous 48 h</span>
         </div>
+      </div>
+      <span class="corner tl" style="top:48px; left:30px;"></span>
+      <span class="corner br" style="bottom:40px; right:30px;"></span>
+    </div>
+  </div>
 
-    </section>
+  <!-- conviction band -->
+  <div style="border-top:1px solid var(--line); background:var(--ink-soft);">
+    <div class="wrap" style="padding-top:46px; padding-bottom:46px; display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center;">
+      <span class="label" style="white-space:nowrap;">§ Ma conviction</span>
+      <p class="serif" style="font-style:italic; font-size:clamp(22px,2.6vw,34px); line-height:1.18; margin:0; max-width:30ch;">
+        « Une pathologie ne se soigne pas en évitant le mouvement — mais avec <span style="color:var(--accent);">le bon mouvement, au bon dosage, au bon moment.</span> »
+      </p>
+    </div>
+  </div>
+</section>
 
-    <!-- About Section Updated: Centered Single Photo -->
-    <section id="apropos" class="py-24 bg-gradient-to-br from-brand-blush/20 via-white to-brand-ice/30 relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center reveal">
+<!-- ============================ MÉTHODE ============================ -->
+<section id="expertise" class="section">
+  <div class="wrap">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:54px;">
+      <div>
+        <span class="section-index" style="display:block; margin-bottom:18px;">— 02 · MA MÉTHODE</span>
+        <h2 class="serif-xl" style="margin:0;">Un process en <em>trois étapes</em>.</h2>
+      </div>
+      <p style="color:var(--cream-dim); font-size:16px; max-width:34ch; margin:0;">De la douleur à la performance — une approche structurée, jamais improvisée.</p>
+    </div>
 
-                <!-- Single Photo Manon -->
-                <div class="relative w-48 h-48 mx-auto mb-10 group">
-                    <div
-                        class="absolute inset-0 bg-brand-coral rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity">
-                    </div>
-                    <img src="images/profile.jpg" alt="Manon" loading="lazy"
-                        class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl ring-4 ring-brand-blush/40">
-                    <div class="absolute bottom-2 right-2 bg-brand-terra p-3 rounded-full shadow-lg text-white">
-                        <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
-                    </div>
-                </div>
-
-                <!-- Intro Text -->
-                <div class="space-y-6 mb-12">
-                    <div>
-                        <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-3">Qui suis-je ?</h2>
-                        <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-6">Je suis <span class="text-brand-rust">Manon</span> 👋
-                        </h3>
-                    </div>
-                    <p class="text-brand-muted text-lg leading-relaxed">
-                        Passionnée par le mouvement & le sport en général (surtout quand il s’agit de soulever lourd &
-                        de finir des WOD en crachant ses poumons 😅).
-                    </p>
-                    <p class="text-brand-dark font-medium text-lg">
-                        👉 J’ai créé <span class="text-brand-terra font-bold">@rebuild.by.m</span> pour aider les
-                        crossfitteurs/ses à s’épanouir dans leur pratique sans douleur & limitations.
-                    </p>
-                </div>
-
-                <!-- Lists Container (Grid for better readability) -->
-                <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
-                    <!-- The "Stop" List -->
-                    <div id="stop-list" class="bg-brand-rust/8 p-8 rounded-3xl border border-brand-rust/20">
-                        <h4 class="font-bold text-brand-rust mb-4 flex items-center gap-2">
-                            <i data-lucide="ban" class="w-5 h-5"></i> On arrête :
-                        </h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="x" class="w-5 h-5 text-brand-rust shrink-0 mt-0.5"></i>
-                                <span>Les WOD gâchés par une douleur</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="x" class="w-5 h-5 text-brand-rust shrink-0 mt-0.5"></i>
-                                <span>Les entraînements adaptés par défaut</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="x" class="w-5 h-5 text-brand-rust shrink-0 mt-0.5"></i>
-                                <span>Les compétitions annulées</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="x" class="w-5 h-5 text-brand-rust shrink-0 mt-0.5"></i>
-                                <span>La prise en charge « générique »</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- The "Solutions" List -->
-                    <div class="bg-brand-light p-8 rounded-3xl border border-brand-sand/30">
-                        <h4 class="font-bold text-brand-dark mb-4 flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-terra"></i> Ici, on trouve :
-                        </h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
-                                <span>Des conseils clairs sur ta pathologie</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
-                                <span>Des solutions pour éradiquer tes douleurs</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
-                                <span>Des outils pour améliorer ta mobilité</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-brand-dark text-sm md:text-base">
-                                <i data-lucide="check" class="w-5 h-5 text-brand-terra font-bold shrink-0 mt-0.5"></i>
-                                <span>Des stratégies de prévention blessures</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="inline-block relative group">
-                    <div
-                        class="absolute -inset-1 bg-brand-coral rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-200">
-                    </div>
-                    <a href="#contact"
-                        class="relative inline-flex items-center gap-2 bg-brand-coral hover:bg-brand-rust text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg">
-                        Prendre RDV maintenant <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                    </a>
-                </div>
-                <p class="text-sm text-brand-muted mt-6">
-                    Adapté à ton quotidien, ta pratique & tes objectifs.
-                </p>
-            </div>
+    <div class="grid reveal" style="grid-template-columns:repeat(3,1fr);">
+      <article class="card" style="padding:34px 30px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:30px;">
+          <span class="serif" style="font-size:60px; line-height:1; color:var(--accent); font-style:italic;">01</span>
+          <span style="width:46px; height:46px; border:1px solid var(--line-strong); border-radius:50%; display:grid; place-items:center; color:var(--accent);"><i data-lucide="search" style="width:21px;height:21px;"></i></span>
         </div>
-    </section>
-
-    <!-- Ma Méthode -->
-    <section id="expertise" class="py-24 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-4">Ma Méthode</h2>
-                <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-4">Un process en <span class="text-brand-rust">3 étapes</span></h3>
-                <p class="text-brand-muted text-lg">Une approche structurée pour aller de la douleur à la performance.</p>
-            </div>
-
-            <div class="relative max-w-5xl mx-auto">
-                <!-- Connecting line (desktop) -->
-                <div class="hidden md:block absolute top-12 left-[calc(16.67%+28px)] right-[calc(16.67%+28px)] h-0.5 bg-gradient-to-r from-brand-terra via-brand-coral to-brand-rust z-0"></div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Étape 1: Bilan -->
-                    <div class="relative reveal">
-                        <div class="flex flex-col items-center text-center">
-                            <div class="relative z-10 w-14 h-14 bg-brand-terra rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
-                                <i data-lucide="search" class="w-7 h-7"></i>
-                            </div>
-                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 1</span>
-                            <div class="bg-gradient-to-br from-brand-blush/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-terra/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-sand w-full">
-                                <h3 class="text-xl font-bold text-brand-dark mb-3">Bilan</h3>
-                                <p class="text-brand-muted leading-relaxed">
-                                    Échange approfondi en visio pour comprendre ta situation, ton historique et identifier l'origine de tes douleurs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Étape 2: Tests -->
-                    <div class="relative reveal">
-                        <div class="flex flex-col items-center text-center">
-                            <div class="relative z-10 w-14 h-14 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
-                                <i data-lucide="clipboard-check" class="w-7 h-7"></i>
-                            </div>
-                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 2</span>
-                            <div class="bg-gradient-to-br from-brand-coral/20 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-coral/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-coral/30 w-full">
-                                <h3 class="text-xl font-bold text-brand-dark mb-3">Tests</h3>
-                                <p class="text-brand-muted leading-relaxed">
-                                    Batterie de tests fonctionnels et d'analyses de mouvement pour évaluer ta mobilité, tes forces et tes faiblesses.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Étape 3: Planification Réhab -->
-                    <div class="relative reveal">
-                        <div class="flex flex-col items-center text-center">
-                            <div class="relative z-10 w-14 h-14 bg-brand-rust rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-white">
-                                <i data-lucide="calendar-check" class="w-7 h-7"></i>
-                            </div>
-                            <span class="text-xs font-bold text-brand-rust uppercase tracking-widest mb-4">Étape 3</span>
-                            <div class="bg-gradient-to-br from-brand-sand/40 to-white p-8 rounded-[2rem] shadow-xl shadow-brand-rust/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-brand-rust/20 w-full">
-                                <h3 class="text-xl font-bold text-brand-dark mb-3">Planification Réhab</h3>
-                                <p class="text-brand-muted leading-relaxed">
-                                    Construction de ton programme personnalisé et évolutif, adapté à ton quotidien et à tes objectifs sportifs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="label" style="margin-bottom:10px;">Étape 1</div>
+        <h3 class="h-sans" style="font-size:24px; margin:0 0 12px;">Bilan</h3>
+        <p style="color:var(--cream-dim); font-size:15px; line-height:1.55; margin:0;">Échange approfondi en visio pour comprendre ta situation, ton historique et identifier l'origine de tes douleurs.</p>
+      </article>
+      <article class="card" style="padding:34px 30px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:30px;">
+          <span class="serif" style="font-size:60px; line-height:1; color:var(--accent); font-style:italic;">02</span>
+          <span style="width:46px; height:46px; border:1px solid var(--line-strong); border-radius:50%; display:grid; place-items:center; color:var(--accent);"><i data-lucide="clipboard-check" style="width:21px;height:21px;"></i></span>
         </div>
-    </section>
-
-    <!-- Offres Section -->
-    <section id="suivis" class="py-24 bg-gradient-to-br from-brand-blush/30 via-white to-brand-coral/10 relative">
-        <!-- Decorative elements -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-rust/10 rounded-full blur-3xl -z-10"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-blush/30 rounded-full blur-3xl -z-10"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-4">Mes Services</h2>
-                <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark mb-6">Choisis ta <span class="text-brand-rust">formule</span></h3>
-                <p class="text-brand-muted text-lg leading-relaxed max-w-2xl mx-auto">
-                    3 solutions selon tes besoins pour reprendre le contrôle de ton corps & de ta pratique.
-                </p>
-            </div>
-
-            <!-- Offres Cards -->
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-                <!-- Offre 1: Suivi Personnalisé Réhab -->
-                <div class="relative pricing-card flex flex-col bg-white p-8 pt-12 rounded-3xl border-2 border-brand-dark hover:shadow-2xl transition-shadow duration-300 reveal group shadow-xl">
-                    <div class="price-badge bg-brand-coral text-white">
-                        <span class="text-base font-black leading-none">150€</span>
-                        <span class="text-[9px] font-bold tracking-wide">/mois</span>
-                    </div>
-                    <h4 class="text-2xl font-display font-bold mb-1">
-                        <span class="text-brand-coral">RÉHAB</span>
-                    </h4>
-                    <p class="font-display font-bold text-brand-dark text-sm mb-4">Ton suivi sur-mesure</p>
-                    <p class="text-brand-muted leading-relaxed mb-6">Un accompagnement pour :</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-coral fill-brand-coral stroke-white shrink-0"></i>
-                            <span>Te débarrasser de tes douleurs</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-coral fill-brand-coral stroke-white shrink-0"></i>
-                            <span>Reprendre plaisir dans ta pratique</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-coral fill-brand-coral stroke-white shrink-0"></i>
-                            <span>Et performer à nouveau sans limitations</span>
-                        </li>
-                    </ul>
-                    <a href="offres/suivi-personnalise.html"
-                        class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-burgundy text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                        Plus d'infos
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-
-                <!-- Offre 2: Consulting -->
-                <div class="relative pricing-card flex flex-col bg-white p-8 pt-12 rounded-3xl border-2 border-brand-terra hover:shadow-2xl transition-shadow duration-300 reveal group shadow-xl">
-                    <div class="price-badge bg-brand-terra text-white" style="animation-delay: 0.8s">
-                        <span class="text-base font-black leading-none">60€</span>
-                        <span class="text-[9px] font-bold tracking-wide">séance</span>
-                    </div>
-                    <h4 class="text-2xl font-display font-bold mb-1">
-                        <span class="text-brand-terra">Consulting</span>
-                    </h4>
-                    <p class="font-display font-bold text-brand-dark text-sm mb-4">Séance unique</p>
-                    <p class="text-brand-muted leading-relaxed mb-4">Tu ne souhaites pas de suivi, mais tu veux des réponses à tes questions ? Bénéficie via ce service :</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-terra fill-brand-terra stroke-white shrink-0"></i>
-                            <span>D'un bilan complet</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-terra fill-brand-terra stroke-white shrink-0"></i>
-                            <span>De conseils personnalisés</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-terra fill-brand-terra stroke-white shrink-0 mt-0.5"></i>
-                            <div>
-                                <span>Et d'exercices adaptés à ta problématique</span>
-                                <div class="flex items-center gap-2 mt-2 ml-1 text-brand-muted text-sm">
-                                    <i data-lucide="corner-down-right" class="w-4 h-4 text-brand-terra/60 shrink-0"></i>
-                                    <span class="italic">À appliquer en autonomie, à ton rythme</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="offres/bilan-douleur.html"
-                        class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                        Plus d'infos
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-
-                <!-- Offre 3: Suivi Mobilité -->
-                <div class="relative pricing-card flex flex-col bg-white p-8 pt-12 rounded-3xl border-2 border-brand-navy hover:shadow-2xl transition-shadow duration-300 reveal group shadow-xl">
-                    <div class="price-badge bg-brand-navy text-white" style="animation-delay: 1.6s">
-                        <span class="text-[11px] font-black leading-none">Sur</span>
-                        <span class="text-[9px] font-bold tracking-wide">devis</span>
-                    </div>
-                    <h4 class="text-2xl font-display font-bold mb-1">
-                        <span class="text-brand-slate">MOBILITÉ</span>
-                    </h4>
-                    <p class="font-display font-bold text-brand-dark text-sm mb-4">Ton suivi sur-mesure</p>
-                    <p class="text-brand-muted leading-relaxed mb-4">Un accompagnement pour :</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-petrol fill-brand-petrol stroke-white shrink-0"></i>
-                            <span>Comprendre tes limitations</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-petrol fill-brand-petrol stroke-white shrink-0"></i>
-                            <span>Débloquer ta mobilité</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-brand-dark">
-                            <i data-lucide="circle-arrow-right" class="w-5 h-5 text-brand-petrol fill-brand-petrol stroke-white shrink-0"></i>
-                            <span>Enfin acquérir tous les mouvements qui te font rêver</span>
-                        </li>
-                    </ul>
-                    <a href="offres/suivi-mobilite.html"
-                        class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-petrol text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                        Plus d'infos
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="label" style="margin-bottom:10px;">Étape 2</div>
+        <h3 class="h-sans" style="font-size:24px; margin:0 0 12px;">Tests</h3>
+        <p style="color:var(--cream-dim); font-size:15px; line-height:1.55; margin:0;">Batterie de tests fonctionnels et d'analyses de mouvement pour évaluer ta mobilité, tes forces et tes faiblesses.</p>
+      </article>
+      <article class="card" style="padding:34px 30px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:30px;">
+          <span class="serif" style="font-size:60px; line-height:1; color:var(--accent); font-style:italic;">03</span>
+          <span style="width:46px; height:46px; border:1px solid var(--line-strong); border-radius:50%; display:grid; place-items:center; color:var(--accent);"><i data-lucide="calendar-check" style="width:21px;height:21px;"></i></span>
         </div>
-    </section>
+        <div class="label" style="margin-bottom:10px;">Étape 3</div>
+        <h3 class="h-sans" style="font-size:24px; margin:0 0 12px;">Planification Réhab</h3>
+        <p style="color:var(--cream-dim); font-size:15px; line-height:1.55; margin:0;">Construction de ton programme personnalisé et évolutif, adapté à ton quotidien et à tes objectifs sportifs.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials Section -->
-    <section id="temoignages" class="py-24 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-2">Témoignages</h2>
-                <h3 class="text-4xl font-display font-bold text-brand-dark">Ils sont revenus plus <span class="text-brand-rust">forts</span>.</h3>
-                <p class="text-brand-coral text-lg font-semibold mt-2">Pourquoi pas toi ?</p>
-            </div>
+<!-- ============================ SERVICES ============================ -->
+<section id="suivis" class="section" style="background:var(--ink-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 56px;">
+      <span class="section-index" style="display:block; margin-bottom:18px;">— 03 · MES SERVICES</span>
+      <h2 class="serif-xl" style="margin:0 0 16px;">Choisis ta <em>formule</em>.</h2>
+      <p style="color:var(--cream-dim); font-size:16px; margin:0;">Trois solutions selon tes besoins pour reprendre le contrôle de ton corps &amp; de ta pratique.</p>
+    </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div
-                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
-                    <span class="absolute -top-2 left-4 text-8xl font-display text-brand-coral/15 leading-none select-none">&ldquo;</span>
-                    <div class="flex items-center gap-1 text-brand-terra mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">J'ai traîné une douleur à l'épaule pendant 6
-                        mois qui m'empêchait de snatcher. En 3 semaines de suivi avec Manon, j'ai pu reprendre la
-                        barre.</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-terra flex items-center justify-center text-white font-bold">
-                            TL</div>
-                        <div>
-                            <p class="font-bold text-brand-dark text-sm">Thomas L.</p>
-                            <p class="text-brand-muted text-xs">CrossFit ® Athlete</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="grid reveal" style="grid-template-columns:repeat(3,1fr); align-items:stretch;">
+      <!-- RÉHAB (featured) -->
+      <article class="card" style="display:flex; flex-direction:column; padding:36px 32px; border-color:var(--coral); background:var(--ink-card-2); position:relative;">
+        <span class="mono" style="position:absolute; top:-1px; right:24px; background:var(--coral); color:var(--ink); font-size:10px; letter-spacing:.2em; text-transform:uppercase; padding:5px 11px;">Le + populaire</span>
+        <div class="label" style="margin-bottom:14px;">Ton suivi sur-mesure</div>
+        <h3 class="h-sans" style="font-size:30px; margin:0 0 18px;"><span style="color:var(--coral);">RÉHAB</span></h3>
+        <p style="color:var(--cream-dim); font-size:14px; margin:0 0 18px;">Un accompagnement pour :</p>
+        <ul style="list-style:none; padding:0; margin:0 0 28px; display:flex; flex-direction:column; gap:13px;">
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--coral);flex-shrink:0;"></i> Te débarrasser de tes douleurs</li>
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--coral);flex-shrink:0;"></i> Reprendre plaisir dans ta pratique</li>
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--coral);flex-shrink:0;"></i> Et performer à nouveau sans limitations</li>
+        </ul>
+        <a href="offres/suivi-personnalise.html" class="btn-cream" style="margin-top:auto; justify-content:center;">Plus d'infos <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+      </article>
 
-                <!-- Review 2 -->
-                <div
-                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
-                    <span class="absolute -top-2 left-4 text-8xl font-display text-brand-coral/15 leading-none select-none">&ldquo;</span>
-                    <div class="flex items-center gap-1 text-brand-terra mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">Le suivi à distance est incroyable. Les
-                        retours vidéos sont ultra précis. Je me sens plus forte et plus safe techniquement sur mes
-                        mouvements de gym.</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-coral flex items-center justify-center text-white font-bold">
-                            SB</div>
-                        <div>
-                            <p class="font-bold text-brand-dark text-sm">Sarah B.</p>
-                            <p class="text-brand-muted text-xs">Gymnastique</p>
-                        </div>
-                    </div>
-                </div>
+      <!-- CONSULTING -->
+      <article class="card" style="display:flex; flex-direction:column; padding:36px 32px;">
+        <h3 class="h-sans" style="font-size:30px; margin:0 0 18px;"><span style="color:var(--terra);">Consulting</span></h3>
+        <p style="color:var(--cream-dim); font-size:14px; margin:0 0 18px;">Pas de suivi, mais des réponses à tes questions ? Via ce service :</p>
+        <ul style="list-style:none; padding:0; margin:0 0 28px; display:flex; flex-direction:column; gap:13px;">
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--terra);flex-shrink:0;"></i> Un bilan complet</li>
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--terra);flex-shrink:0;"></i> Des conseils personnalisés</li>
+          <li style="display:flex; gap:12px; font-size:15px; flex-direction:column;">
+            <span style="display:flex; gap:12px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:var(--terra);flex-shrink:0;"></i> Des exercices adaptés à ta problématique</span>
+            <span class="serif" style="font-style:italic; color:var(--cream-faint); font-size:14px; padding-left:32px;">↳ à appliquer en autonomie, à ton rythme</span>
+          </li>
+        </ul>
+        <a href="offres/bilan-douleur.html" class="btn-ghost" style="margin-top:auto; justify-content:center;">Plus d'infos <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+      </article>
 
-                <!-- Review 3 -->
-                <div
-                    class="relative bg-brand-light p-8 pt-12 rounded-3xl border border-brand-sand/30 hover:shadow-2xl hover:border-brand-coral transition-all reveal">
-                    <span class="absolute -top-2 left-4 text-8xl font-display text-brand-coral/15 leading-none select-none">&ldquo;</span>
-                    <div class="flex items-center gap-1 text-brand-terra mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-brand-dark italic mb-6 leading-relaxed">Enfin une kiné qui comprend que "arrêter le
-                        sport" n'est pas une option. Manon a adapté mon volume pour que je puisse continuer à
-                        m'entraîner.</p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-rust flex items-center justify-center text-white font-bold">
-                            JM</div>
-                        <div>
-                            <p class="font-bold text-brand-dark text-sm">Julien M.</p>
-                            <p class="text-brand-muted text-xs">Haltérophilie</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- MOBILITÉ -->
+      <article class="card" style="display:flex; flex-direction:column; padding:36px 32px;">
+        <div class="label" style="margin-bottom:14px;">Ton suivi sur-mesure</div>
+        <h3 class="h-sans" style="font-size:30px; margin:0 0 18px;"><span style="color:var(--slate, #a2b4c1);">MOBILITÉ</span></h3>
+        <p style="color:var(--cream-dim); font-size:14px; margin:0 0 18px;">Un accompagnement pour :</p>
+        <ul style="list-style:none; padding:0; margin:0 0 28px; display:flex; flex-direction:column; gap:13px;">
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:#a2b4c1;flex-shrink:0;"></i> Comprendre tes limitations</li>
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:#a2b4c1;flex-shrink:0;"></i> Débloquer ta mobilité</li>
+          <li style="display:flex; gap:12px; font-size:15px;"><i data-lucide="circle-arrow-right" style="width:20px;height:20px;color:#a2b4c1;flex-shrink:0;"></i> Enfin acquérir tous les mouvements qui te font rêver</li>
+        </ul>
+        <a href="offres/suivi-mobilite.html" class="btn-ghost" style="margin-top:auto; justify-content:center;">Plus d'infos <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TÉMOIGNAGES ============================ -->
+<section id="temoignages" class="section">
+  <div class="wrap">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:48px;">
+      <div>
+        <span class="section-index" style="display:block; margin-bottom:18px;">— 04 · TÉMOIGNAGES</span>
+        <h2 class="serif-xl" style="margin:0;">Ils sont revenus <em>plus forts</em>.<br><span style="color:var(--cream-dim); font-size:.5em;">Pourquoi pas toi ?</span></h2>
+      </div>
+      <div style="text-align:right;">
+        <div style="display:flex; align-items:center; gap:6px; justify-content:flex-end; color:var(--accent);">
+          <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
+          <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
+          <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
+          <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
+          <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
+          <span class="h-sans" style="font-size:26px; margin-left:8px; color:var(--cream);">5,0</span>
         </div>
-    </section>
+        <p style="font-size:13px; color:var(--cream-dim); margin:8px 0 0;">basé sur <b style="color:var(--cream);">50+ athlètes</b> accompagnés</p>
+      </div>
+    </div>
 
-    <!-- NEW 3: Instagram Feed Integration (Refined for Educational Content) -->
-    <section id="ressources" class="py-24 bg-brand-light border-t border-brand-sand/20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
-                <div>
-                    <h2 class="text-brand-terra font-bold tracking-wide uppercase text-sm mb-2">Ressources Gratuites
-                    </h2>
-                    <h3 class="text-4xl font-display font-bold text-brand-dark">Conseils & <span class="text-brand-rust">Éducatifs</span>.</h3>
-                    <p class="text-brand-muted mt-2">Retrouvez mes analyses et exercices correctifs sur Instagram.</p>
-                </div>
-                <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener noreferrer"
-                    class="hidden md:flex items-center gap-2 text-brand-dark hover:text-brand-terra font-bold transition-colors">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                    Voir tous les posts
-                </a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                <!-- Insta Post 1: Educational (Mobility/Stretching) -->
-                <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
-                    class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/hanche.jpg" alt="Mobilité Hanche" loading="lazy"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm md:text-base">Mobilité Hanche</span>
-                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Voir
-                            l'exercice</span>
-                    </div>
-                </a>
-                <!-- Insta Post 2: Educational (Squat) -->
-                <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
-                    class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/regles.jpg" alt="Correction Squat" loading="lazy"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm md:text-base">Correction Squat</span>
-                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Analyse
-                            technique</span>
-                    </div>
-                </a>
-                <!-- Insta Post 3: Educational (Overhead/Shoulder) -->
-                <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
-                    class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/epaules.jpg" alt="Douleur Épaule" loading="lazy"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm md:text-base">Douleur Épaule ?</span>
-                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Comprendre la
-                            cause</span>
-                    </div>
-                </a>
-                <!-- Insta Post 4: Educational (Active Warmup) -->
-                <a href="https://www.instagram.com/p/DO7qb2_iEvQ/"
-                    class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer block">
-                    <img src="images/snatch.jpg" alt="Warm-up Routine" loading="lazy"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm md:text-base">Warm-up Routine</span>
-                        <span class="text-brand-sand text-xs absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300">Avant le
-                            WOD</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="mt-8 text-center md:hidden">
-                <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-brand-dark hover:text-brand-terra font-bold transition-colors">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                    Voir tous les posts
-                </a>
-            </div>
+    <div class="grid reveal" style="grid-template-columns:1.35fr 1fr;">
+      <!-- featured -->
+      <article style="background:var(--ink-card); border:1px solid var(--line); border-radius:4px; padding:clamp(34px,4vw,52px); position:relative; display:flex; flex-direction:column;">
+        <span class="serif" style="position:absolute; top:-30px; right:18px; font-size:220px; line-height:1; color:rgba(245,236,228,.05); pointer-events:none;">”</span>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:26px;">
+          <div style="display:flex; gap:5px; color:var(--accent);">
+            <i data-lucide="star" style="width:15px;height:15px;fill:currentColor;"></i><i data-lucide="star" style="width:15px;height:15px;fill:currentColor;"></i><i data-lucide="star" style="width:15px;height:15px;fill:currentColor;"></i><i data-lucide="star" style="width:15px;height:15px;fill:currentColor;"></i><i data-lucide="star" style="width:15px;height:15px;fill:currentColor;"></i>
+          </div>
+          <span class="label">Cas vedette</span>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-gradient-to-b from-white to-brand-rust/5">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm mb-2">FAQ</h2>
-                <h3 class="text-3xl md:text-4xl font-display font-bold text-brand-dark">Questions <span class="text-brand-rust">fréquentes</span></h3>
-            </div>
-
-            <div class="space-y-4 reveal">
-                <!-- Question 1 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Le suivi est-il remboursé par la sécurité sociale ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        Le suivi à distance est considéré comme une prestation de coaching sport-santé et de prévention.
-                        Il n'est donc pas pris en charge par la Sécurité Sociale. Cependant, une facture vous sera
-                        fournie car certaines mutuelles proposent des forfaits "Sport sur ordonnance" ou "Médecine
-                        douce".
-                    </p>
-                </details>
-
-                <!-- Question 2 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Ai-je besoin de matériel spécifique ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        Pas nécessairement ! Le programme est 100% personnalisé. Si vous avez accès à une box de
-                        CrossFit, nous utiliserons ce matériel. Si vous êtes à la maison avec juste un élastique, nous
-                        adapterons les exercices en conséquence.
-                    </p>
-                </details>
-
-                <!-- Question 3 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Comment corriger mes mouvements à distance ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        C'est tout l'intérêt de l'analyse vidéo. Vous m'envoyez vos vidéos via l'application. Je les
-                        analyse image par image et je vous renvoie une correction vidéo ou audio avec des consignes
-                        précises (ex: "pousse tes genoux vers l'extérieur"). C'est souvent plus efficace qu'une
-                        correction "en direct" car vous pouvez la revoir à volonté.
-                    </p>
-                </details>
-
-                <!-- Question 4 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Combien de temps dure le suivi ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        Cela dépend de ta pathologie et de tes objectifs. Pour une réathlétisation complète, compte
-                        généralement entre 3 et 6 mois. Cependant, l'engagement minimum est d'un mois, sans obligation
-                        de renouvellement.
-                    </p>
-                </details>
-
-                <!-- Question 5 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Comment se déroulent les séances à distance concrètement ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        On échange en visio pour les bilans et les points de suivi. Entre les séances, tu reçois ton
-                        programme sur une application dédiée. Tu m'envoies tes vidéos d'entraînement et je te fais un
-                        retour détaillé (vidéo ou audio) avec les corrections. On reste en contact par messagerie pour
-                        ajuster en continu.
-                    </p>
-                </details>
-
-                <!-- Question 6 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Je suis débutant(e), c'est pour moi aussi ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        Absolument ! Que tu débutes ou que tu sois compétiteur/trice, le suivi est 100% personnalisé à
-                        ton niveau. L'objectif est le même : bouger mieux, sans douleur, et progresser durablement.
-                    </p>
-                </details>
-
-                <!-- Question 7 -->
-                <details class="group bg-brand-light p-6 rounded-2xl border border-brand-sand/30 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-brand-dark">
-                        Puis-je arrêter le suivi à tout moment ?
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-terra"></i>
-                        </span>
-                    </summary>
-                    <p class="text-brand-muted mt-4 leading-relaxed">
-                        Oui, il n'y a aucun engagement au-delà du mois en cours. Tu es libre de poursuivre ou non selon
-                        tes besoins et ton évolution. L'idée est que tu restes parce que ça te fait du bien, pas par
-                        obligation.
-                    </p>
-                </details>
-            </div>
+        <p class="serif" style="font-size:clamp(24px,2.5vw,34px); line-height:1.2; margin:0 0 32px; flex:1;">
+          J'ai traîné une douleur à l'épaule pendant <em style="color:var(--accent);">six mois</em>. Trois kinés, des semaines sans snatch, le doute qui s'installe. <span style="color:var(--cream-dim);">Trois semaines avec Manon — j'étais revenu à 90 % de mon max. Aujourd'hui je dépasse mes anciens PR.</span>
+        </p>
+        <div style="display:flex; align-items:center; gap:16px; padding-top:24px; border-top:1px solid var(--line);">
+          <div style="width:48px; height:48px; border-radius:50%; background:var(--terra); color:var(--ink); display:grid; place-items:center; font-family:var(--f-sans); font-weight:700; flex-shrink:0;">TL</div>
+          <div style="min-width:0;">
+            <p style="margin:0; font-weight:700; font-size:14px;">Thomas L. <span style="color:var(--cream-faint); font-weight:400;">· 29 ans</span></p>
+            <p style="margin:2px 0 0; color:var(--cream-dim); font-size:12px;">CrossFit® athlete · Snatch 110 kg</p>
+          </div>
+          <div style="margin-left:auto; text-align:right;">
+            <div class="label" style="margin-bottom:3px;">Pathologie</div>
+            <div style="color:var(--accent); font-size:12.5px; font-weight:500;">Épaule droite · 6 mois</div>
+          </div>
         </div>
-    </section>
+      </article>
 
-    <!-- Contact Block Section (Updated for Google Form) -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-brand-blush/40 to-brand-light border-t border-brand-sand/20">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- two stacked -->
+      <div style="display:grid; grid-template-rows:1fr 1fr; gap:24px;">
+        <article class="card" style="padding:28px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:4px; color:var(--accent); margin-bottom:14px;">
+            <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
+          </div>
+          <p class="serif" style="font-size:20px; line-height:1.25; margin:0 0 18px; flex:1;">Les retours vidéo sont d'une précision <em style="color:var(--accent);">chirurgicale</em>. Mes muscle-ups n'ont jamais été aussi propres.</p>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:var(--coral); color:var(--ink); display:grid; place-items:center; font-family:var(--f-sans); font-weight:700; font-size:12px;">SB</div>
+            <div><p style="margin:0; font-weight:700; font-size:12px;">Sarah B.</p><p style="margin:1px 0 0; color:var(--cream-dim); font-size:11px;">Gymnastique · Paris</p></div>
+          </div>
+        </article>
+        <article class="card" style="padding:28px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:4px; color:var(--accent); margin-bottom:14px;">
+            <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
+          </div>
+          <p class="serif" style="font-size:20px; line-height:1.25; margin:0 0 18px; flex:1;">Enfin une kiné qui comprend que <em style="color:var(--accent);">« arrête le sport »</em> n'est pas une option.</p>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:var(--rust); color:var(--cream); display:grid; place-items:center; font-family:var(--f-sans); font-weight:700; font-size:12px;">JM</div>
+            <div><p style="margin:0; font-weight:700; font-size:12px;">Julien M.</p><p style="margin:1px 0 0; color:var(--cream-dim); font-size:11px;">Haltérophilie · Bordeaux</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
 
-                <!-- Contact Text -->
-                <div class="space-y-8 sticky top-32 reveal">
-                    <h2 class="text-brand-rust font-bold tracking-wide uppercase text-sm">Me Contacter</h2>
-                    <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-dark leading-tight">
-                        Prêt(e) à <span class="text-brand-rust">reconstruire</span> vos fondations ?
-                    </h3>
-                    <p class="text-brand-muted text-lg leading-relaxed">
-                        N'attendez pas que la douleur s'installe. Cliquez ci-dessous pour remplir le formulaire
-                        détaillé, et Manon vous recontactera personnellement sous 48h.
-                    </p>
+    <!-- mini quotes -->
+    <div class="grid reveal" style="grid-template-columns:repeat(3,1fr); margin-top:24px;">
+      <div class="card" style="padding:26px;">
+        <p style="font-size:15px; line-height:1.5; margin:0 0 16px; color:var(--cream);">« En 4 semaines, plus de douleur lombaire au deadlift. <b>PR à 180 kg ce mois-ci.</b> »</p>
+        <p class="mono" style="font-size:11px; letter-spacing:.05em; color:var(--cream-dim); display:flex; align-items:center; gap:10px; margin:0;"><span style="width:22px; height:1px; background:var(--accent);"></span>Camille V. · CrossFit® L3</p>
+      </div>
+      <div class="card" style="padding:26px;">
+        <p style="font-size:15px; line-height:1.5; margin:0 0 16px; color:var(--cream);">« Manon m'a appris à <b>écouter mon corps sans paniquer.</b> Game changer pour ma saison Open. »</p>
+        <p class="mono" style="font-size:11px; letter-spacing:.05em; color:var(--cream-dim); display:flex; align-items:center; gap:10px; margin:0;"><span style="width:22px; height:1px; background:var(--accent);"></span>Lucas R. · Open athlete</p>
+      </div>
+      <div class="card" style="padding:26px;">
+        <p style="font-size:15px; line-height:1.5; margin:0 0 16px; color:var(--cream);">« Programme clair, suivi humain, zéro jargon. <b>Je recommande les yeux fermés.</b> »</p>
+        <p class="mono" style="font-size:11px; letter-spacing:.05em; color:var(--cream-dim); display:flex; align-items:center; gap:10px; margin:0;"><span style="width:22px; height:1px; background:var(--accent);"></span>Émilie D. · Boxer / CF</p>
+      </div>
+    </div>
 
-                    <div class="space-y-6 pt-4">
-                        <div class="flex items-center gap-4 group">
-                            <div
-                                class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-terra group-hover:bg-brand-terra group-hover:text-white transition-all">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-brand-muted">Email</p>
-                                <a href="mailto:contact@rebuildbym.com"
-                                    class="font-bold text-brand-dark text-lg hover:text-brand-terra transition-colors">contact@rebuildbym.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 group">
-                            <div
-                                class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-terra group-hover:bg-brand-terra group-hover:text-white transition-all">
-                                <i data-lucide="instagram" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-brand-muted">Instagram</p>
-                                <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener noreferrer"
-                                    class="font-bold text-brand-dark text-lg hover:text-brand-terra transition-colors">@rebuild.by.m</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="reveal" style="margin-top:36px; padding-top:30px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap;">
+      <p style="display:flex; align-items:center; gap:12px; color:var(--cream-dim); font-size:14px; margin:0;"><i data-lucide="shield-check" style="width:17px;height:17px;color:var(--accent);"></i> <span><b style="color:var(--cream);">100 %</b> des athlètes accompagnés depuis 2023 recommandent.</span></p>
+      <a href="#contact" style="font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:8px;">Rejoindre la liste <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+    </div>
+  </div>
+</section>
 
-                <!-- Google Form CTA (New layout) -->
-                <div
-                    class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-brand-terra/10 border border-brand-sand/20 text-center reveal hover:shadow-brand-coral/20 transition-all">
-                    <div
-                        class="w-20 h-20 mx-auto mb-6 bg-brand-coral rounded-full flex items-center justify-center text-white shadow-lg">
-                        <i data-lucide="clipboard-list" class="w-10 h-10"></i>
-                    </div>
-                    <h4 class="text-2xl font-display font-bold text-brand-dark mb-3">Formulaire de Bilan Initial</h4>
-                    <p class="text-brand-muted mb-8">
-                        Remplissez le formulaire détaillé (santé, historique, objectifs) pour que Manon puisse préparer
-                        au mieux notre premier échange.
-                    </p>
+<!-- ============================ RESSOURCES ============================ -->
+<section id="ressources" class="section" style="background:var(--ink-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:42px;">
+      <div>
+        <span class="section-index" style="display:block; margin-bottom:18px;">— 05 · RESSOURCES GRATUITES</span>
+        <h2 class="serif-xl" style="margin:0;">Du contenu gratuit,<br>pour <em>progresser sans rendez-vous</em>.</h2>
+      </div>
+      <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener" class="btn-ghost">
+        <i data-lucide="instagram" style="width:16px;height:16px;"></i> @rebuild.by.m <i data-lucide="arrow-up-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
 
-                    <!-- Simulating Google Form link -->
-                    <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank" rel="noopener noreferrer"
-                        class="w-full inline-flex items-center justify-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                        Accéder au Google Form
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </a>
-                    <p class="text-xs text-brand-muted mt-4">Ouverture dans un nouvel onglet.</p>
-                </div>
-            </div>
+    <!-- featured + 2 -->
+    <div class="grid reveal" style="grid-template-columns:1.4fr 1fr;">
+      <a href="https://www.instagram.com/p/DO7qb2_iEvQ/" target="_blank" rel="noopener" class="frame" style="aspect-ratio:16/11; border-radius:4px; display:block;">
+        <img src="images/snatch.jpg" alt="Snatch">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,4,5,.92), rgba(8,4,5,.2) 55%, rgba(8,4,5,.1));"></div>
+        <div style="position:absolute; top:18px; left:18px; display:flex; gap:8px;">
+          <span class="mono" style="background:var(--terra); color:var(--ink); padding:5px 11px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase;">À la une</span>
+          <span class="mono" style="background:rgba(245,236,228,.14); backdrop-filter:blur(6px); color:var(--cream); padding:5px 11px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;"><i data-lucide="layers" style="width:12px;height:12px;"></i> Carrousel · 9 slides</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-b from-brand-blush/30 to-brand-light border-t border-brand-sand/20 pt-16 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="space-y-4">
-                    <a href="#hero" class="flex items-center gap-3 group">
-                        <img src="images/logo-favicon.png" alt="Logo rebuild.by.m" class="w-10 h-10 rounded-full object-cover">
-                        <span class="text-xl font-display font-bold tracking-tight text-brand-dark lowercase">
-                            rebuild<span class="text-brand-terra">.</span>by<span class="text-brand-terra">.</span>m
-                        </span>
-                    </a>
-                    <p class="text-brand-muted text-sm leading-relaxed max-w-xs">
-                        Le mouvement au service du mouvement. Reconstruire un corps performant & durable.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="https://www.instagram.com/rebuild.by.m/" target="_blank" rel="noopener noreferrer"
-                            class="w-10 h-10 rounded-full bg-brand-sand/40 hover:bg-brand-terra hover:text-white text-brand-dark flex items-center justify-center transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="mailto:contact@rebuildbym.com"
-                            class="w-10 h-10 rounded-full bg-brand-sand/40 hover:bg-brand-terra hover:text-white text-brand-dark flex items-center justify-center transition-all">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Navigation -->
-                <div>
-                    <h5 class="font-display font-bold text-sm uppercase tracking-widest text-brand-muted/50 mb-4">Navigation</h5>
-                    <nav class="grid grid-cols-2 gap-2 text-sm">
-                        <a href="#apropos" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Qui suis-je ?</a>
-                        <a href="#expertise" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Ma Méthode</a>
-                        <a href="#suivis" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Mes Services</a>
-                        <a href="#temoignages" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Témoignages</a>
-                        <a href="#ressources" class="text-brand-muted hover:text-brand-terra transition-colors py-1">Ressources</a>
-                        <a href="#faq" class="text-brand-muted hover:text-brand-terra transition-colors py-1">FAQ</a>
-                    </nav>
-                </div>
-
-                <!-- CTA -->
-                <div>
-                    <h5 class="font-display font-bold text-sm uppercase tracking-widest text-brand-muted/50 mb-4">Prêt(e) à commencer ?</h5>
-                    <p class="text-brand-muted text-sm mb-4">Remplis le formulaire de bilan initial et je te recontacte sous 48h.</p>
-                    <a href="#contact"
-                        class="inline-flex items-center gap-2 bg-brand-terra hover:bg-brand-rust text-white font-bold py-3 px-6 rounded-xl transition-all text-sm shadow-lg shadow-brand-terra/20">
-                        Me contacter
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Bottom bar -->
-            <div class="border-t border-brand-sand/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-brand-muted/50">&copy; <span id="year"></span> Rebuild by Mouvement. Tous droits réservés.</p>
-                <div class="flex gap-6 text-xs text-brand-muted/50">
-                    <a href="legal/mentions-legales.html" class="hover:text-brand-terra transition-colors">Mentions Légales</a>
-                    <a href="legal/politique-de-confidentialite.html" class="hover:text-brand-terra transition-colors">Politique de confidentialité</a>
-                    <a href="legal/cgv.html" class="hover:text-brand-terra transition-colors">CGV</a>
-                </div>
-            </div>
+        <div style="position:absolute; top:18px; right:18px; width:38px; height:38px; border-radius:50%; background:rgba(245,236,228,.14); backdrop-filter:blur(6px); display:grid; place-items:center; color:var(--cream);"><i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i></div>
+        <div style="position:absolute; left:0; right:0; bottom:0; padding:30px;">
+          <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 12px;">Technique · 4 min</p>
+          <h3 class="h-sans" style="font-size:clamp(22px,2.4vw,34px); margin:0 0 10px; max-width:18ch;">5 erreurs qui ruinent ton snatch <span style="color:var(--cream-dim);">(et comment les corriger)</span></h3>
+          <p style="color:var(--cream-dim); font-size:14px; max-width:42ch; margin:0;">Trajet de barre, set-up, position d'épaules au catch — on décortique avec ralentis et corrections.</p>
         </div>
-    </footer>
+      </a>
+      <div style="display:grid; grid-template-rows:1fr 1fr; gap:24px;">
+        <a href="https://www.instagram.com/p/DO7qb2_iEvQ/" target="_blank" rel="noopener" class="frame" style="border-radius:4px; min-height:200px; display:block;">
+          <img src="images/hanche.jpg" alt="Mobilité hanche" style="position:absolute; inset:0; height:100%;">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,4,5,.9), transparent 60%);"></div>
+          <span class="mono" style="position:absolute; top:14px; left:14px; background:rgba(245,236,228,.14); backdrop-filter:blur(6px); color:var(--cream); padding:5px 10px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;"><i data-lucide="play" style="width:11px;height:11px;fill:currentColor;"></i> Réel · 60s</span>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:20px;">
+            <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 6px;">Mobilité</p>
+            <h3 class="h-sans" style="font-size:20px; margin:0;">Débloque ta hanche en 3 minutes</h3>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/p/DO7qb2_iEvQ/" target="_blank" rel="noopener" class="frame" style="border-radius:4px; min-height:200px; display:block;">
+          <img src="images/epaules.jpg" alt="Épaule" style="position:absolute; inset:0; height:100%;">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,4,5,.9), transparent 60%);"></div>
+          <span class="mono" style="position:absolute; top:14px; left:14px; background:rgba(245,236,228,.14); backdrop-filter:blur(6px); color:var(--cream); padding:5px 10px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;"><i data-lucide="image" style="width:11px;height:11px;"></i> Post</span>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:20px;">
+            <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 6px;">Prévention</p>
+            <h3 class="h-sans" style="font-size:20px; margin:0;">Douleur d'épaule au kipping ? Voilà pourquoi.</h3>
+          </div>
+        </a>
+      </div>
+    </div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <!-- second row -->
+    <div class="grid reveal" style="grid-template-columns:repeat(3,1fr); margin-top:24px;">
+      <a href="https://www.instagram.com/p/DO7qb2_iEvQ/" target="_blank" rel="noopener" class="frame" style="aspect-ratio:4/5; border-radius:4px; display:block;">
+        <img src="images/regles.jpg" alt="Squat" style="position:absolute; inset:0; height:100%;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,4,5,.9), transparent 60%);"></div>
+        <span class="mono" style="position:absolute; top:14px; left:14px; background:rgba(245,236,228,.14); backdrop-filter:blur(6px); color:var(--cream); padding:5px 10px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;"><i data-lucide="layers" style="width:11px;height:11px;"></i> Carrousel</span>
+        <div style="position:absolute; left:0; right:0; bottom:0; padding:20px;">
+          <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 6px;">Technique</p>
+          <h3 class="h-sans" style="font-size:18px; margin:0;">3 cues pour corriger ton squat sous la barre</h3>
+        </div>
+      </a>
+
+      <a href="#contact" style="aspect-ratio:4/5; border-radius:4px; background:var(--ink-card); border:1px solid var(--line); padding:28px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <span class="mono" style="background:var(--terra); color:var(--ink); padding:5px 11px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase;">Bonus · gratuit</span>
+          <i data-lucide="arrow-up-right" style="width:18px;height:18px;color:var(--cream-faint);"></i>
+        </div>
+        <div>
+          <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 8px;">Guide PDF · 12 pages</p>
+          <h3 class="h-sans" style="font-size:26px; margin:0 0 10px;">Mon protocole warm-up CrossFit</h3>
+          <p style="color:var(--cream-dim); font-size:13px; line-height:1.5; margin:0 0 18px;">Mobilité, activation, échauffement spécifique — tout ce que je fais avant un WOD.</p>
+          <span style="color:var(--accent); font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px; border-bottom:1px solid var(--line-strong); padding-bottom:4px;">Le recevoir <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DO7qb2_iEvQ/" target="_blank" rel="noopener" class="frame" style="aspect-ratio:4/5; border-radius:4px; display:block;">
+        <img src="images/snatch.jpg" alt="Warm-up" style="position:absolute; inset:0; height:100%;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,4,5,.9), transparent 60%);"></div>
+        <span class="mono" style="position:absolute; top:14px; left:14px; background:rgba(245,236,228,.14); backdrop-filter:blur(6px); color:var(--cream); padding:5px 10px; border-radius:999px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px;"><i data-lucide="play" style="width:11px;height:11px;fill:currentColor;"></i> Réel · 90s</span>
+        <div style="position:absolute; left:0; right:0; bottom:0; padding:20px;">
+          <p class="mono" style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 6px;">Récupération</p>
+          <h3 class="h-sans" style="font-size:18px; margin:0;">Le warm-up à faire avant chaque WOD</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section id="faq" class="section">
+  <div class="wrap" style="display:grid; grid-template-columns:5fr 7fr; gap:clamp(40px,5vw,72px);">
+    <!-- sticky left -->
+    <div class="reveal" style="position:sticky; top:120px; align-self:start;">
+      <span class="section-index" style="display:block; margin-bottom:18px;">— 06 · FAQ</span>
+      <h2 class="serif-xl" style="margin:0 0 22px;">Tout ce que tu te demandes <em>avant</em> de m'écrire.</h2>
+      <p style="color:var(--cream-dim); font-size:16px; line-height:1.6; margin:0 0 28px;">7 questions, 7 réponses claires — regroupées par thème. Si la tienne n'y est pas, écris-moi : je réponds personnellement.</p>
+      <div class="card" style="padding:24px;">
+        <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:18px;">
+          <span style="width:44px; height:44px; border-radius:50%; background:var(--accent); color:var(--ink); display:grid; place-items:center; flex-shrink:0;"><i data-lucide="message-circle" style="width:20px;height:20px;"></i></span>
+          <div><p class="h-sans" style="font-size:17px; margin:0;">Une autre question ?</p><p style="font-size:12.5px; color:var(--cream-dim); margin:4px 0 0; line-height:1.4;">Réponse en moins de 48 h, sans bullshit ni copié-collé.</p></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a href="mailto:contact@rebuildbym.com" style="display:flex; align-items:center; justify-content:space-between; padding:13px 16px; background:var(--ink-soft); border:1px solid var(--line); border-radius:4px; font-size:14px; font-weight:600;"><span style="display:flex; align-items:center; gap:10px;"><i data-lucide="mail" style="width:16px;height:16px;color:var(--accent);"></i> Envoyer un email</span><i data-lucide="arrow-right" style="width:16px;height:16px;color:var(--cream-faint);"></i></a>
+          <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; padding:13px 16px; background:var(--ink-soft); border:1px solid var(--line); border-radius:4px; font-size:14px; font-weight:600;"><span style="display:flex; align-items:center; gap:10px;"><i data-lucide="instagram" style="width:16px;height:16px;color:var(--accent);"></i> DM Instagram</span><i data-lucide="arrow-right" style="width:16px;height:16px;color:var(--cream-faint);"></i></a>
+        </div>
+      </div>
+      <p style="display:flex; align-items:center; gap:10px; font-size:12.5px; color:var(--cream-dim); margin:18px 0 0;"><i data-lucide="clock" style="width:15px;height:15px;color:var(--accent);"></i> Délai moyen de réponse : <b style="color:var(--cream);">48 h</b></p>
+    </div>
+
+    <!-- accordions -->
+    <div class="reveal">
+      <div style="margin-bottom:40px;">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line-strong); margin-bottom:6px;">
+          <span class="mono" style="font-size:11px; letter-spacing:.25em; color:var(--accent);">01</span>
+          <h3 class="mono" style="font-size:13px; letter-spacing:.15em; text-transform:uppercase; margin:0;">Le suivi &amp; l'approche</h3>
+          <span class="mono" style="margin-left:auto; font-size:11px; color:var(--cream-faint);">3 questions</span>
+        </div>
+        <details class="qa"><summary><span><span class="qn">Q.01</span>Comment se déroulent les séances concrètement ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">On échange en visio pour les bilans et les points de suivi. Entre les séances, tu reçois ton programme sur une application dédiée, tu m'envoies tes vidéos d'entraînement, et je te fais un retour détaillé (vidéo ou audio) avec corrections. On reste en contact par messagerie pour ajuster en continu.</div></details>
+        <details class="qa"><summary><span><span class="qn">Q.02</span>Combien de temps dure le suivi ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Ça dépend de ta pathologie et de tes objectifs. Pour une réathlétisation complète, compte généralement entre <b>3 et 6 mois</b>. L'engagement minimum est d'un mois, sans obligation de renouvellement.</div></details>
+        <details class="qa"><summary><span><span class="qn">Q.03</span>Je suis débutant(e), c'est pour moi aussi ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Absolument. Que tu débutes ou que tu sois compétiteur·rice, le suivi est 100 % personnalisé à ton niveau. L'objectif reste le même : bouger mieux, sans douleur, et progresser durablement.</div></details>
+      </div>
+
+      <div style="margin-bottom:40px;">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line-strong); margin-bottom:6px;">
+          <span class="mono" style="font-size:11px; letter-spacing:.25em; color:var(--accent);">02</span>
+          <h3 class="mono" style="font-size:13px; letter-spacing:.15em; text-transform:uppercase; margin:0;">Logistique &amp; pratique</h3>
+          <span class="mono" style="margin-left:auto; font-size:11px; color:var(--cream-faint);">2 questions</span>
+        </div>
+        <details class="qa"><summary><span><span class="qn">Q.04</span>Ai-je besoin de matériel spécifique ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Pas nécessairement. Le programme est 100 % personnalisé. Si tu as accès à une box, on utilise ce matériel. Si tu es à la maison avec un seul élastique, on adapte. Le mouvement passe avant l'équipement.</div></details>
+        <details class="qa"><summary><span><span class="qn">Q.05</span>Comment corriger mes mouvements à distance ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Tout l'intérêt de l'analyse vidéo : tu m'envoies tes vidéos via l'application, je les analyse image par image et je te renvoie une correction vidéo ou audio avec des consignes précises (« pousse tes genoux vers l'extérieur »). Souvent plus efficace qu'une correction en direct — tu peux la revoir à volonté.</div></details>
+      </div>
+
+      <div>
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line-strong); margin-bottom:6px;">
+          <span class="mono" style="font-size:11px; letter-spacing:.25em; color:var(--accent);">03</span>
+          <h3 class="mono" style="font-size:13px; letter-spacing:.15em; text-transform:uppercase; margin:0;">Tarifs &amp; engagement</h3>
+          <span class="mono" style="margin-left:auto; font-size:11px; color:var(--cream-faint);">2 questions</span>
+        </div>
+        <details class="qa"><summary><span><span class="qn">Q.06</span>Est-ce remboursé par la sécurité sociale ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Le suivi à distance est une prestation de coaching sport-santé et de prévention — donc <b>pas pris en charge par la Sécu</b>. Une facture t'est fournie : certaines mutuelles proposent des forfaits « Sport sur ordonnance » ou « Médecine douce ».</div></details>
+        <details class="qa"><summary><span><span class="qn">Q.07</span>Puis-je arrêter le suivi à tout moment ?</span><span class="chev"><i data-lucide="chevron-down"></i></span></summary><div class="ans">Oui. Aucun engagement au-delà du mois en cours. Tu es libre de poursuivre ou non selon ton évolution. L'idée : que tu restes parce que ça te fait du bien, pas par obligation.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section id="contact" class="section" style="background:var(--ink-soft); border-top:1px solid var(--line);">
+  <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,5vw,72px); align-items:start;">
+    <div class="reveal" style="position:sticky; top:120px;">
+      <span class="section-index" style="display:block; margin-bottom:18px;">— 07 · ME CONTACTER</span>
+      <h2 class="serif-xl" style="margin:0 0 24px;">Prêt·e à <em>reconstruire</em> tes fondations ?</h2>
+      <p style="color:var(--cream-dim); font-size:16px; line-height:1.6; max-width:46ch; margin:0 0 36px;">N'attends pas que la douleur s'installe. Remplis le formulaire détaillé, et Manon te recontacte personnellement sous 48 h.</p>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <a href="mailto:contact@rebuildbym.com" style="display:flex; align-items:center; gap:16px;">
+          <span style="width:48px; height:48px; border-radius:50%; border:1px solid var(--line-strong); display:grid; place-items:center; color:var(--accent);"><i data-lucide="mail" style="width:20px;height:20px;"></i></span>
+          <span><span class="label" style="display:block; margin-bottom:2px;">Email</span><span class="h-sans" style="font-size:18px;">contact@rebuildbym.com</span></span>
+        </a>
+        <a href="https://instagram.com/rebuild.by.m/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:16px;">
+          <span style="width:48px; height:48px; border-radius:50%; border:1px solid var(--line-strong); display:grid; place-items:center; color:var(--accent);"><i data-lucide="instagram" style="width:20px;height:20px;"></i></span>
+          <span><span class="label" style="display:block; margin-bottom:2px;">Instagram</span><span class="h-sans" style="font-size:18px;">@rebuild.by.m</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal card" style="padding:clamp(34px,4vw,52px); text-align:center; position:relative;">
+      <span class="corner tl" style="top:18px; left:18px;"></span>
+      <span class="corner tr" style="top:18px; right:18px;"></span>
+      <span style="width:72px; height:72px; border-radius:50%; background:var(--accent); color:var(--ink); display:grid; place-items:center; margin:0 auto 24px;"><i data-lucide="clipboard-list" style="width:34px;height:34px;"></i></span>
+      <h3 class="h-sans" style="font-size:26px; margin:0 0 14px;">Formulaire de bilan initial</h3>
+      <p style="color:var(--cream-dim); font-size:15px; line-height:1.6; max-width:40ch; margin:0 auto 30px;">Remplis le formulaire détaillé (santé, historique, objectifs) pour que Manon prépare au mieux ton premier échange.</p>
+      <a href="https://docs.google.com/forms/d/e/SimulatedGoogleFormLink/viewform" target="_blank" rel="noopener" class="btn-cream" style="justify-content:center; width:100%;">Accéder au Google Form <i data-lucide="send" style="width:16px;height:16px;"></i></a>
+      <p class="mono" style="font-size:10px; letter-spacing:.1em; color:var(--cream-faint); margin:16px 0 0;">Ouverture dans un nouvel onglet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer style="background:var(--ink); border-top:1px solid var(--line); padding-top:64px;">
+  <div class="wrap" style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:48px; padding-bottom:48px;">
+    <div>
+      <a href="#hero" class="lg" style="font-family:var(--f-sans); font-weight:700; font-size:21px; letter-spacing:-.02em; text-transform:lowercase; display:inline-flex; align-items:center; gap:11px; margin-bottom:16px;">
+        <img src="images/logo-favicon.png" alt="" style="width:34px; height:34px; border-radius:50%; object-fit:cover;">
+        <span>rebuild<span style="color:var(--accent);">.</span>by<span style="color:var(--accent);">.</span>m</span>
+      </a>
+      <p style="color:var(--cream-dim); font-size:14px; line-height:1.6; max-width:34ch; margin:0 0 18px;">Le mouvement au service du mouvement. Reconstruire un corps performant &amp; durable.</p>
+      <div style="display:flex; gap:10px;">
+        <a href="https://www.instagram.com/rebuild.by.m/" target="_blank" rel="noopener" style="width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); display:grid; place-items:center;"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+        <a href="mailto:contact@rebuildbym.com" style="width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); display:grid; place-items:center;"><i data-lucide="mail" style="width:18px;height:18px;"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="label" style="margin:0 0 18px;">Navigation</h4>
+      <nav style="display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; font-size:14px;">
+        <a class="lk" href="#apropos" style="color:var(--cream-dim);">Qui suis-je ?</a>
+        <a class="lk" href="#expertise" style="color:var(--cream-dim);">Ma méthode</a>
+        <a class="lk" href="#suivis" style="color:var(--cream-dim);">Mes services</a>
+        <a class="lk" href="#temoignages" style="color:var(--cream-dim);">Témoignages</a>
+        <a class="lk" href="#ressources" style="color:var(--cream-dim);">Ressources</a>
+        <a class="lk" href="#faq" style="color:var(--cream-dim);">FAQ</a>
+      </nav>
+    </div>
+    <div>
+      <h4 class="label" style="margin:0 0 18px;">Prêt·e à commencer ?</h4>
+      <p style="color:var(--cream-dim); font-size:14px; line-height:1.6; margin:0 0 18px;">Remplis le formulaire de bilan initial et je te recontacte sous 48 h.</p>
+      <a href="#contact" class="btn-cream">Me contacter <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--line);">
+    <div class="wrap" style="padding:24px 0; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      <p class="mono" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint); margin:0;">© <span id="year"></span> Rebuild by Movement. Tous droits réservés.</p>
+      <div style="display:flex; gap:24px;" class="mono">
+        <a href="legal/mentions-legales.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">Mentions légales</a>
+        <a href="legal/politique-de-confidentialite.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">Confidentialité</a>
+        <a href="legal/cgv.html" style="font-size:11px; letter-spacing:.05em; color:var(--cream-faint);">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // nav scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  // mobile menu
+  const mnav = document.getElementById('mnav');
+  document.getElementById('mburger').addEventListener('click', () => mnav.classList.toggle('open'));
+  mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.classList.remove('open')));
+
+  // reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // icons
+  if (window.lucide) lucide.createIcons();
+</script>
 
 </body>
-
 </html>
