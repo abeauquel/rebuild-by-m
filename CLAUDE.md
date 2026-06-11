@@ -2,25 +2,17 @@
 
 ## Stack
 - **HTML/CSS/JS vanilla** — pas de React, pas de Node.js, pas de package.json
-- **Tailwind CSS v4** via CLI standalone (binaire local)
+- **CSS écrit à la main** dans `css/cinema.css` (thème « Cinéma sombre »)
 - **Lucide Icons** via CDN
-- **Animations** : IntersectionObserver pour les scroll-reveals, CSS keyframes + JS pour les effets hover
+- **Animations** : IntersectionObserver pour les scroll-reveals (classe `.reveal` → `.reveal.in`)
 
-## CSS — règle importante
+## Thème « Cinéma sombre » — tout le site
 
-> **Ne jamais écrire directement dans `css/output.css`.**
-> Ce fichier est généré automatiquement. Toute modification manuelle sera écrasée au prochain build.
+**Toutes les pages** (`index.html`, `offres/*.html`, `legal/*.html`) utilisent le thème éditorial sombre **« Cinéma »** (fond oxblood `#140809`, texte crème, accent corail, grain film), dont le style vit dans **`css/cinema.css`**.
 
-**Toujours :**
-1. Éditer `css/input.css` (source Tailwind)
-2. Recompiler avec le binaire Tailwind du projet :
+> ✅ `css/cinema.css` est du **CSS vanilla écrit à la main** — on l'édite **directement**. Les variables du thème (`--ink`, `--cream`, `--accent`, etc.) et les classes partagées (`.wrap`, `.section`, `.card`, `.btn-cream`, `.serif-xl`, `.prose`, `#subnav`…) y sont définies. Les pages utilisent ces classes + du style inline.
 
-```bash
-./tailwindcss -i css/input.css -o css/output.css
-```
-
-Le binaire `tailwindcss` (Linux x64 standalone) se trouve à la **racine du projet** (`/tailwindcss`).
-Il est téléchargé automatiquement par le hook `.claude/hooks/session-start.sh` dans les environnements remote (Claude Code Web).
+> ⚠️ **Tailwind n'est plus utilisé.** Plus aucune page ne charge `css/output.css` — ce fichier généré, son source `css/input.css` et le binaire `tailwindcss` sont désormais orphelins (conservés mais inutilisés). Ne pas y toucher pour modifier le rendu : éditer `css/cinema.css`.
 
 ## Couleurs du projet
 
