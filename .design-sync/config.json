@@ -1,0 +1,5 @@
+{
+  "projectId": "4b9efaaa-e9d4-49a4-9796-1d75ca6dec0f",
+  "shape": "off-script",
+  "note": "rebuild-by-m is a vanilla static HTML/CSS/JS site (no package.json, no React, no Storybook — see CLAUDE.md). It is outside the design-sync converter's envelope, which expects a componentized (React/Storybook) repo. This sync was produced by hand: real design tokens from css/cinema.css plus real HTML/CSS pattern snippets lifted from the live pages, uploaded as static preview cards. No _ds_bundle.js / .d.ts / .prompt.md were generated because there is no JS component API to describe."
+}
