@@ -1,3 +1,15 @@
 tailwindcss.exe
 tailwindcss
 ds-bundle/
+
+# Pages et catalogues de fournisseurs, aspirés pendant les recherches
+# d'hébergement (Hetzner, OVH). Code source de tiers, ~11 Mo, regénérable :
+# rien à faire dans l'historique.
+app.js
+b.js
+t.out
+hz.html
+hzp.html
+object-storage.html
+storage-box.html
+ovh.json
