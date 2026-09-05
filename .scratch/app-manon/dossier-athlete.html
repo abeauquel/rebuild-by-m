@@ -1,0 +1,1426 @@
+<title>Le dossier athlète</title>
+
+<style>
+/* ============================================================
+   Pré-spec — direction artistique reprise du document imprimable
+   TrueCoach (automisation true coach / src/render.js) : papier
+   blanc, encre terre cuite, accent rouille, polices système
+   uniquement. Aucune police distante, comme la fiche d'origine.
+
+   Rôles de couleur, jamais de swatch en dur :
+     --ink        texte principal, filets forts, bandeaux pleins
+     --muted      texte secondaire
+     --line       filets de séparation
+     --off        absence (« pas de donnée »), pas erreur
+     --accent     TEXTE coloré — ≥4.5:1 sur blanc
+     --accent-bar FILETS et chiffres — ≥3:1, jamais un mot à lire
+     --wash       aplat clair, plaques de titre
+   ============================================================ */
+:root {
+  --ink:         #30100f;
+  --muted:       #6b4a41;
+  --line:        #e8dad5;
+  --off:         #a68f88;
+  --accent:      #c74f2f;
+  --accent-bar:  #d66d4f;
+  --wash:        #f7d1cc;
+  --wash-soft:   #fdf1ec;
+  --on-ink:      #fdf1ec;
+  --on-ink-dim:  #d9b3a8;
+  --paper:       #ffffff;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
+
+  --measure: 74ch;
+  --pad-x: clamp(24px, 6vw, 64px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.wrap { max-width: 940px; margin: 0 auto; padding: 0 var(--pad-x); }
+
+/* ---------- masthead : bandeau plein, encre inversée ---------- */
+.head {
+  background: var(--ink);
+  color: var(--on-ink);
+  margin: 0 calc(var(--pad-x) * -1);
+  padding: clamp(36px, 6vw, 60px) var(--pad-x) clamp(28px, 4vw, 40px);
+}
+.head .kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--on-ink-dim);
+  margin: 0 0 18px;
+  max-width: none;
+}
+.head h1 {
+  font-size: clamp(30px, 5.5vw, 46px);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.04;
+  margin: 0;
+  text-wrap: balance;
+}
+.head h1 em { color: var(--wash); font-style: normal; }
+.rule-thick { height: 2px; background: var(--accent-bar); margin: 14px 0 20px; }
+.head .standfirst {
+  max-width: var(--measure);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--on-ink-dim);
+  margin: 0;
+}
+.head .standfirst strong { color: var(--on-ink); font-weight: 700; }
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--on-ink-dim);
+}
+
+/* ---------- sections ---------- */
+section { padding: clamp(38px, 5.5vw, 60px) 0; border-bottom: 1px solid var(--line); }
+section:last-of-type { border-bottom: 0; }
+
+/* séparateur de section : — 01 · TITRE ————————— */
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 16px;
+  max-width: none;
+}
+.mark::after { content: ""; flex: 1; height: 1px; background: var(--accent-bar); }
+
+h2 {
+  font-size: clamp(23px, 3.4vw, 31px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.12;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+h2 em { color: var(--accent); font-style: normal; }
+
+h3 { font-size: 17px; font-weight: 700; line-height: 1.3; margin: 0 0 6px; letter-spacing: -.01em; }
+h4 { font-size: 17px; font-weight: 700; margin: 0; letter-spacing: -.01em; }
+
+p { margin: 0 0 15px; max-width: var(--measure); }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 17px; color: var(--muted); }
+strong { font-weight: 700; }
+em.q { color: var(--accent); font-style: italic; }
+
+a { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-bar); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent-bar);
+  outline-offset: 2px;
+}
+
+/* ---------- process : séquence numérotée ---------- */
+.steps { display: flex; flex-direction: column; margin-top: 26px; }
+.step {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 0 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.step:last-child { border-bottom: 1px solid var(--line); }
+.step .no {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--accent-bar);
+  padding-top: 3px;
+}
+.step .body p { margin-bottom: 10px; }
+.friction {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 11px 14px;
+  background: var(--wash-soft);
+  border-left: 2px solid var(--accent-bar);
+  max-width: var(--measure);
+}
+.friction .lbl {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  color: var(--accent);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+.friction p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+/* ---------- briques / cartes ---------- */
+.objects { display: grid; gap: 14px; margin-top: 26px; grid-template-columns: repeat(auto-fit, minmax(262px, 1fr)); }
+.obj {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.obj .tag {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.obj p { font-size: 14.5px; color: var(--muted); margin: 0; max-width: none; }
+.obj ul { margin: 3px 0 0; padding-left: 17px; font-size: 14.5px; color: var(--muted); }
+.obj li { margin-bottom: 4px; }
+.obj.pivot { background: var(--wash-soft); border-color: var(--accent-bar); }
+.obj.pivot .tag { color: var(--accent); }
+
+/* ---------- maquette de la vue comparative ---------- */
+.mock { margin-top: 24px; border: 1px solid var(--line); overflow: hidden; }
+.mock-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap;
+  padding: 11px 16px;
+  background: var(--ink); color: var(--on-ink-dim);
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+}
+.mock-bar b { color: var(--on-ink); }
+.mock-scroll { overflow-x: auto; }
+.mock-grid { min-width: 560px; display: grid; grid-template-columns: 1.35fr 1fr 1fr .8fr; }
+.mock-grid > div { padding: 11px 16px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.mock-grid .hd {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  color: var(--accent); background: var(--wash-soft);
+}
+.mock-grid .val { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+.mock-grid .lab { color: var(--muted); }
+.mock-grid .delta { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
+.mock-grid .delta.flat { color: var(--off); font-weight: 400; }
+.mock-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.photo {
+  aspect-ratio: 4 / 3; background: var(--wash-soft);
+  display: grid; place-items: center; gap: 5px; text-align: center; padding: 14px;
+}
+.photo span {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--accent);
+}
+.photo b { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.caption { font-size: 13.5px; color: var(--muted); margin-top: 12px; max-width: 88ch; }
+
+/* ---------- tableaux ---------- */
+.tablewrap { overflow-x: auto; margin-top: 24px; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 14.5px; }
+th, td { text-align: left; padding: 12px 15px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  color: var(--accent); background: var(--wash-soft);
+  white-space: nowrap;
+}
+td { color: var(--muted); }
+td:first-child { color: var(--ink); font-weight: 700; white-space: nowrap; }
+td .price { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.pill {
+  display: inline-block;
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: 2px 6px; border: 1px solid currentColor; white-space: nowrap;
+}
+.pill.out { color: var(--off); }
+.pill.in  { color: var(--accent); }
+
+/* ---------- chemins ---------- */
+.paths { display: grid; gap: 16px; margin-top: 26px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.path { border: 1px solid var(--line); border-top: 3px solid var(--accent-bar); padding: 20px 18px 22px; display: flex; flex-direction: column; gap: 11px; }
+.path .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.path h3 { margin: 0; font-size: 19px; }
+.path .counters { display: flex; flex-direction: column; }
+.path .counters div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-top: 1px solid var(--line);
+  font-size: 13.5px; color: var(--muted);
+}
+.path .counters b {
+  font-family: var(--mono); font-size: 12.5px; font-weight: 700;
+  color: var(--ink); text-align: right; font-variant-numeric: tabular-nums;
+}
+.path .verdict { font-size: 14.5px; color: var(--muted); margin: 0; max-width: none; }
+.path .verdict b { color: var(--accent); font-weight: 700; }
+
+/* ---------- blocs avantages / inconvénients ---------- */
+.choice { border: 1px solid var(--line); padding: 20px 18px 18px; margin-top: 16px; }
+.choice h4 { margin: 0 0 2px; }
+.pc { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); margin: 14px 0 0; }
+.pc > div { background: var(--paper); padding: 13px 15px 15px; }
+.pc .lbl {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  margin: 0 0 8px; max-width: none;
+}
+.pc .lbl.plus { color: var(--accent); }
+.pc .lbl.minus { color: var(--off); }
+.pc ul { margin: 0; padding-left: 16px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.pc li { margin-bottom: 6px; }
+.pc li:last-child { margin-bottom: 0; }
+.choice .reco { margin: 14px 0 0; font-size: 14.5px; color: var(--ink); max-width: none; }
+.choice .reco strong { color: var(--accent); }
+
+/* ---------- définition ---------- */
+.def { margin: 22px 0 26px; border: 1px solid var(--line); background: var(--wash-soft); padding: 20px 20px 22px; }
+.def .sigle { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; max-width: none; }
+.def h3 { font-size: 21px; font-weight: 800; margin: 0 0 12px; letter-spacing: -.015em; }
+.def p { font-size: 14.5px; color: var(--muted); max-width: none; margin-bottom: 11px; }
+.def p:last-child { margin-bottom: 0; }
+
+.who { display: grid; gap: 1px; background: var(--line); margin: 16px 0 14px; border: 1px solid var(--line); }
+.who > div { background: var(--paper); padding: 11px 14px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.who .verdict {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  flex-shrink: 0; min-width: 82px;
+}
+.who .yes .verdict { color: var(--accent); }
+.who .no  .verdict { color: var(--off); }
+.who .names { font-size: 14.5px; color: var(--muted); }
+
+/* ---------- questions ---------- */
+.qs { display: flex; flex-direction: column; margin-top: 26px; }
+.qa { border-top: 1px solid var(--line); padding: 20px 0; }
+.qa:last-child { border-bottom: 1px solid var(--line); }
+.qa .qhead { display: grid; grid-template-columns: 62px 1fr; gap: 0 18px; }
+.qa .no { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .05em; color: var(--accent-bar); padding-top: 3px; }
+.qsplit {
+  margin: 30px 0 0; padding-top: 24px;
+  border-top: 2px solid var(--accent-bar);
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); max-width: none;
+}
+.qa .why { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+.qa .why ul { margin: 8px 0 0; padding-left: 17px; }
+.qa .why li { margin-bottom: 5px; }
+.qa .why li:last-child { margin-bottom: 0; }
+.qa .alex {
+  margin: 13px 0 0;
+  padding: 11px 14px;
+  background: var(--wash-soft);
+  border-left: 2px solid var(--accent-bar);
+  font-size: 14.5px;
+  color: var(--ink);
+  max-width: var(--measure);
+}
+.qa .alex .lbl {
+  display: block;
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 5px;
+}
+.qa .field { grid-column: 2; margin-top: 13px; }
+@media (max-width: 620px) {
+  .qa .qhead, .step { grid-template-columns: 1fr; gap: 6px; }
+  .qa .field { grid-column: 1; }
+  .mock-grid { min-width: 520px; }
+  .pc { grid-template-columns: 1fr; }
+}
+textarea {
+  width: 100%; min-height: 76px; resize: vertical;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 11px 13px;
+  font-family: var(--sans); font-size: 14.5px; line-height: 1.5;
+}
+textarea::placeholder { color: var(--off); }
+.saveline { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
+button {
+  font-family: var(--sans); font-weight: 700; font-size: 14px;
+  padding: 9px 20px; background: var(--ink); color: var(--on-ink);
+  border: 0; cursor: pointer;
+}
+button:hover { background: var(--accent); }
+button[disabled] { opacity: .4; cursor: default; }
+.status { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.status.ok { color: var(--accent); }
+.fallback { margin-top: 22px; padding: 14px 16px; border: 1px dashed var(--accent-bar); font-size: 14.5px; color: var(--muted); background: var(--wash-soft); }
+
+/* ---------- pied ---------- */
+footer { padding: clamp(34px, 5vw, 52px) 0 clamp(48px, 6vw, 72px); border-top: 2px solid var(--accent-bar); }
+footer p { font-size: 14px; color: var(--muted); }
+.legal { margin-top: 18px; padding: 14px 16px; background: var(--wash-soft); border-left: 2px solid var(--accent-bar); font-size: 13.5px; color: var(--muted); max-width: 88ch; }
+
+/* ---------- bloc technique repliable ---------- */
+.tech { margin-top: 44px; border-top: 1px solid var(--line); padding-top: 22px; }
+.tech > summary {
+  cursor: pointer;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent);
+  list-style: none;
+  display: flex; align-items: center; gap: 9px;
+}
+.tech > summary::-webkit-details-marker { display: none; }
+.tech > summary::before { content: "+"; font-size: 15px; line-height: 1; }
+.tech[open] > summary::before { content: "–"; }
+.tech > summary:hover { color: var(--ink); }
+.tech > summary:focus-visible { outline: 2px solid var(--accent-bar); outline-offset: 3px; }
+
+/* ---------- impression / export PDF ---------- */
+@page { size: A4; margin: 14mm 12mm; }
+@media print {
+  /* Les aplats font partie du sens ici (bandeau, plaques d'en-tête) :
+     sans eux, du texte crème sort sur du blanc. */
+  .head, .mock-bar, th, .obj.pivot, .friction, .alex, .legal, .def, .fallback, .qsplit {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  body { font-size: 10.5pt; line-height: 1.5; }
+  .wrap { max-width: none; padding: 0; }
+  .head { margin: 0; padding: 16mm 12mm 10mm; }
+  section { padding: 9mm 0; }
+
+  /* Un PDF ne se déplie pas : on ouvre le bloc technique. */
+  details > *:not(summary) { display: block !important; }
+  details > summary { list-style: none; }
+
+  /* Rien de ce qui s'actionne n'a de sens sur papier. */
+  #save, .saveline .status, .fallback { display: none !important; }
+  textarea { min-height: 22mm; background: #fff; border: 1px solid var(--line); }
+
+  /* Ne rien couper en travers d'une page. */
+  .obj, .path, .choice, .friction, .step, .mock, .alex, tr, .qa { break-inside: avoid; }
+  h2, h3, h4, .mark { break-after: avoid; }
+  .tablewrap { overflow: visible; border: 1px solid var(--line); }
+  table { min-width: 0; font-size: 9pt; }
+  a { text-decoration: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <p class="kicker">REC · 00 / PRÉ-SPEC · RIEN N'EST ENCORE DÉCIDÉ</p>
+    <h1>Le dossier <em>athlète</em></h1>
+    <div class="rule-thick"></div>
+    <p class="standfirst">
+      Ce document décrit ce qu'on a compris de ta façon de travailler, et à quoi ressemblerait
+      un outil qui la centralise. <strong>Ce n'est pas un devis et ce n'est pas un plan.</strong>
+      C'est une hypothèse posée noir sur blanc pour que tu puisses la corriger — et pour qu'on
+      décide ensemble s'il faut acheter quelque chose qui existe déjà, ou construire.
+    </p>
+    <div class="byline">
+      <span>Rédigé par Alex</span>
+      <span>Pour Manon · rebuild.by.m</span>
+      <span>5 septembre 2026</span>
+      <span>Lecture ≈ 10 min</span>
+    </div>
+  </header>
+
+  <section>
+    <p class="mark">— 01 · Ce qu'on a compris de ton process</p>
+    <h2>Cinq étapes, et cinq endroits où <em>ça se perd</em></h2>
+    <p class="lead">
+      Si une seule de ces étapes est fausse, dis-le — tout le reste du document en dépend.
+      Les cinq sont dans l'ordre où tu les vis, du premier contact au suivi long.
+    </p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="no">ÉTAPE 01</div>
+        <div class="body">
+          <h3>Le questionnaire d'admission</h3>
+          <p>Tu envoies un PDF à remplir : coordonnées, antécédents, description de la
+             problématique. L'athlète te le renvoie par mail ou par WhatsApp.</p>
+          <div class="friction">
+            <span class="lbl">Friction</span>
+            <p>Un PDF ne se remplit pas sur un téléphone. Tu relances, tu attends, et ce que tu
+               reçois n'est jamais rangé au même endroit que la suite.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="no">ÉTAPE 02</div>
+        <div class="body">
+          <h3>Le bilan en visio</h3>
+          <p>Soixante minutes pour remonter à l'origine de la douleur. Tu notes tout, sur un
+             deuxième PDF.</p>
+          <div class="friction">
+            <span class="lbl">Friction</span>
+            <p>Tu retapes des informations que l'athlète t'a déjà données à l'étape 01, pendant
+               que tu l'écoutes. Le bilan n'est pré-rempli de rien.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="no">ÉTAPE 03</div>
+        <div class="body">
+          <h3>Les tests envoyés, les vidéos qui reviennent</h3>
+          <p>Tu envoies les tests par WhatsApp ou par TrueCoach. L'athlète te renvoie ses vidéos
+             par le canal qui lui plaît.</p>
+          <div class="friction">
+            <span class="lbl">Friction</span>
+            <p>Deux canaux d'aller, deux canaux de retour. Une vidéo de mobilité d'épaule qui
+               arrive dans une conversation WhatsApp est trouvable pendant trois jours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="no">ÉTAPE 04</div>
+        <div class="body">
+          <h3>L'analyse, les captures, les résultats</h3>
+          <p>Tu regardes les vidéos, tu fais des captures d'écran pour figer l'état des lieux, tu
+             notes les résultats des tests musculaires.</p>
+          <div class="friction">
+            <span class="lbl">Friction</span>
+            <p>C'est <strong>l'étape la plus coûteuse et la plus fragile</strong>. Les captures
+               finissent dans un dossier, les chiffres dans un PDF, et rien ne les relie. Dans
+               huit semaines, retrouver « le test d'épaule du 12 mars » sera une fouille.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="no">ÉTAPE 05</div>
+        <div class="body">
+          <h3>Le suivi, tous les quinze jours</h3>
+          <p>Tu demandes un retour régulier sur les sensations. Parfois une visio pour
+             re-checker, parfois de nouveaux tests.</p>
+          <div class="friction">
+            <span class="lbl">Friction</span>
+            <p>Ces retours vivent dans une conversation, pas dans un dossier. Impossible de
+               relire six mois de suivi d'un coup, ni de montrer à l'athlète le chemin parcouru.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="mark">— 02 · Ce que serait l'outil</p>
+    <h2>Un dossier par athlète, et <em>tout dedans</em></h2>
+    <p class="lead">
+      Pas cinq documents dans quatre endroits, mais un objet unique qui grossit avec le suivi.
+      Voilà les sept briques qu'il contiendrait. Les six premières suivent exactement tes cinq
+      étapes ; la septième est celle qui te protège.
+    </p>
+
+    <div class="objects">
+
+      <div class="obj">
+        <span class="tag">Brique 01 · remplie par l'athlète</span>
+        <h3>Le questionnaire</h3>
+        <p>Le contenu de ton PDF actuel, en formulaire, ouvrable depuis un téléphone par un lien
+           que tu envoies. Ce qu'il remplit atterrit directement dans son dossier.</p>
+      </div>
+
+      <div class="obj">
+        <span class="tag">Brique 02 · remplie en visio</span>
+        <h3>Le bilan</h3>
+        <p>Ta trame de bilan, déjà pré-remplie avec ce qu'il a répondu au questionnaire. Tu
+           complètes en direct pendant l'échange, au clavier, sans retaper l'existant.</p>
+      </div>
+
+      <div class="obj">
+        <span class="tag">Brique 03 · le cœur technique</span>
+        <h3>Une session de tests</h3>
+        <p>Une date, et sous cette date :</p>
+        <ul>
+          <li>des mesures chiffrées — degrés, kilos, secondes, répétitions</li>
+          <li>des photos et des vidéos <strong>attachées à la mesure qu'elles montrent</strong></li>
+          <li>tes observations en texte libre</li>
+        </ul>
+      </div>
+
+      <div class="obj pivot">
+        <span class="tag">Brique 04 · ce que personne ne fait</span>
+        <h3>La comparaison</h3>
+        <p>Deux sessions de tests, côte à côte. Les chiffres avec leur écart calculé, les photos
+           en vis-à-vis. C'est la brique qui justifie tout le projet : c'est la seule chose que le marché ne sait pas faire.</p>
+      </div>
+
+      <div class="obj">
+        <span class="tag">Brique 05 · le fil du suivi</span>
+        <h3>Le journal</h3>
+        <p>Les retours des quinze jours, tes notes de re-check, les ajustements. Rangés par date,
+           relisibles d'un coup, dans le dossier de l'athlète et pas dans une conversation.</p>
+      </div>
+
+      <div class="obj">
+        <span class="tag">Brique 06 · la vue d'ensemble</span>
+        <h3>Ta liste d'athlètes</h3>
+        <p>Qui est en suivi, qui n'a pas donné de nouvelles depuis trois semaines, qui a des
+           tests à refaire. La page que tu ouvrirais en premier le matin.</p>
+      </div>
+
+      <div class="obj pivot">
+        <span class="tag">Brique 07 · non négociable</span>
+        <h3>Rendre et effacer</h3>
+        <p>Deux boutons sur chaque dossier : <strong>sortir tout</strong> — un document lisible que
+           tu envoies à l'athlète qui le réclame — et <strong>tout effacer</strong>, fiche, bilan,
+           tests, photos et journal compris, avec une trace datée de la suppression. C'est la brique qui
+           te protège le plus : dans les sanctions prononcées contre des praticiens libéraux, le
+           déclencheur est presque toujours un patient qui réclame son dossier et n'obtient
+           rien.</p>
+      </div>
+
+    </div>
+
+    <h3 style="margin-top:52px; font-size:22px;">À quoi ressemblerait la comparaison</h3>
+    <p>Maquette grossière, avec des chiffres inventés — juste pour que tu réagisses à la forme.</p>
+
+    <div class="mock">
+      <div class="mock-bar">
+        <span>Dossier · <b>Thomas L.</b> — épaule droite</span>
+        <span>Session <b>12 mars</b> → <b>07 mai</b> · 8 semaines</span>
+      </div>
+      <div class="mock-scroll">
+        <div class="mock-grid">
+          <div class="hd">Mesure</div>
+          <div class="hd">12 mars</div>
+          <div class="hd">07 mai</div>
+          <div class="hd">Écart</div>
+
+          <div class="lab">Flexion épaule D — active</div>
+          <div class="val">142°</div>
+          <div class="val">168°</div>
+          <div class="delta">+26°</div>
+
+          <div class="lab">Rotation externe à 90°</div>
+          <div class="val">54°</div>
+          <div class="val">71°</div>
+          <div class="delta">+17°</div>
+
+          <div class="lab">Overhead squat — profondeur</div>
+          <div class="lab">talons surélevés</div>
+          <div class="lab">à plat</div>
+          <div class="delta">acquis</div>
+
+          <div class="lab">Douleur au kipping (0-10)</div>
+          <div class="val">7</div>
+          <div class="val">2</div>
+          <div class="delta">−5</div>
+
+          <div class="lab">Force rotateurs — dynamomètre</div>
+          <div class="val">11,4 kg</div>
+          <div class="val">11,9 kg</div>
+          <div class="delta flat">+0,5 kg</div>
+        </div>
+      </div>
+      <div class="mock-photos">
+        <div class="photo"><span>12 mars</span><b>Overhead squat — vue de profil</b></div>
+        <div class="photo"><span>07 mai</span><b>Overhead squat — vue de profil</b></div>
+      </div>
+    </div>
+    <p class="caption">
+      La question qu'on te posera sur cet écran : est-ce qu'il te sert à toi pendant que tu
+      travailles, ou est-ce que c'est un document que tu envoies à l'athlète pour lui montrer sa
+      progression ? Ce ne sont pas les mêmes objets.
+    </p>
+  </section>
+
+  <section>
+    <p class="mark">— 03 · Ce que l'outil ne ferait pas</p>
+    <h2>Les frontières, <em>posées d'avance</em></h2>
+    <p class="lead">
+      Un projet qui essaie de tout faire ne sort jamais. Voilà ce qu'on met volontairement dehors,
+      et pourquoi. Si l'un de ces choix te gêne, c'est important de le dire maintenant.
+    </p>
+
+    <div class="objects" style="margin-top:32px;">
+      <div class="obj">
+        <span class="tag">Dehors</span>
+        <h3>La programmation d'exercices</h3>
+        <p>TrueCoach reste, avec sa bibliothèque vidéo et son suivi de séance. Conséquence
+           assumée : tu gardes deux outils ouverts. <strong>C'est le choix qui garde le projet
+           petit</strong> — et c'est le point qu'on a le plus besoin que tu confirmes.</p>
+      </div>
+      <div class="obj">
+        <span class="tag">Pas en V1 · possible ensuite</span>
+        <h3>La facturation</h3>
+        <p>Tiime fait déjà le travail et les virements fonctionnent : rien n'oblige à y toucher
+           maintenant. Ça pourra revenir dans une version ultérieure — et le vrai sujet sera alors
+           « passer à Stripe », une question qui se tranche indépendamment de l'outil.</p>
+      </div>
+      <div class="obj">
+        <span class="tag">Dehors, pour l'instant</span>
+        <h3>L'anglais</h3>
+        <p>Français seulement en première version. Chaque écran et chaque document en double,
+           c'est un coût réel — on le chiffrera à part si tu en as besoin vite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="mark">— 04 · Ce qu'on a vérifié sur les outils qui existent</p>
+    <h2>On a cherché à <em>ne pas</em> construire</h2>
+    <p class="lead">
+      Avant de proposer quoi que ce soit, on a passé le marché en revue : les logiciels de kiné
+      français, les plateformes de coaching, les outils sans code, et les deux références que tu
+      as citées. Quatre candidats sortaient du lot. On est allé vérifier leur documentation, pas
+      leurs pages de vente.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Prix affiché</th>
+            <th>Verdict</th>
+            <th>Motif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rehab&nbsp;Guru</td>
+            <td><span class="price">20 £ / mois</span></td>
+            <td><span class="pill out">écarté</span></td>
+            <td>Anglais strict — sa fiche officielle ne déclare aucune autre langue, ni pour toi
+                ni pour l'athlète. Et son contrat de sous-traitance des données mène à une page
+                qui n'existe pas.</td>
+          </tr>
+          <tr>
+            <td>Physitrack</td>
+            <td><span class="price">22,95 € / mois</span></td>
+            <td><span class="pill out">écarté</span></td>
+            <td>Le meilleur dossier juridique du lot, mais ses questionnaires n'acceptent que des
+                échelles de 0 à 10. Impossible de saisir 142° ou 38 kg, impossible de joindre une
+                photo.</td>
+          </tr>
+          <tr>
+            <td>Andrew</td>
+            <td><span class="price">34,90–49,90 €</span></td>
+            <td><span class="pill out">écarté</span></td>
+            <td>Français, hébergé en France, contrat impeccable. Mais aucune batterie de tests
+                chiffrés, aucune photo, aucune comparaison — ce n'est pas ce que tu as cru voir.</td>
+          </tr>
+          <tr>
+            <td>Hexfit</td>
+            <td><span class="price">39 € ou 50 €</span></td>
+            <td><span class="pill in">en lice</span></td>
+            <td>Mesures chiffrées libres, comparaison entre deux dates native, export de tes
+                données en libre-service. Mais <strong>les photos vivent à côté des mesures, pas
+                attachées à elles</strong>, et trois points de son dossier juridique restent à
+                éclaircir.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:30px;">
+      <strong>Le résultat qui compte, et qui m'a surpris :</strong> aucun des quatre ne sait
+      faire à la fois « une photo attachée à la mesure qu'elle illustre » et « deux dates
+      comparées ». Rehab Guru range la photo au bon endroit mais ne compare rien. Hexfit compare
+      bien mais range les photos ailleurs. <em class="q">Ce que tu demandes, le marché ne le fait
+      pas</em> — et c'est précisément l'étape 04, la plus coûteuse de ton process.
+    </p>
+    <p>
+      Le site que ton collègue t'a montré n'est pas un logiciel qu'on peut acheter : c'est une
+      application faite sur mesure. On pourrait sans doute faire pareil — mais on n'en a aucune
+      vue, seulement sa page d'accueil.
+    </p>
+  </section>
+  <section>
+    <p class="mark">— 05 · Les trois chemins</p>
+    <h2>Ne rien faire, acheter, <em>ou construire</em></h2>
+    <p class="lead">
+      Le premier n'est pas là pour faire joli : c'est l'étalon. Un projet qui ne bat pas
+      « on ne fait rien » n'a pas de raison d'exister.
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Chemin</th>
+            <th>Par mois</th>
+            <th>Ce que tu gagnes</th>
+            <th>Ce que ça coûte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>On ne fait rien</td>
+            <td><span class="price">0 €</span></td>
+            <td>Rien de nouveau à apprendre</td>
+            <td>Le temps que tu perds aujourd'hui, tu continues de le perdre</td>
+          </tr>
+          <tr>
+            <td>Acheter Hexfit</td>
+            <td><span class="price">≈ 40 €</span></td>
+            <td>Un outil qui existe déjà, entretenu sans moi, et qui survit si je ne suis plus
+                disponible</td>
+            <td>Il ne fera pas la comparaison photo comme tu l'imagines, et il faut migrer tes
+                dossiers</td>
+          </tr>
+          <tr>
+            <td>Construire</td>
+            <td><span class="price">14 à 49 €</span></td>
+            <td>Exactement ce que tu décris, et <strong>le code t'appartient</strong></td>
+            <td>Ça repose sur moi au départ, et ça demande environ une heure de ton temps par
+                semaine</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">
+      <strong>Les trois chemins tiennent dans une cinquantaine d'euros d'écart par mois.</strong>
+      Construire sans agrément revient moins cher qu'acheter ; avec l'agrément, c'est à peu près
+      le même prix. Autrement dit, la décision ne se jouera pas sur le montant — elle se jouera
+      sur ce que tu obtiens en face, et sur ce qui se passe le jour où je ne suis pas
+      disponible.
+    </p>
+  </section>
+
+  <section>
+    <p class="mark" id="hebergement" style="scroll-margin-top:24px;">— 06 · Ce que coûte l'hébergement</p>
+    <h2>Entre 5 et 49 € par mois, <em>et une seule décision pour toi</em></h2>
+    <p class="lead">
+      Faire tourner une application pour dix personnes coûte <strong>environ 5 € par mois de
+      puissance de calcul</strong>. Ton outil est minuscule pour une machine. Tout ce qui dépasse
+      ces 5 €, on ne l'achète pas en puissance : on l'achète en travail qu'on ne fera pas, ou en
+      certification.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Chez qui</th>
+            <th>Par mois</th>
+            <th>Qui l'entretient</th>
+            <th>Agréé santé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OVHcloud ou Hostinger<br><span style="font-weight:400;color:var(--cream-faint);font-size:13px;">une machine nue</span></td>
+            <td><span class="price">5 à 12 €</span></td>
+            <td>moi, à la main</td>
+            <td><span class="pill out">non</span></td>
+          </tr>
+          <tr>
+            <td>Render ou Heroku<br><span style="font-weight:400;color:var(--cream-faint);font-size:13px;">une plateforme</span></td>
+            <td><span class="price">14 à 15 €</span></td>
+            <td>l'hébergeur</td>
+            <td><span class="pill out">non</span></td>
+          </tr>
+          <tr>
+            <td>Scalingo<br><span style="font-weight:400;color:var(--cream-faint);font-size:13px;">une plateforme française</span></td>
+            <td><span class="price">34 à 49 €</span></td>
+            <td>l'hébergeur</td>
+            <td><span class="pill in">oui</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">
+      <strong>Prix hors taxes — comme tu es en franchise de TVA, tu paies le TTC : ajoute
+      environ 20 %.</strong> Soit, pour la ligne agréée, entre 41 et 59 € réellement débités.
+      Ajoute aussi un nom de domaine, environ 10 € par an. À ce volume, l'espace de
+      stockage inclus suffit largement — de seize ans à plusieurs décennies selon l'hébergeur,
+      à condition de compresser les photos et les vidéos à l'envoi.
+    </p>
+
+    <h3 style="margin-top:48px; font-size:22px;">La seule décision qui te revient</h3>
+    <p>
+      Un mot d'abord sur ce qu'est l'agrément santé, puisque c'est de lui qu'il s'agit. On
+      l'appelle <strong>HDS</strong>, pour « hébergeur de données de santé » : c'est une
+      certification délivrée par l'État aux entreprises qui louent des serveurs, avec audit à
+      l'entrée et ré-audit régulier. <strong>Ce n'est pas toi qui te fais certifier</strong> — ni
+      audit à passer, ni dossier à monter. Ton seul travail est d'en choisir un qui l'a.
+    </p>
+    <p>
+      Le reste — où vont les photos, comment tes athlètes se connectent — ce sont des choix
+      techniques dont je me charge. Celui-ci est différent : il engage ton nom et ta
+      responsabilité, donc c'est toi qui tranches.
+    </p>
+
+    <div class="choice">
+      <h4>Un hébergeur agréé santé, ou non ?</h4>
+      <div class="pc">
+        <div>
+          <p class="lbl plus">Agréé</p>
+          <ul>
+            <li>Le certificat existe et se montre — à un athlète, à ton assureur, à l'Ordre</li>
+            <li>La question est fermée une fois pour toutes</li>
+            <li>Ça ne coûte que 13 à 20 € de plus par mois</li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl minus">Mais</p>
+          <ul>
+            <li>Beaucoup moins d'hébergeurs au choix</li>
+            <li>Un contrat à signer, quelques jours de délai</li>
+            <li>Mieux vaut partir agréé dès le premier jour : l'agrément ne s'ajoute pas après
+                coup sur un hébergement existant</li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl plus">Non agréé</p>
+          <ul>
+            <li>13 à 20 € par mois d'économie, soit 155 à 240 € par an</li>
+            <li>Plus de choix, dont Render que je connais déjà</li>
+            <li>Toutes tes obligations européennes restent tenues par ailleurs</li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl minus">Mais</p>
+          <ul>
+            <li>Rien à montrer le jour où quelqu'un demande</li>
+            <li>C'est un pari sur une lecture du droit qu'on a trouvée fragile</li>
+            <li>Basculer plus tard reste possible, mais c'est <strong>une migration à
+                prévoir</strong> : on remonte l'hébergement à côté et on déplace les données.
+                Le code, lui, ne bouge pas</li>
+          </ul>
+        </div>
+      </div>
+      <p class="reco">Mon choix : <strong>agréé</strong>. À 13-20 € d'écart, l'argument
+        économique ne tient plus — mais c'est ton nom sur les dossiers, donc c'est ta décision.</p>
+    </div>
+
+    <details class="tech">
+      <summary>Le détail technique — tu peux sauter, c'est pour moi</summary>
+
+      <p style="margin-top:18px;">
+        Une application a besoin de trois choses : <strong>un serveur</strong> qui la fait tourner,
+        <strong>une base de données</strong> pour les textes et les chiffres, et <strong>un espace
+        disque</strong> pour les photos et les vidéos. Chez tous les hébergeurs ci-dessous, les
+        trois viennent ensemble — un seul fournisseur, une seule facture.
+      </p>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Hébergeur</th>
+              <th>Le serveur</th>
+              <th>La base</th>
+              <th>Les photos</th>
+              <th>Les vidéos</th>
+              <th>Total / mois</th>
+              <th>Mise en route</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hostinger</td>
+              <td><span class="price">5,49 €</span><br><span style="font-size:13px;">puis 11,99 €</span></td>
+              <td>sur la même machine</td>
+              <td>sur le disque</td>
+              <td>50 Go — <strong>~80 ans</strong></td>
+              <td><span class="price">5,49 €</span></td>
+              <td><strong>1 à 2 jours</strong></td>
+            </tr>
+            <tr>
+              <td>OVHcloud</td>
+              <td><span class="price">4,60 €</span></td>
+              <td>sur la même machine</td>
+              <td>sur le disque</td>
+              <td>40 Go — <strong>~65 ans</strong></td>
+              <td><span class="price">4,60 €</span></td>
+              <td><strong>1 à 2 jours</strong></td>
+            </tr>
+            <tr>
+              <td>Render</td>
+              <td><span class="price">7 €</span></td>
+              <td><span class="price">7 €</span></td>
+              <td>disque, au Go</td>
+              <td>autant qu'on en paie</td>
+              <td><span class="price">14 €</span> + le disque</td>
+              <td><strong>2 à 3 heures</strong></td>
+            </tr>
+            <tr>
+              <td>Heroku</td>
+              <td><span class="price">7 $</span></td>
+              <td><span class="price">9 $</span> — 10 Go</td>
+              <td>dans la base</td>
+              <td>10 Go — <strong>~16 ans</strong></td>
+              <td><span class="price">≈ 15 €</span></td>
+              <td><strong>2 à 3 heures</strong></td>
+            </tr>
+            <tr>
+              <td>Scalingo</td>
+              <td><span class="price">14,40 à 28,80 €</span><br><span style="font-size:13px;">deux serveurs imposés</span></td>
+              <td><span class="price">20,00 €</span> — 10 Go</td>
+              <td>dans la base</td>
+              <td>10 Go — <strong>~16 ans</strong><br><span style="font-size:13px;">3 ans sans compression</span></td>
+              <td><span class="price">34 à 49 €</span></td>
+              <td><strong>une demi-journée</strong><br><span style="font-size:13px;">+ le contrat santé</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption">
+        Une séance de tests pèse 20 Mo compressée, 110 Mo en pleine qualité. À une quinzaine
+        d'athlètes et deux séances par an, ça fait ~600 Mo par an — d'où les seize ans. Chez
+        Hostinger, 5,49 € est une promotion : le renouvellement est à 11,99 €. Les durées de mise
+        en route sont mes estimations, pas des chiffres relevés. Sources :
+        <a href="https://render.com/pricing">Render</a> ·
+        <a href="https://www.heroku.com/pricing">Heroku</a> ·
+        <a href="https://scalingo.com/fr/pricing#containers">Scalingo</a> ·
+        <a href="https://www.ovhcloud.com/fr/vps/">OVHcloud</a> ·
+        <a href="https://www.hostinger.fr/serveur-vps">Hostinger</a>.
+        <strong>Clever Cloud</strong> est français et agréé santé lui aussi, mais son offre santé ajoute
+        <strong>200 € fixes par mois</strong> plus une majoration de 40 % sur le reste, soit environ
+        234 €/mois pour le même service — hors sujet à cette échelle. Le prix de Scalingo est une fourchette parce que leur
+        plateforme <strong>impose deux serveurs</strong> pour l'agrément — c'est écrit dans leur
+        documentation. Le bas de la fourchette suppose les plus petits serveurs possibles, ce qui
+        est jouable mais serré ; 49 € est le chiffre réaliste.
+      </p>
+
+      <div class="choice">
+        <h4>Les photos : sur un disque, ou dans la base ?</h4>
+        <div class="pc">
+          <div>
+            <p class="lbl plus">Sur un disque</p>
+            <ul>
+              <li>Aucune limite pratique — 40 à 50 Go, soit des décennies</li>
+              <li>Les images s'affichent directement, sans passer par l'application</li>
+              <li>La base reste légère, donc les sauvegardes sont rapides</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl minus">Mais</p>
+            <ul>
+              <li>Se facture au gigaoctet sur les plateformes managées</li>
+              <li>C'est un élément de plus à sauvegarder — et le plus souvent oublié</li>
+              <li><strong>Chez un hébergeur agréé, un stockage séparé coûte 250 €/mois</strong></li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl plus">Dans la base</p>
+            <ul>
+              <li>Un seul endroit à sauvegarder : les photos partent avec le dossier</li>
+              <li>Compris dans les 10 Go, donc rien de plus à payer</li>
+              <li>Effacer un athlète efface vraiment tout, d'un coup</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl minus">Mais</p>
+            <ul>
+              <li>Plafonné à 10 Go : seize ans compressées, trois ans en pleine qualité</li>
+              <li>Les sauvegardes s'alourdissent à mesure que ça grossit</li>
+              <li>Compresser à l'envoi devient obligatoire, pas optionnel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="reco">Mon choix : <strong>dans la base</strong>, avec compression à l'envoi.</p>
+      </div>
+
+      <div class="choice">
+        <h4>La connexion : la coder, ou passer par un service ?</h4>
+        <div class="pc">
+          <div>
+            <p class="lbl plus">Nous-mêmes — mot de passe ou bouton Google</p>
+            <ul>
+              <li>Aucun fournisseur en plus, aucun contrat à signer</li>
+              <li>Gratuit, définitivement</li>
+              <li>Le bouton Google supprime le problème du mot de passe oublié</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl minus">Mais</p>
+            <ul>
+              <li>Il faut l'écrire : réinitialisation, sessions, sécurité</li>
+              <li>Pas de double authentification sans travail supplémentaire</li>
+              <li>C'est du code de plus à maintenir dans la durée</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl plus">Un service — Auth0 ou Supabase</p>
+            <ul>
+              <li>Tout est prêt : mot de passe oublié, double authentification, bouton Google</li>
+              <li>L'offre gratuite d'Auth0 couvre très largement une dizaine de comptes</li>
+              <li>Moins de code écrit, donc moins de code à réparer</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lbl minus">Mais</p>
+            <ul>
+              <li>Un fournisseur américain de plus, avec son contrat de sous-traitance</li>
+              <li>Si leur service tombe, plus personne ne se connecte</li>
+              <li>Supabase n'a de sens que si on lui confie aussi la base et les fichiers</li>
+            </ul>
+          </div>
+        </div>
+        <p class="reco">Mon choix : <strong>le bouton Google</strong>, sans service tiers.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <p class="mark">— 07 · Ce dont on a besoin de toi</p>
+    <h2>Dix questions, et on <em>arrête de deviner</em></h2>
+    <p class="lead">
+      Tu peux répondre directement ici — ce que tu écris est enregistré et je le relis de mon
+      côté. Réponds à ce que tu peux, laisse vide le reste. Une phrase suffit partout.
+    </p>
+
+    <div class="qs">
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q1</div>
+          <div>
+            <h3>Après avoir lu tout ça, vers quoi tu penches ?</h3>
+            <p class="why">Ne rien changer, acheter un logiciel, ou me faire construire quelque chose — les trois
+              restent ouverts, et « je ne sais pas encore » est une réponse valable. Dis-moi
+              aussi <strong>ce qui te retient</strong> : c'est souvent plus utile que le choix
+              lui-même.</p>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q1" placeholder="Je pencherais plutôt vers… / ce qui me retient, c'est…"></textarea></div>
+      </div>
+
+      <p class="qsplit">En supposant qu'on construise quelque chose</p>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q2</div>
+          <div>
+            <h3>On garde TrueCoach ?</h3>
+            <p class="why">L'outil ne ferait ni programmation, ni vidéos d'exercices, ni suivi de
+              séance. Tu aurais deux outils ouverts. C'est ce découpage qui rend le projet
+              faisable — mais c'est toi qui vis avec.</p>
+            <div class="alex">
+              <span class="lbl">Mon avis</span>
+              Oui, on garde, en tout cas pour l'instant. Remplacer TrueCoach par un outil à moi
+              représenterait beaucoup trop de travail pour ce que ça apporterait. À plus long
+              terme, il y aurait la possibilité de passer par <strong>Build by Alex</strong> —
+              l'application d'entraînement que je développe en parallèle — mais ce n'est pas pour
+              tout de suite, et ça ne change rien à ce qu'on décide aujourd'hui.
+            </div>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q2" placeholder="D'accord, ou pas ? Et ce qui te gênerait…"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q3</div>
+          <div>
+            <h3>Est-ce que tes athlètes ont un compte ?</h3>
+            <p class="why">Deux mondes. Soit l'outil est pour toi seule et ils continuent par
+              WhatsApp. Soit ils se connectent, remplissent le questionnaire eux-mêmes et notent
+              leur douleur régulièrement. Le second coûte environ trois fois plus cher. Et
+              au-delà de ce que tu veux : <strong>est-ce qu'ils le feront vraiment</strong> ?</p>
+            <div class="alex">
+              <span class="lbl">Mon avis</span>
+              On peut découper, et ça irait plus vite. <strong>Une première version où tu es la
+              seule à te connecter</strong> : tu saisis ce que les athlètes t'envoient par
+              WhatsApp, comme aujourd'hui, mais tout est enfin rangé au même endroit. Elle sort
+              nettement plus tôt, et elle m'apprend ce qui manque vraiment avant qu'on ait
+              construit dessus. Les comptes pour tes athlètes s'ajoutent après, <em>si tu les veux
+              toujours</em> — c'est la même application, avec des écrans en plus. Rien n'est perdu,
+              et on ne paie pas d'avance pour une hypothèse qu'on n'a pas vérifiée.
+            </div>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q3" placeholder="D'accord pour commencer par toi seule ? Et ce que tu crois qu'ils feront…"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q4</div>
+          <div>
+            <h3>Combien de temps tu y passes aujourd'hui ?</h3>
+            <p class="why">En ordre de grandeur, pas au chronomètre. Par nouveau client : envoyer
+              le PDF, relancer, dépouiller, saisir le bilan, monter les captures. Et par semaine :
+              les retours des quinze jours, retrouver une info dans un vieux dossier. Sans ce
+              repère, on ne pourra jamais prouver que l'outil t'a fait gagner quoi que ce soit.</p>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q4" placeholder="Par nouveau client ≈ … / par semaine ≈ …"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q5</div>
+          <div>
+            <h3>Au vu du tableau juste au-dessus, tu mets combien par mois ?</h3>
+            <p class="why">Les options vont de <strong>5 €</strong> — une machine nue, mais qu'il
+              faut entretenir à la main — à <strong>14 €</strong> pour une plateforme qui s'en
+              occupe, et <strong>34 à 49 €</strong> pour la même chose avec l'agrément santé. Tu
+              paies déjà 60 € de TrueCoach à côté. Quelle ligne te paraît juste, et à partir de
+              quel montant tu dis non ?</p>
+            <div class="alex">
+              <span class="lbl">Mon avis</span>
+              Les trois sont jouables, et je ne te cache pas mon incertitude sur l'une d'elles.
+              <br><br>
+              <strong>Le VPS à 5 €</strong> est le plus malléable — on fait exactement ce qu'on
+              veut — mais chaque fonction demande nettement plus de travail de ma part. L'IA aide
+              beaucoup, seulement <strong>je n'arrive pas à estimer honnêtement</strong> combien de
+              temps ça représente. C'est le seul endroit de ce dossier où je n'ai pas de chiffre à
+              te donner.
+              <br><br>
+              <strong>Render à 14 €</strong>, c'est exactement ce que j'utilise pour ma propre
+              application. Je sais ce que ça donne au quotidien, je n'aurai pas de surprise.
+              <strong>La version agréée à 34-49 €</strong> est jouable aussi, et c'est la plus
+              tranquille côté juridique.
+              <br><br>
+              On peut changer en cours de route si on s'est trompés — mais c'est du temps et du
+              travail, donc autant viser juste du premier coup.
+            </div>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q5" placeholder="À l'aise jusqu'à … / au-delà de … c'est non"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q6</div>
+          <div>
+            <h3>La comparaison à 8 semaines — tu veux voir quoi, exactement ?</h3>
+            <p class="why">Regarde la maquette plus haut. Deux photos côte à côte ? Une courbe sur
+              toute la durée du suivi ? Un document que tu envoies à l'athlète ? C'est la seule
+              chose que le marché ne sait pas faire, donc c'est là que se joue toute la décision.</p>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q6" placeholder="Ce que tu veux voir sur cet écran…"></textarea></div>
+      </div>
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q7</div>
+          <div>
+            <h3>Combien d'athlètes en suivi, aujourd'hui et dans un an ?</h3>
+            <p class="why">Le nombre change tout, pour trois raisons. Certains logiciels facturent
+              au patient actif. Le sur-mesure devient plus rationnel à mesure que ça grossit. Et
+              surtout, <strong>c'est lui qui détermine le volume de vidéos</strong> : à une
+              quinzaine d'athlètes, l'espace inclus tient seize ans ; à cinquante, on tombe autour
+              de cinq. C'est ce chiffre qui décide de ce qu'on peut garder, et combien de temps.</p>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q7" placeholder="Aujourd'hui ≈ … / dans un an ≈ …"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q8</div>
+          <div>
+            <h3>Es-tu d'accord pour que tout soit à ton nom ?</h3>
+            <p class="why">Si on construit, le code t'appartient et l'hébergement est ouvert à ton
+              nom. Ça ne change rien au quotidien — c'est moi qui m'en occupe — mais le jour où
+              je ne suis plus disponible, ou si tu préfères quelqu'un d'autre, tu prends ton code et
+              tu vas voir un autre développeur, sans rien demander à personne. En échange, tu as
+              deux ou trois comptes à ouvrir et une carte bancaire à y mettre.</p>
+            <div class="alex">
+              <span class="lbl">Mon avis</span>
+              Pour moi c'est important, oui. Si un jour je ne suis plus disponible, il faut que tu
+              gardes la main : pouvoir faire modifier l'outil, par toi-même ou par quelqu'un
+              d'autre, sans dépendre de moi.
+              <br><br>
+              Le plan est donc simple : <strong>tout est ouvert à ton nom</strong> — le code,
+              l'hébergement, le nom de domaine — <strong>et tu me donnes les droits d'accès
+              partout</strong>. Je travaille chez toi, en somme. Le jour où on arrête de travailler
+              ensemble, tu me retires les accès et rien d'autre ne bouge : pas de facture à
+              transférer, pas de mot de passe à me réclamer, pas de compte à récupérer.
+            </div>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q8" placeholder="D'accord avec ce fonctionnement ? Ce qui te gênerait…"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q9</div>
+          <div>
+            <h3>Peux-tu m'envoyer le contrat que tu fais vraiment signer ?</h3>
+            <p class="why">On a travaillé sur les CGV du site, qui n'est pas encore en service —
+              donc probablement pas sur le bon document. Le contrat réel décide de deux choses :
+              où tes dossiers ont le droit d'être hébergés, et si ton consentement actuel couvre
+              les données de santé. Et dis-moi, avec tes mots à toi, comment tu décrirais ta
+              prestation à quelqu'un qui n'y connaît rien.</p>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q9" placeholder="Le contrat suit par mail — et ma prestation, c'est…"></textarea></div>
+      </div>
+
+      <div class="qa">
+        <div class="qhead">
+          <div class="no">Q10</div>
+          <div>
+            <h3>Combien de temps tu peux y consacrer, chaque semaine ?</h3>
+            <div class="why">
+              Participer, concrètement, c'est :
+              <ul>
+                <li><strong>Ouvrir les comptes à ton nom</strong> — l'hébergement, le nom de
+                    domaine. Une fois, au début, et avec moi au téléphone.</li>
+                <li><strong>Répondre à des questions</strong> comme celles de ce document, au fur
+                    et à mesure qu'elles se posent.</li>
+                <li><strong>Valider des choix</strong> : les écrans, le vocabulaire employé, ce
+                    qu'on garde et ce qu'on laisse tomber.</li>
+                <li><strong>Relire des maquettes</strong> et dire ce qui cloche.</li>
+                <li><strong>Tester l'outil avec un vrai dossier</strong>, et signaler ce qui ne va
+                    pas <em>avant</em> qu'on ait construit dessus.</li>
+              </ul>
+            </div>
+            <div class="alex">
+              <span class="lbl">Mon avis</span>
+              <strong>Il faudrait au minimum une heure par semaine</strong>, je pense — pendant la
+              phase de conception surtout ; une fois l'outil en place, beaucoup moins.
+              C'est le point qui fait échouer ce genre de projet, bien plus souvent que la
+              technique : un outil construit sans retours devient un outil que personne n'ouvre,
+              et on aura passé des semaines à fabriquer quelque chose qui ne te ressemble pas.
+              Alors réponds de façon réaliste plutôt qu'optimiste. Si c'est une demi-heure, on
+              adapte la méthode : moins de questions, plus de décisions prises à ta place. Si
+              c'est zéro en ce moment, mieux vaut le savoir maintenant et attendre un meilleur
+              moment.
+            </div>
+          </div>
+        </div>
+        <div class="field"><textarea data-q="q10" placeholder="Réaliste, pas optimiste : … par semaine"></textarea></div>
+      </div>
+
+    </div>
+
+    <div class="saveline">
+      <span class="status" id="status">Brouillon non enregistré</span>
+      <button id="save" type="button">Enregistrer mes réponses</button>
+    </div>
+
+    <div class="fallback" id="fallback" hidden>
+      L'enregistrement n'est pas disponible depuis cette vue. Copie tes réponses et envoie-les
+      par message — c'est aussi bien.
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DOC = "reponses/manon";
+  var fields = Array.prototype.slice.call(document.querySelectorAll("textarea[data-q]"));
+  var saveBtn = document.getElementById("save");
+  var status = document.getElementById("status");
+  var fallback = document.getElementById("fallback");
+  var db = null;
+  var dirty = false;
+
+  function setStatus(text, ok) {
+    status.textContent = text;
+    status.className = ok ? "status ok" : "status";
+  }
+
+  function collect() {
+    var out = {};
+    fields.forEach(function (el) { out[el.getAttribute("data-q")] = el.value; });
+    return out;
+  }
+
+  function markDirty() {
+    if (dirty) return;
+    dirty = true;
+    setStatus("Modifications non enregistrées", false);
+  }
+
+  fields.forEach(function (el) { el.addEventListener("input", markDirty); });
+
+  // Sans capacité db, la page reste entièrement lisible et utilisable :
+  // on bascule simplement sur « copie et envoie ».
+  function degrade() {
+    saveBtn.hidden = true;
+    status.hidden = true;
+    fallback.hidden = false;
+  }
+
+  saveBtn.disabled = true;
+  setStatus("Connexion…", false);
+
+  if (!window.claude || typeof window.claude.use !== "function") {
+    degrade();
+    return;
+  }
+
+  window.claude.use("db").then(function (ns) {
+    if (!ns) { degrade(); return; }
+    db = ns;
+    setStatus("Chargement…", false);
+
+    // On n'active le bouton qu'APRES la lecture : un clic entre-temps
+    // enregistrerait des champs vides par-dessus des réponses existantes.
+    return db.doc(DOC).get().then(function (existing) {
+      if (existing) {
+        fields.forEach(function (el) {
+          var v = existing[el.getAttribute("data-q")];
+          if (typeof v === "string") el.value = v;
+        });
+        dirty = false;
+      }
+      saveBtn.disabled = false;
+      if (existing && existing.enregistreLe) {
+        setStatus("Dernier enregistrement · " + existing.enregistreLe, true);
+      } else {
+        setStatus("Prêt", false);
+      }
+    }, function () {
+      // Échec de LECTURE seulement : l'enregistrement reste possible,
+      // on ne cache donc pas le bouton — on prévient, c'est tout.
+      saveBtn.disabled = false;
+      setStatus("Réponses précédentes illisibles — tu peux quand même enregistrer", false);
+    });
+  }).catch(function () {
+    degrade();
+  });
+
+  saveBtn.addEventListener("click", function () {
+    if (!db) return;
+    var payload = collect();
+    payload.enregistreLe = new Date().toLocaleString("fr-FR", {
+      day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+    saveBtn.disabled = true;
+    setStatus("Enregistrement…", false);
+    db.doc(DOC).set(payload).then(function () {
+      dirty = false;
+      saveBtn.disabled = false;
+      setStatus("Enregistré · " + payload.enregistreLe, true);
+    }).catch(function () {
+      saveBtn.disabled = false;
+      setStatus("Échec — copie tes réponses et envoie-les par message", false);
+    });
+  });
+})();
+</script>
